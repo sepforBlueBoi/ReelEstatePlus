@@ -49,6 +49,8 @@
     "token3": "You dont have enough",
     "token4": "Okie Dokie, let me set you up with those tokens!",
     "token5": "There we go. Here is your * Tokens. Have fun!",
-    "token6": "...This is not an amount..."
-
+    "token6": "...This is not an amount...",
+    "token7": "* to Tokens",
+    "token8": "Tokens to *",
+    "token9": "Return to Casino Hub"
 }

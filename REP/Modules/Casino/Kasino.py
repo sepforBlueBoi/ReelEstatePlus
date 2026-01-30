@@ -113,6 +113,7 @@ def Casino(Data, text):
             clear()
             roulette(Data, text)
         elif choice == "2" or choice == "slots":
+            clear()
             print("slots")
         elif choice == "3" or choice == "tokens":
             clear()
