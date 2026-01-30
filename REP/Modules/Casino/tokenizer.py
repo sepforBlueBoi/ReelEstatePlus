@@ -20,12 +20,12 @@ def token_shop(lore, Data):
         print(lore["token9"])# 3. return to Casino hub
         time.sleep(1.4)
 
-        choice = input(lore["token13"]).strip()# Which exchanger?
+        choice = input(lore["token13"] ).strip()# Which exchanger?
 
         if choice == "3":
             clear()
             print(lore["tokenLeave"]) # You leave the Token shop. You find its weird name to be too weird to use.
-            time.sleep(4.5)
+            time.sleep(1.5)
             return
 
         elif choice == "1":
@@ -41,13 +41,13 @@ def token_shop(lore, Data):
             except ValueError:
                 clear()
                 print(lore["token6"])
-                time.sleep(4.5)
+                time.sleep(1.4)
                 continue
 
             if token_amount * 5 > Data["currency"]:
                 clear()
                 print(lore["token3"])# you dont have enough
-                time.sleep(4.5)
+                time.sleep(1.4)
                 continue
             else:
                 token_amount_string = str(token_amount)
@@ -59,9 +59,9 @@ def token_shop(lore, Data):
                 Data["tokens"] = Data["tokens"] + token_amount
                 print(token5) # there we go, there is your * tokens. Have fun!
                 time.sleep(1.4)
-                return
+                continue
 
-        elif choice == "2:": #tokens to money.
+        elif choice == "2": #tokens to money.
             
             print(token2)
             time.sleep(1.4)
@@ -73,19 +73,19 @@ def token_shop(lore, Data):
             except ValueError:
                 clear()
                 print(lore["token6"])
-                time.sleep(4.5)
+                time.sleep(1.4)
                 continue
 
             if cash_amount % 5 != 0:
                 clear() 
                 print(lore["token10"])# uhhh, this...doesnt...isnt an amount i can convert...    
-                time.sleep(4.5)
+                time.sleep(1.4)
                 continue
 
             if cash_amount > Data["tokens"] * 5:
                 clear()
                 print(lore["token3"])# you dont have enough
-                time.sleep(4.5)
+                time.sleep(1.4)
                 continue
             else:
 
@@ -97,4 +97,10 @@ def token_shop(lore, Data):
                 Data["currency"] = Data["currency"] + cash_amount
                 print(lore["token12"])# There ya go! Try not to spend it all in one place...or do. im not your parent.
                 time.sleep(1.4)
-                return
+                continue
+
+        else:
+            clear()
+            print() #No. bad. Legit where are you attepting to go. Hey hey, dont ignore my rant, hey...You tune out the narrators rant.
+            time.sleep(1.4)
+            continue

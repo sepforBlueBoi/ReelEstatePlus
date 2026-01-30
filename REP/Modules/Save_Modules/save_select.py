@@ -1,6 +1,6 @@
 #dec 1, start choices :)
-from REP.Modules.Saves.save_module import delete_save
-import REP.Modules.Saves.Load_module as load
+from REP.Modules.Save_Modules.save_module import delete_save
+import REP.Modules.Save_Modules.Load_module as load
 from REP.core.Hub import World
 
 from colorama import Fore, Style, init

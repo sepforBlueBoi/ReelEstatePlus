@@ -4,9 +4,55 @@ import time
 from colorama import Fore, Style, init
 from REP.Modules.Casino.roulette import rouletete
 from REP.Modules.Casino.tokenizer import token_shop
+from REP.Modules.Casino.Slots import slot_animation
 
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
+
+def slots(Data, text):
+    print() # You go to the closest Slots machine.
+    time.sleep(1.4)
+
+    while True:
+        print() # The lever becons deaply. 
+        time.sleep(1.4)
+        print() # tokens
+        try:
+            amount = int(input()) # How many tokens to you insert into the hole? (Put 0 to return) \n
+        except ValueError:
+            clear()
+            print() # the machine refuses whatever you just put in the machine.
+            continue
+
+        if amount == 0:
+            clear()
+            print() # you leave the machine and return to the casino hub.
+            time.sleep(4.5)
+            continue
+
+        reel = slot_animation()
+
+        time.sleep(01.4)
+        print(f"   _    _    _")
+        print(f" | {reel[0]} | {reel[1]} | {reel[2]} | ,")
+        print(" |              |/")
+        time.sleep(1.4)
+
+        if reel[0] == reel[1] and reel[1] == reel[2]:
+            print()# JACKPOT!
+            Data["currency"] += amount * 2
+            time.sleep(1.4)
+            print() # You won {amount * 2}!
+            time.sleep(4.5)
+            clear()
+            continue
+
+        elif reel[0] == reel[1] or reel[0] == reel[2] or reel[1] == reel[2]:
+            Data["currency"] += amount
+            print() #You won {amount}!
+            time.sleep(4.5)
+            clear()
+            continue
 
 def roulette(Data, text):
 
