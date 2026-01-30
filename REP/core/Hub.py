@@ -1,6 +1,6 @@
 import time
-from REP.Modules.Saves.Load_module import load_json
-from REP.Modules.Saves.save_module import save_game
+from REP.Modules.Save_Modules.Load_module import load_json
+from REP.Modules.Save_Modules.save_module import save_game
 from REP.Modules.Casino.Kasino import Casino
 from REP.Modules.Checkers.Intro_Checker import *
 import sys, os
@@ -72,7 +72,8 @@ class World:
         self.dialogue = load_json(file="lore.json")
         self.Worldstate = save
         clear_console()
-        if self.Worldstate["intro"] == "False":
+        print(self.Worldstate)
+        if self.Worldstate["intro"] == "False": # why isnt it working?? hmm
             print(self.dialogue["lore1"])
             for x in range(3):
                 print(".", end=' ', flush=True)

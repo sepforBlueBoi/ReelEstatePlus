@@ -12,13 +12,20 @@ def token_shop(lore, Data):
         lore7 = lore["token7"].replace('*', Data["c_name"])
         lore8 = lore["token8"].replace("*", Data["c_name"])
 
+        time.sleep(1.4)
         print(lore7)# 1. {c_name} to Tokens
+        time.sleep(1.4)
         print(lore8)# 2. Tokens to {c_name}
+        time.sleep(1.4)
         print(lore["token9"])# 3. return to Casino hub
+        time.sleep(1.4)
 
-        choice = input().strip()# Which exchanger?
+        choice = input(lore["token13"]).strip()# Which exchanger?
 
         if choice == "3":
+            clear()
+            print(lore["tokenLeave"]) # You leave the Token shop. You find its weird name to be too weird to use.
+            time.sleep(4.5)
             return
 
         elif choice == "1":
@@ -26,49 +33,68 @@ def token_shop(lore, Data):
             token2 = lore["token2"].replace("*", Data["c_name"])
         
             print(token2)#the exchange rate is 5 {c_name} to 1 token
+            time.sleep(1.4)
             print(f"Currency: {Data["currency"]}") # Currency: {currency}
+            time.sleep(1.4)
             try:
                 token_amount = int(input("> "))
             except ValueError:
                 clear()
                 print(lore["token6"])
+                time.sleep(4.5)
                 continue
 
             if token_amount * 5 > Data["currency"]:
                 clear()
                 print(lore["token3"])# you dont have enough
+                time.sleep(4.5)
                 continue
             else:
-                token5 = lore["token5"].replace("*", token_amount)
+                token_amount_string = str(token_amount)
+                token5 = lore["token5"].replace("*", token_amount_string)
                 clear()
                 print(lore["token4"]) #okie dokie. let me set you up with the tokens
+                time.sleep(1.4)
                 Data["currency"] = Data["currency"] - token_amount * 5
                 Data["tokens"] = Data["tokens"] + token_amount
                 print(token5) # there we go, there is your * tokens. Have fun!
+                time.sleep(1.4)
                 return
 
         elif choice == "2:": #tokens to money.
+            
             print(token2)
+            time.sleep(1.4)
             print(f"Tokens: {Data["tokens"]}")
+            time.sleep(1.4)
 
             try:
                 cash_amount = int(input("> "))
             except ValueError:
                 clear()
                 print(lore["token6"])
+                time.sleep(4.5)
                 continue
 
             if cash_amount % 5 != 0:
                 clear() 
-                print()# uhhh, this...doesnt...isnt an amount i can convert...    
-                continue()
+                print(lore["token10"])# uhhh, this...doesnt...isnt an amount i can convert...    
+                time.sleep(4.5)
+                continue
 
             if cash_amount > Data["tokens"] * 5:
                 clear()
                 print(lore["token3"])# you dont have enough
+                time.sleep(4.5)
                 continue
             else:
-                print() # Thanks for the tokens, i'll go get the {c_name}
+
+                token11 = lore[token11].replace('*', Data["c_name"])
+
+                print(token11) # Thanks for the tokens, i'll go get the {c_name}
+                time.sleep(1.4)
                 Data["tokens"] = Data["tokens"] - cash_amount / 5
                 Data["currency"] = Data["currency"] + cash_amount
-                print()# There ya go! Try not to spend it all in one place...or do. im not your parent.
+                print(lore["token12"])# There ya go! Try not to spend it all in one place...or do. im not your parent.
+                time.sleep(1.4)
+                return

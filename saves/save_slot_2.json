@@ -1,5 +1,8 @@
 {
-    "name": "",
-    "currency": 0,
-    "c_name": ""
+    "name": "Kondike",
+    "currency": 500,
+    "c_name": "Cashington",
+    "tokens": 0,
+    "map": "owned",
+    "intro": "Done"
 }

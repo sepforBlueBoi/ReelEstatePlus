@@ -1,5 +1,8 @@
 {
-    "name": "what tf",
-    "currency": 0,
-    "c_name": ""
+    "name": "Kondike",
+    "currency": 500,
+    "c_name": "Cash Cash Cash",
+    "tokens": 0,
+    "map": "owned",
+    "intro": "Done"
 }

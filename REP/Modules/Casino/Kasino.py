@@ -119,10 +119,12 @@ def Casino(Data, text):
             clear()
             token_shop(text, Data)
         elif choice == "4" or choice == "leave":
+            clear()
             print(text["casino6"])
             time.sleep(1.4)
             print(text["casino7"])
-            time.sleep(1.4)
+            time.sleep(4.5)
+            clear()
             return
         else:
             print("Try again bozo")

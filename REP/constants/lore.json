@@ -50,7 +50,12 @@
     "token4": "Okie Dokie, let me set you up with those tokens!",
     "token5": "There we go. Here is your * Tokens. Have fun!",
     "token6": "...This is not an amount...",
-    "token7": "* to Tokens",
-    "token8": "Tokens to *",
-    "token9": "Return to Casino Hub"
+    "token7": "1. * to Tokens",
+    "token8": "2. Tokens to *",
+    "token9": "3. Return to Casino Hub",
+    "token10": "uhhh...I can't convert this amount. please make sure its a multiple of 5. please.",
+    "token11": "Thanks for the tokens! I'll be back with the *.",
+    "token12": "Here is your currency. Try not to spend it all in one place...or do. i am not your parents.",
+    "token13": "Which exchanger?",
+    "tokenLeave": "You leave the Token shop. You find its weird name to be too weird to use."
 }

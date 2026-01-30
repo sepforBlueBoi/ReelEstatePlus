@@ -5,7 +5,6 @@ game_dict: dict[str, any] = {
     "c_name": "",
     "map": "not owned",
     "intro": "False",
-    
 }
 
 new_game = game_dict = {
@@ -14,5 +13,5 @@ new_game = game_dict = {
     "c_name": "",
     "tokens": 0,
     "map": "not owned",
-    "intro": "False"
+    "intro": "False",
 }
