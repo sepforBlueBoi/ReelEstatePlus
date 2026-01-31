@@ -37,3 +37,7 @@ Day 2 is done. :]
 ### day 3
 Jan 31 2026. yesterday went according to plan. today the plan is to finish slots/bugtest and add scripting, set up save/quit, saves in Casino, and then afterwards if i have energy add the dev console.
 I think today can have lots of things since all the said things are quite small. save quit is a simple prompt and check. scripting is write it in lore.json, add the lines to the slots function in Casino.py, then import save, make sure the save slot is in Casino.py, then add saves throughout Casino.py. simple.
+
+12:46 Slots is done, with a few tweaks to the Token store timing wise, and a few clear()s. feels good to be caught up. sent the executable in a zip file to the QA        members in hopes they find bugs i can fix. and if they can't then we are golden. :)
+
+1: 09 I've decided after my short break to start on the save/quit function

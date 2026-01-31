@@ -68,5 +68,9 @@
     "slots7.5": "You won * Tokens!",
     "slots8": "Luck was not on your side this roll.",
     "slots8.5": "You lost * Tokens...",
-    "slots9": "Sadly the machine will only let you insert 99 tokens. Anymore will get returned immediently."
+    "slots9": "Sadly the machine will only let you insert 99 tokens. Anymore will get returned immediently.",
+    "quit1": "You plan on leaving?",
+    "quit2": "1. Save",
+    "quit3": "2. Quit",
+    "quit4": "3. return"
 }

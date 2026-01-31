@@ -3,6 +3,7 @@ from REP.Modules.Save_Modules.Load_module import load_json
 from REP.Modules.Save_Modules.save_module import save_game
 from REP.Modules.Casino.Kasino import Casino
 from REP.Modules.Checkers.Intro_Checker import *
+from REP.Modules.Misc.Save_quit import leaving
 import sys, os
 from colorama import Fore, init, Style
 
@@ -28,7 +29,7 @@ class World:
         elif choice == "4":
             print("Inventory")
         elif choice == "0":
-            print("save quit menu")
+            leaving(self.slot, self.Worldstate, self.dialogue)
         elif choice == "{/}" and name == "kondike":
             print("Dev Console")
         
