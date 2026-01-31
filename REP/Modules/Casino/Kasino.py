@@ -10,46 +10,77 @@ def clear():
     os.system('cls' if os.name == "nt" else "clear")
 
 def slots(Data, text):
-    print() # You go to the closest Slots machine.
+    print(text["slots1"]) # You go to the closest Slots machine.
     time.sleep(1.4)
 
     while True:
-        print() # The lever becons deaply. 
+        print(text["slots2"]) # The lever becons deaply. 
         time.sleep(1.4)
-        print() # tokens
+        print(f"Tokens in Pocket: {Data["tokens"]}") # tokens
         try:
-            amount = int(input()) # How many tokens to you insert into the hole? (Put 0 to return) \n
+            amount = int(input(text["slots3"])) # How many tokens to you insert into the hole? (Put 0 to return) \n
         except ValueError:
             clear()
-            print() # the machine refuses whatever you just put in the machine.
+            print(text["slots4"]) # the machine refuses whatever you just put in the machine.
             continue
 
         if amount == 0:
             clear()
-            print() # you leave the machine and return to the casino hub.
+            print(text["slots5"]) # you leave the machine and return to the casino hub.
             time.sleep(4.5)
-            continue
+            return
 
+        if amount >= 100:
+            amount = 99
+            print(text["slots9"]) #Sadly the machine will only let you insert 99. Anything else gets returned.
+            time.sleep(3.5)
+            
+
+
+        time.sleep(1.4)
         reel = slot_animation()
 
-        time.sleep(01.4)
+        time.sleep(1.4)
+        clear()
         print(f"   _    _    _")
         print(f" | {reel[0]} | {reel[1]} | {reel[2]} | ,")
         print(" |              |/")
         time.sleep(1.4)
 
         if reel[0] == reel[1] and reel[1] == reel[2]:
-            print()# JACKPOT!
-            Data["currency"] += amount * 2
-            time.sleep(1.4)
-            print() # You won {amount * 2}!
+            print(text["slots6"])# JACKPOT!
+            Data["tokens"] += amount * 2
+            time.sleep(2.4)
+
+            jackpot = str(amount * 2)
+
+            slots7 = text["slots7"].replace('*', jackpot)
+
+            print(slots7) # You won {amount * 2}!
             time.sleep(4.5)
             clear()
             continue
 
         elif reel[0] == reel[1] or reel[0] == reel[2] or reel[1] == reel[2]:
-            Data["currency"] += amount
-            print() #You won {amount}!
+            Data["tokens"] += amount
+
+            win = str(amount)
+            slots7_5 = text["slots7.5"].replace('*', win)
+
+            print(slots7_5) #You won {amount}!
+            time.sleep(4.5)
+            clear()
+            continue
+        
+        else:
+            Data["tokens"] -= amount
+
+            anoumt = str(amount)
+            slots8_5 = text["slots8.5"].replace('*', anoumt)
+
+            print(text["slots8"]) # Luck was not on your side this roll
+            time.sleep(2.4)
+            print(slots8_5)# You lost {amount}
             time.sleep(4.5)
             clear()
             continue
@@ -160,7 +191,7 @@ def Casino(Data, text):
             roulette(Data, text)
         elif choice == "2" or choice == "slots":
             clear()
-            print("slots")
+            slots(Data, text)
         elif choice == "3" or choice == "tokens":
             clear()
             token_shop(text, Data)

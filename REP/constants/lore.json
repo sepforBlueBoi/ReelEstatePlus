@@ -25,7 +25,7 @@
     "credit4": "My last Planned text based game",
     "credit5": "Be prepared for Kondikes Kasino the Game!",
     "credit6": "     -The Snowman Games Team",
-    "casino1": "You enter the imfamous casino",
+    "casino1": "You enter the infamous casino",
     "casino2": "Kondike's Kasino...",
     "casino3": "The place is ran by ghosts",
     "casino4": "Which game to waste time at?",
@@ -57,5 +57,16 @@
     "token11": "Thanks for the tokens! I'll be back with the *.",
     "token12": "Here is your currency. Try not to spend it all in one place...or do. i am not your parents.",
     "token13": "Which exchanger?",
-    "tokenLeave": "You leave the Token shop. You find its weird name to be too weird to use."
+    "tokenLeave": "You leave the Token shop. You find its weird name to be too weird to use.",
+    "slots1": "You make your way to the closest slot machine.",
+    "slots2": "The lever beacons deeply",
+    "slots3": "How many tokens do you put in the hole? (0 to leave.) \n> ",
+    "slots4": "The Machine refuses whatever you just tried...",
+    "slots5": "You depart from the machine and return to the Casino hub.",
+    "slots6": "JACKPOT!",
+    "slots7": "You won * Tokens!",
+    "slots7.5": "You won * Tokens!",
+    "slots8": "Luck was not on your side this roll.",
+    "slots8.5": "You lost * Tokens...",
+    "slots9": "Sadly the machine will only let you insert 99 tokens. Anymore will get returned immediently."
 }

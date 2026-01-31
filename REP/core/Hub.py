@@ -72,7 +72,6 @@ class World:
         self.dialogue = load_json(file="lore.json")
         self.Worldstate = save
         clear_console()
-        print(self.Worldstate)
         if self.Worldstate["intro"] == "False": # why isnt it working?? hmm
             print(self.dialogue["lore1"])
             for x in range(3):

@@ -9,7 +9,9 @@ SAVE_DIR = "saves"
 os.makedirs(SAVE_DIR, exist_ok=True)
 active_slot = 0
 
-saved = random.choice(["saved", "Saved", "Json File Updated", "Data Uploaded", "Json File consumed", "Backup Made"])
+save_speech = ["saved", "Saved", "Json File Updated", "Data Uploaded", "Json File consumed", "Backup Made"]
+
+saved = random.choice(save_speech)
 
 def save_game(data, slot): #saves current status to current save slot, aka currect save file
     filepath = os.path.join(SAVE_DIR, f"save_slot_{slot}.json")

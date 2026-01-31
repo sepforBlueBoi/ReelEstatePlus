@@ -25,11 +25,12 @@ def token_shop(lore, Data):
         if choice == "3":
             clear()
             print(lore["tokenLeave"]) # You leave the Token shop. You find its weird name to be too weird to use.
-            time.sleep(1.5)
+            time.sleep(4.5)
+            clear()
             return
 
         elif choice == "1":
-    
+            clear()
             token2 = lore["token2"].replace("*", Data["c_name"])
         
             print(token2)#the exchange rate is 5 {c_name} to 1 token
@@ -58,11 +59,12 @@ def token_shop(lore, Data):
                 Data["currency"] = Data["currency"] - token_amount * 5
                 Data["tokens"] = Data["tokens"] + token_amount
                 print(token5) # there we go, there is your * tokens. Have fun!
-                time.sleep(1.4)
+                time.sleep(3.4)
+                clear()
                 continue
 
         elif choice == "2": #tokens to money.
-            
+            clear()
             print(token2)
             time.sleep(1.4)
             print(f"Tokens: {Data["tokens"]}")
@@ -96,7 +98,8 @@ def token_shop(lore, Data):
                 Data["tokens"] = Data["tokens"] - cash_amount / 5
                 Data["currency"] = Data["currency"] + cash_amount
                 print(lore["token12"])# There ya go! Try not to spend it all in one place...or do. im not your parent.
-                time.sleep(1.4)
+                time.sleep(3.4)
+                clear()
                 continue
 
         else:
