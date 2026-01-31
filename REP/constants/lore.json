@@ -72,5 +72,7 @@
     "quit1": "You plan on leaving?",
     "quit2": "1. Save",
     "quit3": "2. Quit",
-    "quit4": "3. return"
+    "quit4": "3. return",
+    "quit5": "You return to the Game.",
+    "quit6": "Did you save first?"
 }

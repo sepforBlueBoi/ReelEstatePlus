@@ -13,7 +13,7 @@ def credits():
     print(credit["credit1"]) # Reel Estate+
     time.sleep(0.9)
 
-    credits2 = credit[credit2].replace("Kondike_Barr", f"{Fore.BLUE}Kondike_Barr{Style.RESET_ALL}")
+    credits2 = credit["credit2"].replace("Kondike_Barr", f"{Fore.BLUE}Kondike_Barr{Style.RESET_ALL}")
 
     print(credits2) # Made my Kondike
     time.sleep(0.9)

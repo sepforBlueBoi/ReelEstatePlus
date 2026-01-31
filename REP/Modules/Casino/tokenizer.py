@@ -91,7 +91,7 @@ def token_shop(lore, Data):
                 continue
             else:
 
-                token11 = lore[token11].replace('*', Data["c_name"])
+                token11 = lore["token11"].replace('*', Data["c_name"])
 
                 print(token11) # Thanks for the tokens, i'll go get the {c_name}
                 time.sleep(1.4)

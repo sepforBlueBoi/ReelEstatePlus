@@ -16,7 +16,7 @@ def select_save(slot):
         print(f"loading save {slot}")
         time.sleep(1.4)
         game_state = load.load_game(slot)
-        return game_state
+        game.intro(game, game_state, slot)
     else:
         return "nu-uh-uh"
         
@@ -37,12 +37,8 @@ def save_select():
             print("1. load save\n2. Delete save\n3. Go Back")
             save_selected = input("> ").strip()
             if save_selected == "1":
-                game_state = select_save(int(choice))
-                if game_state != "nu-uh-uh":
-                    game.intro(game ,game_state, choice)
-                    break
-                else:
-                    continue
+                select_save(int(choice))
+                
             
             elif save_selected == "2":
                 delete_save(int(choice))

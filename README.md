@@ -41,3 +41,5 @@ I think today can have lots of things since all the said things are quite small.
 12:46 Slots is done, with a few tweaks to the Token store timing wise, and a few clear()s. feels good to be caught up. sent the executable in a zip file to the QA        members in hopes they find bugs i can fix. and if they can't then we are golden. :)
 
 1: 09 I've decided after my short break to start on the save/quit function
+
+3:14 OMG. just ran into so many syntax errors in the save quit function. also turns out pygame isnt good at reporting errors :(. but it works, and a svae quit function exists.

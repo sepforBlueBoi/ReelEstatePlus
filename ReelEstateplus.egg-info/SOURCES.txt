@@ -1,4 +1,5 @@
 LICENSE.md
+README.md
 setup.py
 ReelEstateplus.egg-info/PKG-INFO
 ReelEstateplus.egg-info/SOURCES.txt
