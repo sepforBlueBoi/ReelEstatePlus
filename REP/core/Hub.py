@@ -29,7 +29,6 @@ class World:
         elif choice == "4":
             print("Inventory")
         elif choice == "0":
-            print("ur mum")
             leaving(self.slot, self.Worldstate, self.dialogue)
         elif choice == "{/}" and name == "kondike":
             print("Dev Console")

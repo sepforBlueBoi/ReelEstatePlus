@@ -1,0 +1,22 @@
+{
+    "cmd_1": {
+        "ID": "01",
+        "desc": "Changes currency amount"
+    },
+    "cmd_2": {
+        "ID": "02",
+        "desc": "Changes token amount"
+    },
+    "cmd_3": {
+        "ID": "03",
+        "desc": "back door to EVERY area"
+    },
+    "cmd_4": {
+        "ID": "04",
+        "desc": "Changes currency name"
+    },
+    "cmd_5": {
+        "ID": "05",
+        "desc": "Changes user name"
+    }
+}

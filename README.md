@@ -43,3 +43,7 @@ I think today can have lots of things since all the said things are quite small.
 1: 09 I've decided after my short break to start on the save/quit function
 
 3:14 OMG. just ran into so many syntax errors in the save quit function. also turns out pygame isnt good at reporting errors :(. but it works, and a svae quit function exists.
+
+4:37 dev console in progress. im done for today. im tired. the save/quit thing killed my momentum. dev console WILL be finished tomorrow. i will make sure of it. 
+
+noticable less action then yesterday, but simple how it is i guess. and progress IS progress. :)

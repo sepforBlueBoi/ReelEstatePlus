@@ -1,7 +1,7 @@
 {
-    "name": "Kondike",
-    "currency": 500,
-    "c_name": "Cashar",
+    "name": "Kond",
+    "currency": 450,
+    "c_name": "Kondollars",
     "tokens": 0,
     "map": "owned",
     "intro": "Done"

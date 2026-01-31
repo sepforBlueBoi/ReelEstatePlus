@@ -162,6 +162,7 @@ def roulette(Data, text):
         time.sleep(1.4)
         input("Press Enter to Continue")
         clear()
+        continue
     else:
         print(text["roulette10"])# oof, better luck next time!
         time.sleep(1.4)
@@ -170,6 +171,7 @@ def roulette(Data, text):
         print(Data["currency"],"...")
         input("press Enter to Continue")
         clear()
+        continue
         
 
 def Casino(Data, text):

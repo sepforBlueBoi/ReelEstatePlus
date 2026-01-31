@@ -42,6 +42,8 @@ def save_select():
             
             elif save_selected == "2":
                 delete_save(int(choice))
+                print(f"Deleted save {choice}")
+                time.sleep(3.5)
                 clear_console()
                 continue
             elif save_select == "3":
