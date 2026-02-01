@@ -47,3 +47,6 @@ I think today can have lots of things since all the said things are quite small.
 4:37 dev console in progress. im done for today. im tired. the save/quit thing killed my momentum. dev console WILL be finished tomorrow. i will make sure of it. 
 
 noticable less action then yesterday, but simple how it is i guess. and progress IS progress. :)
+
+### day 4
+Feb 01, 2026. with the most recent progress, and the making of Static, i do believe today will hold plenty of progress. The Plans for today is to finish the Dev console, and start on the shop. i do think the shop will take tomorrow to finish with the scale of it, but it should be super good...while writing that ive decided to also work on the inventory with the shop. this way i can see whats happening :).

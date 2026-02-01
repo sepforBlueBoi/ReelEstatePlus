@@ -4,6 +4,7 @@ from REP.Modules.Save_Modules.save_module import save_game
 from REP.Modules.Casino.Kasino import Casino
 from REP.Modules.Checkers.Intro_Checker import *
 from REP.Modules.Save_Modules.SaveExit import leaving
+from REP.Modules.Misc.Dev_stuff import Terminal
 import sys, os
 from colorama import Fore, init, Style
 
@@ -31,7 +32,7 @@ class World:
         elif choice == "0":
             leaving(self.slot, self.Worldstate, self.dialogue)
         elif choice == "{/}" and name == "kondike":
-            print("Dev Console")
+            Terminal(self.Worldstate, self.slot, self.dialogue)
         
 
     def choice(self):

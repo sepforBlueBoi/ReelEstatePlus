@@ -149,29 +149,28 @@ def roulette(Data, text):
             clear()
             print(roulette7)# sorry bud, max bet is 999 {money name}
             continue
-        else:
-            break
+        
 
-    wow = rouletete()
-    time.sleep(2)
-    if p_color == wow:
-        print(text["roulette9"])# nice win
-        time.sleep(1.4)
-        Data["currency"] = Data["currency"] + bet
-        print(Data["currency"],"!")
-        time.sleep(1.4)
-        input("Press Enter to Continue")
-        clear()
-        continue
-    else:
-        print(text["roulette10"])# oof, better luck next time!
-        time.sleep(1.4)
-        Data["currency"] = Data["currency"] - bet
-        time.sleep(1.4)
-        print(Data["currency"],"...")
-        input("press Enter to Continue")
-        clear()
-        continue
+        wow = rouletete()
+        time.sleep(2)
+        if p_color == wow:
+            print(text["roulette9"])# nice win
+            time.sleep(1.4)
+            Data["currency"] = Data["currency"] + bet
+            print(Data["currency"],"!")
+            time.sleep(1.4)
+            input("Press Enter to Continue")
+            clear()
+            continue
+        else:
+            print(text["roulette10"])# oof, better luck next time!
+            time.sleep(1.4)
+            Data["currency"] = Data["currency"] - bet
+            print(Data["currency"],"...")
+            time.sleep(1.4)
+            input("press Enter to Continue")
+            clear()
+            continue
         
 
 def Casino(Data, text):
