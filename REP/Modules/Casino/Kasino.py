@@ -102,15 +102,15 @@ def roulette(Data, text):
         if roull == "1":
             clear()
             p_color = "red"
-            break
+            
         elif roull == "2":
             clear()
             p_color = "black"
-            break
+            
         elif roull == "3":
             clear()
             p_color = "blue"
-            break
+            
         elif roull == "4":
             clear()
             return
@@ -119,63 +119,63 @@ def roulette(Data, text):
             print(f"No, you cannot bet on {Fore.MAGENTA}purple{Style.RESET_ALL}")
             continue
 
-    while True:
+        while True:
         
-        print(text["roulette4"])# Now the bet.
-        time.sleep(1.4)
-        print(text["roulette5"])# how much you bettin?
-        time.sleep(1.4)
-        print(f"Currency: {Data["currency"]}")# in your wallet is {money}.
-        try:
-            bet = int(input("> "))
-        except ValueError:
-            clear()
-            print(text["roulette5.5"]) # this...isn't an amount
-            continue
-        
-
-        roulette6 = text["roulette6"].replace("*", Data["c_name"])
-        roulette7 = text["roulette7"].replace("*", Data["c_name"])
-
-        if bet == 0:
-            clear()
-            print(text["roulettereturn"])#ah, changing colors?
-            break
-        
-        if bet <= 19:
-            clear()
-            print(roulette6)# our lowest bet is 20 {money name}
-            continue
-        elif bet > Data["currency"]:
-            clear()
-            print(text["roulette8"])# you dont have that much
-            continue
-        elif bet >= 1000:
-            clear()
-            print(roulette7)# sorry bud, max bet is 999 {money name}
-            continue
+            print(text["roulette4"])# Now the bet.
+            time.sleep(1.4)
+            print(text["roulette5"])# how much you bettin?
+            time.sleep(1.4)
+            print(f"Currency: {Data["currency"]}")# in your wallet is {money}.
+            try:
+                bet = int(input("> "))
+            except ValueError:
+                clear()
+                print(text["roulette5.5"]) # this...isn't an amount
+                continue
         
 
-        wow = rouletete()
-        time.sleep(2)
-        if p_color == wow:
-            print(text["roulette9"])# nice win
-            time.sleep(1.4)
-            Data["currency"] = Data["currency"] + bet
-            print(Data["currency"],"!")
-            time.sleep(1.4)
-            input("Press Enter to Continue")
-            clear()
-            continue
-        else:
-            print(text["roulette10"])# oof, better luck next time!
-            time.sleep(1.4)
-            Data["currency"] = Data["currency"] - bet
-            print(Data["currency"],"...")
-            time.sleep(1.4)
-            input("press Enter to Continue")
-            clear()
-            break
+            roulette6 = text["roulette6"].replace("*", Data["c_name"])
+            roulette7 = text["roulette7"].replace("*", Data["c_name"])
+
+            if bet == 0:
+                clear()
+                print(text["roulettereturn"])#ah, changing colors?
+                break
+        
+            if bet <= 19:
+                clear()
+                print(roulette6)# our lowest bet is 20 {money name}
+                continue
+            elif bet > Data["currency"]:
+                clear()
+                print(text["roulette8"])# you dont have that much
+                continue
+            elif bet >= 1000:
+                clear()
+                print(roulette7)# sorry bud, max bet is 999 {money name}
+                continue
+        
+
+            wow = rouletete()
+            time.sleep(2)
+            if p_color == wow:
+                print(text["roulette9"])# nice win
+                time.sleep(1.4)
+                Data["currency"] = Data["currency"] + bet
+                print(Data["currency"],"!")
+                time.sleep(1.4)
+                input("Press Enter to Continue")
+                clear()
+                continue
+            else:
+                print(text["roulette10"])# oof, better luck next time!
+                time.sleep(1.4)
+                Data["currency"] = Data["currency"] - bet
+                print(Data["currency"],"...")
+                time.sleep(1.4)
+                input("press Enter to Continue")
+                clear()
+                break
         
 
 def Casino(Data, text):
