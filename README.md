@@ -54,3 +54,5 @@ Feb 01, 2026. with the most recent progress, and the making of Static, i do beli
 ### day 9
 Feb 05, 2026. i have made little progress as of day 4. as in i did a small thing to the dev console, and took a long break.
 so plan for today is ACTUALLY FINISH THE DEV CONSOLE!! Thank you :)
+
+Have me some dr thunder, i am READYYY

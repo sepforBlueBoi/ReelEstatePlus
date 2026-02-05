@@ -137,6 +137,11 @@ def roulette(Data, text):
         roulette6 = text["roulette6"].replace("*", Data["c_name"])
         roulette7 = text["roulette7"].replace("*", Data["c_name"])
 
+        if bet == 0:
+            clear()
+            print(text["roulettereturn"])#ah, changing colors?
+            break
+        
         if bet <= 19:
             clear()
             print(roulette6)# our lowest bet is 20 {money name}
@@ -170,7 +175,7 @@ def roulette(Data, text):
             time.sleep(1.4)
             input("press Enter to Continue")
             clear()
-            continue
+            break
         
 
 def Casino(Data, text):
