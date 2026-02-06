@@ -1,6 +1,6 @@
 # README
 
-The Readme is actually a dev log suckas
+The changelog is actually a dev log suckas
 
 ## Dev-Log
 

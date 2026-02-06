@@ -22,3 +22,18 @@ Reel Estate features:
 * npcs and side quests
 * collectables
 * and more, especially with this new version!
+
+## Structure
+
+The game modules can be found in the REP/ folder.
+
+**REP** - REP/ is split into three main folders, constants/ which holds all the dialogue, save data, and other text based thing used cross session, core/ whic has all the main major things, such as the menu, and main game look, and Modules/ which has just about everything else such as Casino/ or Misc/.
+
+**LEGACY** - LEGACY/ has Reel_Estate_8.1 which was the lastest version of the orginal Reel Estate, It is here as a blue print.
+
+**/** - The root folder has all the github info, requirements.txt, REP/, and LEGACY/. setup.py was to make pyinstaller work, same with ReelEstateplus.egg-info.     
+
+## Other information
+
+You can find more info in the wiki at github.com/sepforBlueBoi/ReelEstatePlus/wiki
+, the Change log that acts as my dev log, and CONTRIBUTING.

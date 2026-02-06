@@ -38,4 +38,4 @@ If you find a bug please test with multiple save files before reporting.
  **No pull requests**: Thanks, but not needed. I would like to maintain Reel Estate Plus by myself. feel free to do pull requests with other forks.
 
  ## Questions
- open a discussion or reach out via discord (kondike_barr)
+ open a discussion or reach out via discord (kondike_barr) or email (ihaditundercontrol@gmail.com)
