@@ -59,3 +59,5 @@ Have me some dr thunder, i am READYYY
 
 11:53 I have fixed roulette...again. now there is a way to leave lol. and also Dev console is DONE. on to the Shop/inventory, im hyped :)
       I will be starting With the inventory, just cause =_=
+
+7:39 I am done for today. inventory module started as a class. 
