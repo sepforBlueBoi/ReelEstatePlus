@@ -2,7 +2,7 @@ import os
 import json
 import REP.Modules.Save_Modules.save_module as save
 from REP.constants.save_stuff import new_game
-import time
+
 
 SAVE_DIR = "saves"
 JSON_DIR = "constants"
