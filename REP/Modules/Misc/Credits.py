@@ -7,13 +7,13 @@ def clear():
 
 from REP.Modules.Save_Modules.Load_module import load_json
 
-credit = load_json("lore.json")
+credit = load_json("lore.json") # loads credits. only time this is called outside the main loop.
 
 def credits():
     print(credit["credit1"]) # Reel Estate+
     time.sleep(0.9)
 
-    credits2 = credit["credit2"].replace("Kondike_Barr", f"{Fore.BLUE}Kondike_Barr{Style.RESET_ALL}")
+    credits2 = credit["credit2"].replace("Kondike_Barr", f"{Fore.BLUE}Kondike_Barr{Style.RESET_ALL}") # a blue kondike ;)
 
     print(credits2) # Made my Kondike
     time.sleep(0.9)

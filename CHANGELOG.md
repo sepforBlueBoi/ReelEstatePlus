@@ -1,4 +1,4 @@
-# README
+# CHANGE-LOG/Dev-Log
 
 The changelog is actually a dev log suckas
 
@@ -16,21 +16,21 @@ okay writing this on the day AFTER...freak that. i basically just finished the t
 ### day 2
 Jan 30, 2026. after yesterdays...progress today i will only plan to finish the text in the tokenizer, then push to start slots. maybe today will be hold more progress then yesterday. 
 
-1:06: turns out there was a bug in save_stuff.py. fixed it. also i am trying to make sure when switching areas it feels smooth and not cluttered. tokens is ALMOST done. a few more lines of time.sleep(), some testing, repeat till its done.
+**1:06**: turns out there was a bug in save_stuff.py. fixed it. also i am trying to make sure when switching areas it feels smooth and not cluttered. tokens is ALMOST done. a few more lines of time.sleep(), some testing, repeat till its done.
 
-2:23: i changed the name of Saves to Save_Modules to stop confusion between saves and Saves (Both Dir), now the only thing its Save_Modules and save_module is a thing. capital different and one is a Dir while the other is a file. also finished with the tokenizer. next step: SLOTS!! 
+**2:23**: i changed the name of Saves to Save_Modules to stop confusion between saves and Saves (Both Dir), now the only thing its Save_Modules and save_module is a thing. capital different and one is a Dir while the other is a file. also finished with the tokenizer. next step: SLOTS!! 
 
-2:31: WHAT HAVE I DONT. It's Alive. wtf
+**2:31**: WHAT HAVE I DONT. It's Alive. wtf
     .
     .
     .
     JOKING. im wasting more time. :)
 
-4:14 im geting back to work. read alot of homestuck :)  Time to start on slots again. 
+**4:14** im geting back to work. read alot of homestuck :)  Time to start on slots again. 
 
-4:50 slots animation is done. im gonna set up the function in Casino.py, then push it to github, then bug test.
+**4:50** slots animation is done. im gonna set up the function in Casino.py, then push it to github, then bug test.
 
-5:40 Slots is done. untested, but done. 
+**5:40** Slots is done. untested, but done. 
 
 Day 2 is done. :]
 
@@ -38,26 +38,31 @@ Day 2 is done. :]
 Jan 31 2026. yesterday went according to plan. today the plan is to finish slots/bugtest and add scripting, set up save/quit, saves in Casino, and then afterwards if i have energy add the dev console.
 I think today can have lots of things since all the said things are quite small. save quit is a simple prompt and check. scripting is write it in lore.json, add the lines to the slots function in Casino.py, then import save, make sure the save slot is in Casino.py, then add saves throughout Casino.py. simple.
 
-12:46 Slots is done, with a few tweaks to the Token store timing wise, and a few clear()s. feels good to be caught up. sent the executable in a zip file to the QA        members in hopes they find bugs i can fix. and if they can't then we are golden. :)
+**12:46** Slots is done, with a few tweaks to the Token store timing wise, and a few clear()s. feels good to be caught up. sent the executable in a zip file to the QA        members in hopes they find bugs i can fix. and if they can't then we are golden. :)
 
-1: 09 I've decided after my short break to start on the save/quit function
+**1: 09** I've decided after my short break to start on the save/quit function
 
-3:14 OMG. just ran into so many syntax errors in the save quit function. also turns out pygame isnt good at reporting errors :(. but it works, and a svae quit function exists.
+**3:14** OMG. just ran into so many syntax errors in the save quit function. also turns out pygame isnt good at reporting errors :(. but it works, and a svae quit function exists.
 
-4:37 dev console in progress. im done for today. im tired. the save/quit thing killed my momentum. dev console WILL be finished tomorrow. i will make sure of it. 
+**4:37** dev console in progress. im done for today. im tired. the save/quit thing killed my momentum. dev console WILL be finished tomorrow. i will make sure of it. 
 
 noticable less action then yesterday, but simple how it is i guess. and progress IS progress. :)
 
 ### day 4
 Feb 01, 2026. with the most recent progress, and the making of Static, i do believe today will hold plenty of progress. The Plans for today is to finish the Dev console, and start on the shop. i do think the shop will take tomorrow to finish with the scale of it, but it should be super good...while writing that ive decided to also work on the inventory with the shop. this way i can see whats happening :).
 
-### day 8
+### day 5
 Feb 05, 2026. i have made little progress as of day 4. as in i did a small thing to the dev console, and took a long break.
 so plan for today is ACTUALLY FINISH THE DEV CONSOLE!! Thank you :)
 
 Have me some dr thunder, i am READYYY
 
-11:53 I have fixed roulette...again. now there is a way to leave lol. and also Dev console is DONE. on to the Shop/inventory, im hyped :)
+**11:53** I have fixed roulette...again. now there is a way to leave lol. and also Dev console is DONE. on to the Shop/inventory, im hyped :)
       I will be starting With the inventory, just cause =_=
 
-7:39 I am done for today. inventory module started as a class. 
+**7:39** I am done for today. inventory module started as a class. 
+
+### day 6
+Feb 06, 2026. Inventory work, and adding comments and notes in dev_stuff is on the agenda. 
+I adjusted the repo structure to be more clear and readable to newbies, and just anyone in general.
+Yesterday i added CONTRIBUTING and requirements so people can help debug.
