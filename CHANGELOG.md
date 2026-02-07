@@ -76,3 +76,5 @@ Feb 7, 2026. okay, i was wrong. yesterday (the 6th) was just be making sure ever
 also i wanna talk about how the REPO for REstate+ is getting so many views...
 
 ![Repo stats](Images/Git_stats.png)
+
+I never thought something i made would get this kind of attention, bots or not.

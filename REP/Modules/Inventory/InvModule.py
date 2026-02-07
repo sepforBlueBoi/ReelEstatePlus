@@ -7,7 +7,7 @@ import os
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
     
-class Inventory:
+class InvDisplay:
     """Inventory class for reel estate plus.
     
     Contains multiple pages, at then end of each page will be a prompt.
@@ -26,14 +26,40 @@ class Inventory:
         self.data = {} # Holds data. same thing we did in Hub.py
         self.page = 1 # keep track of pages
         
+    def page_5(self, data):
+        print("page 5\t ----\tHouses and Furniture")
+        time.sleep(1.4)
+        
+    def page_4(self, data):
+        print("page 4\t ----\tFishpedia")
+        time.sleep(1.4)    
+        
+    def page_3(self, data):
+        print("Page 3\t ----\tAchievments")
+        time.sleep(1.4)    
+        
+    def page_2(self, data):
+        print("Page 2\t ----\tCollectables")
+        time.sleep(1.4)
         
     def page_1(self, data): # <- current page function
-        print("Page 1\t ----\tInventory")
-        
+        print("Page 1\t ----\tBasic Inventory")
+        time.sleep(1.4)
+        print(data["name"])
+        time.sleep(0.9)
+        print(data["c_name"], ":", data["currency"])
+        time.sleep(0.9)
+        print("tokens:", data["tokens"])
+        time.sleep(0.9)
+        print("Fishing rods: TODO") #TODO 
+        time.sleep(0.9)
         
     def prompt(self): # simple page prompt that will be at the bottom of every page.
         time.sleep(1.4)
+        print(f"page {self.page}/5")
+        time.sleep(1.4)
         print("which page . . .")
+        time.sleep(1.4)
         print("0 to close inventory")
         time.sleep(1.4)
         try:
@@ -63,5 +89,9 @@ class Inventory:
             self.page = page
             continue
         
-Inv = Inventory() # instance of the call.
-Inv.display() # <- the call
+        
+# for quick testing skeleton. 
+# does not work with data parameter
+# probably wont touch this again, but i'd like to be safe ;)        
+"""Inv = Inventory() # instance of the call.
+Inv.display() # <- the call"""

@@ -37,3 +37,9 @@ The game modules can be found in the REP/ folder.
 
 You can find more info in the wiki at github.com/sepforBlueBoi/ReelEstatePlus/wiki
 , the Change log that acts as my dev log, and CONTRIBUTING.
+
+## Sick game information && Pictures
+
+REstate may be text based, but still has animations, such as roulette, and slots!
+
+The name Reel Estate was made by a user on twitch going by avoidingcord366.

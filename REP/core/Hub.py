@@ -5,11 +5,14 @@ from REP.Modules.Casino.Kasino import Casino
 from REP.Modules.Checkers.Intro_Checker import *
 from REP.Modules.Save_Modules.SaveExit import leaving
 from REP.Modules.Misc.Dev_stuff import Terminal
+from REP.Modules.Inventory.InvModule import InvDisplay
 import sys, os
 from colorama import Fore, init, Style
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear' )
+
+Inv = InvDisplay()
 
 class World:
     def init(self):
@@ -28,7 +31,7 @@ class World:
         elif choice == "3":
             print("lake")
         elif choice == "4":
-            print("Inventory")
+            Inv.display(self.Worldstate)
         elif choice == "0":
             leaving(self.slot, self.Worldstate, self.dialogue)
         elif choice == "{/}" and name == "kondike":
