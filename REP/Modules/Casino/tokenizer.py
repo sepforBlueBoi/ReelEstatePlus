@@ -20,7 +20,7 @@ def token_shop(lore, Data):
         print(lore["token9"])# 3. return to Casino hub
         time.sleep(1.4)
 
-        choice = input(lore["token13"] ).strip()# Which exchanger?
+        choice = input(f"{lore["token13"]} ").strip()# Which exchanger?
 
         if choice == "3":
             clear()
@@ -59,7 +59,7 @@ def token_shop(lore, Data):
                 Data["currency"] = Data["currency"] - token_amount * 5
                 Data["tokens"] = Data["tokens"] + token_amount
                 print(token5) # there we go, there is your * tokens. Have fun!
-                time.sleep(3.4)
+                time.sleep(4.5)
                 clear()
                 continue
 

@@ -27,41 +27,42 @@ class InvDisplay:
         self.page = 1 # keep track of pages
         
     def page_5(self, data):
-        print("page 5\t ----\tHouses and Furniture")
+        print("page 5\t ----\tHouses and Furniture\n")
         time.sleep(1.4)
         
     def page_4(self, data):
-        print("page 4\t ----\tFishpedia")
+        print("page 4\t ----\tFishpedia\n")
         time.sleep(1.4)    
         
     def page_3(self, data):
-        print("Page 3\t ----\tAchievments")
+        print("Page 3\t ----\tAchievements\n")
         time.sleep(1.4)    
         
     def page_2(self, data):
-        print("Page 2\t ----\tCollectables")
+        print("Page 2\t ----\tCollectables and Lore\n")
         time.sleep(1.4)
         
     def page_1(self, data): # <- current page function
-        print("Page 1\t ----\tBasic Inventory")
+        print("Page 1\t ----\tBasic Inventory\n")
         time.sleep(1.4)
-        print(data["name"])
-        time.sleep(0.9)
-        print(data["c_name"], ":", data["currency"])
-        time.sleep(0.9)
+        print(f"[{data["name"]}]")
+        time.sleep(0.2)
+        print(data["c_name"],":",data["currency"])
+        time.sleep(0.2)
         print("tokens:", data["tokens"])
-        time.sleep(0.9)
+        time.sleep(0.2)
         print("Fishing rods: TODO") #TODO 
-        time.sleep(0.9)
+        time.sleep(0.2)
         
     def prompt(self): # simple page prompt that will be at the bottom of every page.
-        time.sleep(1.4)
+        time.sleep(0.2)
         print(f"page {self.page}/5")
-        time.sleep(1.4)
+        time.sleep(0.2)
         print("which page . . .")
-        time.sleep(1.4)
+        time.sleep(0.2)
         print("0 to close inventory")
-        time.sleep(1.4)
+        print("1-5 to go to those pages")
+        time.sleep(0.2)
         try:
             page = int(input("> ").strip())
         except ValueError:
@@ -75,7 +76,9 @@ class InvDisplay:
             page_string = str(self.page) #<- making it a string so maybe it works better???. this is where the error is
             page_to_display = getattr(self, f"page_{page_string}") # <- getattr. even when not making self.page a string an error occurs here too
             page_to_display(data)
-        
+
+            print("\n")
+            
             page = self.prompt()
             
             if page == "error":
@@ -83,7 +86,10 @@ class InvDisplay:
                 continue
             
             if page == 0:
+                clear()
                 print("you close the inventory")
+                time.sleep(4.5)
+                clear()
                 return
             
             self.page = page

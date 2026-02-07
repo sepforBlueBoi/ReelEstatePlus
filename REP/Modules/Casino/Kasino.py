@@ -126,11 +126,15 @@ def roulette(Data, text):
             print(text["roulette5"])# how much you bettin?
             time.sleep(1.4)
             print(f"Currency: {Data["currency"]}")# in your wallet is {money}.
+            time.sleep(1.4)
+            print(text["roulette0"]) # Type 0 to return to colors
             try:
                 bet = int(input("> "))
             except ValueError:
                 clear()
                 print(text["roulette5.5"]) # this...isn't an amount
+                time.sleep(4.5)
+                clear()
                 continue
         
 

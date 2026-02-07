@@ -46,6 +46,8 @@ def leaving(slot, Data, text):
                 save_game(Data, slot)
 
             time.sleep(1.4)
+            print("Cya later alligator!")
+            time.sleep(1.4)
             sys.exit()
 
         
