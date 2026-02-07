@@ -1,17 +1,117 @@
 game_dict: dict[str, any] = {
     "name": "",
-    "currency": 500,
+    "currency": 250,
     "tokens": 0,
     "c_name": "",
     "map": "not owned",
-    "intro": "False",
+    "intro": "False",    
+    "phase": 1,
+    "shop": { #replica of all items but with prices.
+        "house_small": {"tag": "house", "price": 2000, "desc": "Basic house, perfect for one person."},
+        "house": {"tag": "house", "price": 2500,"desc": "Rather nice house, perfect for you."},
+        "house_large": {"tag": "house", "price":5000, "desc": "Large house. Not mansion sized yet."},
+        "house_weird": {"tag": "house", "price": 6300, "desc": "This house has 20 bathrooms. 19 of them have toilets. 1 has a urinal."},
+        "house_box": {"tag": "house", "price": 2, "desc": "how...is this a house?"},
+        "house_casino": {"tag": "house", "price": 9500, "desc": "Not a house. but you can live in it. Something inside wants you.", "lock": True},
+        "old_rod": {"tag": "lake", "price": 5, "desc": "Old fishing rod. kinda broken. I would not advice using it."},
+        "basic_rod": {"tag": "lake", "price": 450, "desc": "Basic rod. decent choice for the lake."},
+        "colored_rod": {"tag": "ocean", "price": 600, "desc": "comes in many different colors", "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "pruple"],
+                        "color_owned": ""},
+        "effiecent_rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach"},
+        "superior_rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach"},
+        "premier_rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney."},
+        "map": {"tag": "misc", "price": 500, "desc": "Its the same map you refused at the beginning of the game."},
+        "red_and_white_ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?"},
+        "golden_idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this."},
+        "old_couch": {"tag": "furniture", "phase": 1, "price": 50, "desc": "it is mostly holes"},
+        "small_tv": {"tag": "furniture", "phase": 1, "price": 100, "desc": "Its basically a mobile phone with how small it is."},
+        "smelly_rug": {"tag": "furniture", "phase": 1, "price": 25, "desc": "It has one stain, It wont leave. Its smell is...Why was this for sell?"},
+        "loveseat_nice": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Thousands of times better then the couch. No holes either."},
+        "basic_TV": {"tag": "furniture", "phase": 2, "price": 600, "desc": "It comes with all modern streaming services for free!. this has gotta be illegal"},
+        "nice_rug": {"tag": "furniture", "phase": 2, "price": 350, "desc": "Its the same type of rug from before; just clean and new."},
+        "pictures": {"tag": "furniture", "phase": 2, "price": 100, "desc": "There is three of them. sadly since this world text based you can't see their beauty."},
+        "desk": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Presumably for a computer you don't have yet."},
+    },
+    "achiev": {
+      
+    },
+    "quests": {
+        
+    },
+    "collectables": {
+        
+    },
+    "lore": {
+        
+    },
+    "rods": {
+        
+    },
+    "fish": {
+        
+    },
+    "lures": {
+        
+    },
+    "estate": {
+        
+    },
+    "furniture": {
+        
+    },
 }
 
-new_game = game_dict = {
+new_game = {
     "name": "",
     "currency": 500,
-    "c_name": "",
     "tokens": 0,
+    "c_name": "",
     "map": "not owned",
-    "intro": "False",
+    "intro": "False",    
+    "phase": 1,
+    "shop": {
+       "house_small": {"tag": "house", "price": 2000, "desc": "Basic house, perfect for one person."},
+        "house": {"tag": "house", "price": 2500,"desc": "Rather nice house, perfect for you."},
+        "house_large": {"tag": "house", "price":5000, "desc": "Large house. Not mansion sized yet."},
+        "house_weird": {"tag": "house", "price": 6300, "desc": "This house has 20 bathrooms. 19 of them have toilets. 1 has a urinal."},
+        "house_box": {"tag": "house", "price": 2, "desc": "how...is this a house?"},
+        "house_casino": {"tag": "house", "price": 9500, "desc": "Not a house. but you can live in it. Something inside wants you.", "lock": True},
+        "old_rod": {"tag": "lake", "price": 5, "desc": "Old fishing rod. kinda broken. I would not advice using it."},
+        "basic_rod": {"tag": "lake", "price": 450, "desc": "Basic rod. decent choice for the lake."},
+        "colored_rod": {"tag": "ocean", "price": 600, "desc": "comes in many different colors", "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "pruple"],
+                        "color_owned": ""},
+        "effiecent_rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach"},
+        "superior_rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach"},
+        "premier_rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney."},
+        "map": {"tag": "misc", "price": 500, "desc": "Its the same map you refused at the beginning of the game."},
+        "red_and_white_ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?"},
+        "golden_idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this."} 
+    },
+    "achiev": {
+      
+    },
+    "quests": {
+        
+    },
+    "collectables": {
+        
+    },
+    "lore": {
+        
+    },
+    "rods": {
+        
+    },
+    "fish": {
+        
+    },
+    "lures": {
+        
+    },
+    "estate": {
+        
+    },
+    "furniture": {
+        
+    },
 }

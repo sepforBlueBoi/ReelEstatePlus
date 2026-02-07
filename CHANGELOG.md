@@ -80,3 +80,9 @@ also i wanna talk about how the REPO for REstate+ is getting so many views...
 I never thought something i made would get this kind of attention, bots or not.
 
 **1:57** Made the icon and updated README with appropriate information.
+
+**3:22** fully fleshed out inventory structure, with good timing and formatting. starting on the shop
+
+**3:45** im stalling again, the save_stuff has been updated, preparing for shop and other things. really dont wanna go and do this. so many items. but it has gotta be done. i guess first step is doing shop item replicas.
+
+**5:19** made the shop folder+file, and have been upgrading the current savefiles to make room for the shop. kinda brain numbing, but will be worth it.
