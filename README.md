@@ -23,6 +23,8 @@ Reel Estate features:
 * collectables
 * and more, especially with this new version!
 
+![Reel Estate Plus Icon](Images/ReelEstatePlus.png)
+
 ## Structure
 
 The game modules can be found in the REP/ folder.
