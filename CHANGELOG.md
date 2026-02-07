@@ -78,3 +78,5 @@ also i wanna talk about how the REPO for REstate+ is getting so many views...
 ![Repo stats](Images/Git_stats.png)
 
 I never thought something i made would get this kind of attention, bots or not.
+
+**1:57** Made the icon and updated README with appropriate information.

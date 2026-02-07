@@ -23,8 +23,6 @@ Reel Estate features:
 * collectables
 * and more, especially with this new version!
 
-![Reel Estate Plus Icon](Images/ReelEstatePlus.png)
-
 ## Structure
 
 The game modules can be found in the REP/ folder.
@@ -45,3 +43,5 @@ You can find more info in the wiki at github.com/sepforBlueBoi/ReelEstatePlus/wi
 REstate may be text based, but still has animations, such as roulette, and slots!
 
 The name Reel Estate was made by a user on twitch going by avoidingcord366.
+
+![Reel Estate Plus Icon](Images/ReelEstatePlus.png)
