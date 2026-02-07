@@ -26,9 +26,15 @@ class Inventory:
         self.data = {} # Holds data. same thing we did in Hub.py
         self.page = 1 # keep track of pages
         
-    def prompt(): # simple page prompt that will be at the bottom of every page.
+        
+    def page_1(self, data): # <- current page function
+        print("Page 1\t ----\tInventory")
+        
+        
+    def prompt(self): # simple page prompt that will be at the bottom of every page.
         time.sleep(1.4)
         print("which page . . .")
+        print("0 to close inventory")
         time.sleep(1.4)
         try:
             page = int(input("> ").strip())
@@ -36,3 +42,26 @@ class Inventory:
             return "error"
         
         return page
+
+    def display(self, data):
+        while True:
+            clear()
+            page_string = str(self.page) #<- making it a string so maybe it works better???. this is where the error is
+            page_to_display = getattr(self, f"page_{page_string}") # <- getattr. even when not making self.page a string an error occurs here too
+            page_to_display(data)
+        
+            page = self.prompt()
+            
+            if page == "error":
+                print("You proceed to change the channel. you are still on the same page") 
+                continue
+            
+            if page == 0:
+                print("you close the inventory")
+                return
+            
+            self.page = page
+            continue
+        
+Inv = Inventory() # instance of the call.
+Inv.display() # <- the call

@@ -66,3 +66,13 @@ Have me some dr thunder, i am READYYY
 Feb 06, 2026. Inventory work, and adding comments and notes in dev_stuff is on the agenda. 
 I adjusted the repo structure to be more clear and readable to newbies, and just anyone in general.
 Yesterday i added CONTRIBUTING and requirements so people can help debug.
+
+### day 7
+Feb 7, 2026. okay, i was wrong. yesterday (the 6th) was just be making sure everything else was smooth. the repo, the discord server, etc. other then that not much happened other then more comments. with all that done it IS inventory time.
+
+**12:37** After getting the basic display of the inventory working, im quite excited for it. imo its gonna be the most interactive thing i built so far. :))
+    prolly the most interactive too.
+
+also i wanna talk about how the REPO for REstate+ is getting so many views...
+
+![Repo stats](/home/Kondike/Pictures/Git_stats.png)
