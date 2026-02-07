@@ -54,9 +54,9 @@ def rouletete():
         win_lose = "red"
 
     frames = win.values()
-    for times in [0.1 ,0.15, 0.2, 0.27, 0.4]:
+    for times in [0.1 ,0.15, 0.2, 0.27, 0.4]: # plays the animation
         for frame in frames:
             clear()
             print(frame)
             time.sleep(times)
-    return win_lose
+    return win_lose # returns what won

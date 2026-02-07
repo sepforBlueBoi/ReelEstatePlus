@@ -14,14 +14,16 @@ class Inventory:
     type in the page you wanna go to. or do i use a and d to move between pages? hmmm
      a and d would just require adding of subtracting one, and would mirror every other games inventory.
      i will do the number method as it is not used, and i want to juice the freedom i have as a text based game
+     ^-Not Important
      
      Each page will be different but will still be on the same function. 
      Each page gets its own function: basic, fishpedia, etc.
      but its all displayed in ONE function.
+     ^-Important
      """
      
     def __init__(self):
-        self.data = {}
+        self.data = {} # Holds data. same thing we did in Hub.py
         self.page = 1 # keep track of pages
         
     def prompt(): # simple page prompt that will be at the bottom of every page.

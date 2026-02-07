@@ -78,7 +78,7 @@ def token_shop(lore, Data):
                 time.sleep(1.4)
                 continue
 
-            if cash_amount % 5 != 0:
+            if cash_amount % 5 != 0: # this is mean math >:\
                 clear() 
                 print(lore["token10"])# uhhh, this...doesnt...isnt an amount i can convert...    
                 time.sleep(1.4)
@@ -104,6 +104,6 @@ def token_shop(lore, Data):
 
         else:
             clear()
-            print() #No. bad. Legit where are you attepting to go. Hey hey, dont ignore my rant, hey...You tune out the narrators rant.
+            print(lore["tokenrant"]) #No. bad. Legit where are you attepting to go. Hey hey, dont ignore my rant, hey...You tune out the narrators rant.
             time.sleep(1.4)
             continue
