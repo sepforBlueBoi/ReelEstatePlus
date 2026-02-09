@@ -6,6 +6,7 @@ from REP.Modules.Checkers.Intro_Checker import *
 from REP.Modules.Save_Modules.SaveExit import leaving
 from REP.Modules.Misc.Dev_stuff import Terminal
 from REP.Modules.Inventory.InvModule import InvDisplay
+from REP.Modules.Shop.REP_Shop import shop_init
 import sys, os
 from colorama import Fore, init, Style
 
@@ -27,7 +28,7 @@ class World:
         if choice == "1":
             Casino(self.Worldstate, self.dialogue)
         elif choice == "2":
-            print("shop")
+            shop_init(self.Worldstate, self.dialogue)
         elif choice == "3":
             print("lake")
         elif choice == "4":
