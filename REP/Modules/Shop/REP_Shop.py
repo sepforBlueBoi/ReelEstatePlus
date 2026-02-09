@@ -20,6 +20,8 @@ def shop(tag, data, sale):
             print(f"{idx}. {item_name} - {status}")
         print(f"{len(display_items)+1}. Leave")
     """
+    items = ["placeholder"]
+    
     match tag:
         case "house":
             title = "Real Estate"
@@ -36,11 +38,17 @@ def shop(tag, data, sale):
         
         for idx, (k, v) in enumerate(data["shop"].items(), start=1):
             if v.get("tag") == tag:
-                item = k.replace("_", " ")
-                print(f"{idx}. - {item}")
+                item_display = k.replace("_", " ")
+                items.append(f"{k}: {idx}")
+                desc = v
+                print(f"{idx}. - {item_display}")
+                print(items)
+        print() # 0. Return
                 
-        input()
-        
+        try:
+            item = int(input())
+        except ValueError:
+            print() # You hear a loud buzzer blare
     
 def shop_init(data, lore):
     print() # you walk into the little shop. the bell above the door dings
