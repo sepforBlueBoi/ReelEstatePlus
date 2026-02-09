@@ -31,6 +31,12 @@ game_dict: dict[str, any] = {
         "nice_rug": {"tag": "furniture", "phase": 2, "price": 350, "desc": "Its the same type of rug from before; just clean and new."},
         "pictures": {"tag": "furniture", "phase": 2, "price": 100, "desc": "There is three of them. sadly since this world text based you can't see their beauty."},
         "desk": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Presumably for a computer you don't have yet."},
+        "Deluxe_Double_decker_couch": {"tag": "furniture", "phase": 3, "price": 1000, "desc": "surprisingly not made of Legos."},
+        "Amazing_Carpet": {"tag": "furniture", "phase": 3, "price": 550, "desc": "Its actually a carpet of snow that doesn't melt, nor get footprints. It's almost solid."},
+        "more_pictures": {"tag": "furniture", "phase": 3, "price": 100, "desc": "Even more pictures you can't see. just know, they are beautiful."},
+        "Gaming_chair": {"tag": "furniture", "phase": 3, "price": 150, "desc": "Would fit well with the desk you bought earlier."},
+        "Entire_Desktop": {"tag": "furniture", "phase": 3, "price": 1600, "desc": "Even comes with a monitor, keyboard, and mouse. weird."},
+        "Statue_of_self": {"tag": "furniture", "phase": 3, "price": 9000, "desc": "...who made this and when?"}
     },
     "achiev": {
       
@@ -85,7 +91,21 @@ new_game = {
         "premier_rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney."},
         "map": {"tag": "misc", "price": 500, "desc": "Its the same map you refused at the beginning of the game."},
         "red_and_white_ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?"},
-        "golden_idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this."} 
+        "golden_idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this."},
+        "old_couch": {"tag": "furniture", "phase": 1, "price": 50, "desc": "it is mostly holes"},
+        "small_tv": {"tag": "furniture", "phase": 1, "price": 100, "desc": "Its basically a mobile phone with how small it is."},
+        "smelly_rug": {"tag": "furniture", "phase": 1, "price": 25, "desc": "It has one stain, It wont leave. Its smell is...Why was this for sell?"},
+        "loveseat_nice": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Thousands of times better then the couch. No holes either."},
+        "basic_TV": {"tag": "furniture", "phase": 2, "price": 600, "desc": "It comes with all modern streaming services for free!. this has gotta be illegal"},
+        "nice_rug": {"tag": "furniture", "phase": 2, "price": 350, "desc": "Its the same type of rug from before; just clean and new."},
+        "pictures": {"tag": "furniture", "phase": 2, "price": 100, "desc": "There is three of them. sadly since this world text based you can't see their beauty."},
+        "desk": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Presumably for a computer you don't have yet."},
+        "Deluxe_Double_decker_couch": {"tag": "furniture", "phase": 3, "price": 1000, "desc": "surprisingly not made of Legos."},
+        "Amazing_Carpet": {"tag": "furniture", "phase": 3, "price": 550, "desc": "Its actually a carpet of snow that doesn't melt, nor get footprints. It's almost solid."},
+        "more_pictures": {"tag": "furniture", "phase": 3, "price": 100, "desc": "Even more pictures you can't see. just know, they are beautiful."},
+        "Gaming_chair": {"tag": "furniture", "phase": 3, "price": 150, "desc": "Would fit well with the desk you bought earlier."},
+        "Entire_Desktop": {"tag": "furniture", "phase": 3, "price": 1600, "desc": "Even comes with a monitor, keyboard, and mouse. weird."},
+        "Statue_of_self": {"tag": "furniture", "phase": 3, "price": 9000, "desc": "...who made this and when?"}
     },
     "achiev": {
       

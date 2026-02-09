@@ -1,1 +1,1 @@
-This is for CHANGELOG.md, and README. md in the root folder
+This folder is for images in CHANGELOG.md, and README. md in the root folder, as well as the icons.

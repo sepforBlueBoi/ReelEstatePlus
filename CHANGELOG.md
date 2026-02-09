@@ -86,3 +86,8 @@ I never thought something i made would get this kind of attention, bots or not.
 **3:45** im stalling again, the save_stuff has been updated, preparing for shop and other things. really dont wanna go and do this. so many items. but it has gotta be done. i guess first step is doing shop item replicas.
 
 **5:19** made the shop folder+file, and have been upgrading the current savefiles to make room for the shop. kinda brain numbing, but will be worth it.
+
+### day 8
+Feb 8, 2026. some decent progress happened yesterday. i dont expect as much, but i have plans >:), though the shop still scares me. i dont know how im gonna improve it compared to the last one. i mean other then more items, and obv actually getting sales to work. i mean, i guess just making it have a better UI too. which is also the plan. i guess casheer dialogue would work. but i'd like to implement that with the other NPCs.
+
+**8:27** i have done zero progress and its 8pm. ive started on the shop :)

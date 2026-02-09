@@ -1,8 +1,106 @@
 {
-    "name": "Kondi",
-    "currency": 300,
-    "c_name": "kondollars",
-    "tokens": 45,
+    "name": "Kondike",
+    "currency": 500,
+    "tokens": 0,
+    "c_name": "Sandwhich",
     "map": "owned",
-    "intro": "Done"
+    "intro": "Done",
+    "phase": 1,
+    "shop": {
+        "house_small": {
+            "tag": "house",
+            "price": 2000,
+            "desc": "Basic house, perfect for one person."
+        },
+        "house": {
+            "tag": "house",
+            "price": 2500,
+            "desc": "Rather nice house, perfect for you."
+        },
+        "house_large": {
+            "tag": "house",
+            "price": 5000,
+            "desc": "Large house. Not mansion sized yet."
+        },
+        "house_weird": {
+            "tag": "house",
+            "price": 6300,
+            "desc": "This house has 20 bathrooms. 19 of them have toilets. 1 has a urinal."
+        },
+        "house_box": {
+            "tag": "house",
+            "price": 2,
+            "desc": "how...is this a house?"
+        },
+        "house_casino": {
+            "tag": "house",
+            "price": 9500,
+            "desc": "Not a house. but you can live in it. Something inside wants you.",
+            "lock": true
+        },
+        "old_rod": {
+            "tag": "lake",
+            "price": 5,
+            "desc": "Old fishing rod. kinda broken. I would not advice using it."
+        },
+        "basic_rod": {
+            "tag": "lake",
+            "price": 450,
+            "desc": "Basic rod. decent choice for the lake."
+        },
+        "colored_rod": {
+            "tag": "ocean",
+            "price": 600,
+            "desc": "comes in many different colors",
+            "colors": [
+                "red",
+                "orange",
+                "yellow",
+                "green",
+                "blue",
+                "indigo",
+                "pruple"
+            ],
+            "color_owned": ""
+        },
+        "effiecent_rod": {
+            "tag": "ocean",
+            "price": 800,
+            "desc": "Great rod. good for fishing at the beach"
+        },
+        "superior_rod": {
+            "tag": "ocean",
+            "price": 1200,
+            "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach"
+        },
+        "premier_rod": {
+            "tag": "ocean",
+            "price": 2000,
+            "desc": "The best rod. His name is Rodney."
+        },
+        "map": {
+            "tag": "misc",
+            "price": 500,
+            "desc": "Its the same map you refused at the beginning of the game."
+        },
+        "red_and_white_ball": {
+            "tag": "misc",
+            "price": 450,
+            "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?"
+        },
+        "golden_idle": {
+            "tag": "misc",
+            "price": 9,
+            "desc": "It's a golden idle. You aren't sure if you should waste your money on this."
+        }
+    },
+    "achiev": {},
+    "quests": {},
+    "collectables": {},
+    "lore": {},
+    "rods": {},
+    "fish": {},
+    "lures": {},
+    "estate": {},
+    "furniture": {}
 }
