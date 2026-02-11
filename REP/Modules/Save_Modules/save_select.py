@@ -12,13 +12,13 @@ def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def select_save(slot):
-    if slot in [1, 2, 3]:
+    if slot in [1, 2, 3]: # if it can load
         print(f"loading save {slot}")
         time.sleep(1.4)
-        game_state = load.load_game(slot)
+        game_state = load.load_game(slot) # load
         game.intro(game, game_state, slot)
     else:
-        return "nu-uh-uh"
+        return "nu-uh-uh" # NU UH
         
 
 
@@ -28,29 +28,29 @@ init(autoreset=True)
 def save_select():
     while True:
         clear_console()
-        for idx, i in enumerate(range(3), start=1):
+        for idx, i in enumerate(range(3), start=1): # prints save slot choices for me
             print(Fore.YELLOW + f"{idx}. Save Slot {i}")
         print("Select Save: ")
-        choice = input("> ").strip()
+        choice = input("> ").strip() # grab the save you want
 
         if choice:
             print("1. load save\n2. Delete save\n3. Go Back")
             save_selected = input("> ").strip()
             if save_selected == "1":
-                select_save(int(choice))
+                select_save(int(choice)) # enters the phase where it may be able to load it
                 
             
             elif save_selected == "2":
                 delete_save(int(choice))
-                print(f"Deleted save {choice}")
+                print(f"Deleted save {choice}") # kills the save >:)
                 time.sleep(3.5)
                 clear_console()
                 continue
             elif save_select == "3":
-                return
+                return # leave loop
             else:
                 clear_console()
-                continue
+                continue # redo loop if choice wasnt a correct option
         else:
             clear_console()
-            return
+            continue # loops if no choice

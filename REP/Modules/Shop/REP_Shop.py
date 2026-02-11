@@ -19,10 +19,12 @@ def shop(tag, data, sale):
             status = "BOUGHT" if bought else f"${price} {game_state['money']}"
             print(f"{idx}. {item_name} - {status}")
         print(f"{len(display_items)+1}. Leave")
+        
+    ^ Not important. old logic from Legacy 8.1, used for example to get print items to work
     """
-    items = ["placeholder"]
+    items = ["placeholder"] # place holder so items start at index 1.
     
-    match tag:
+    match tag: # grabs the title of the page/isle based off of tag.
         case "house":
             title = "Real Estate"
         case "furniture":
@@ -36,13 +38,13 @@ def shop(tag, data, sale):
         print("=" * 5, title, "=" * 5)
         print("\n")
         
-        for idx, (k, v) in enumerate(data["shop"].items(), start=1):
-            if v.get("tag") == tag:
+        for k, v in data["shop"].items(): #grabs item, and item info for each item in shop dict
+            if v.get("tag") == tag: # checks if they are in the tag selected
                 item_display = k.replace("_", " ")
-                items.append(f"{k}: {idx}")
+                if k not in items:
+                    items.append(k) # appends item to items list for later selection
                 desc = v
-                print(f"{idx}. - {item_display}")
-                print(items)
+                print(f"{desc.get("id")}. - {item_display}") # print items
         print() # 0. Return
                 
         try:
@@ -57,7 +59,7 @@ def shop_init(data, lore):
     
     sales = 1.0
     if random.randint(1, 40) == 1:
-        sales = 0.5
+        sales = 0.5 #sales :)
     
     while True:
         print() # There are a wide array of isles. 

@@ -33,12 +33,12 @@ def leaving(slot, Data, text):
             clear()
             return
 
-        if choice == "1" or choice == "save":
+        elif choice == "1" or choice == "save":
             save_game(Data, slot)
             time.sleep(1.4)
             continue
 
-        if choice == "2" or choice == "quit":
+        elif choice == "2" or choice == "quit":
             print(quit6) #did you save first?
             save = input("(Y/N)>").lower().strip()
 
@@ -49,5 +49,10 @@ def leaving(slot, Data, text):
             print("Cya later alligator!")
             time.sleep(1.4)
             sys.exit()
+            
+        else:
+            clear()
+            continue
+        #TODO ADD A PRINT STATEMENT HEAR YOU A HOLE
 
         

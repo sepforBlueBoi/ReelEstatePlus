@@ -35,19 +35,25 @@ def slots(Data, text):
             print(text["slots9"]) #Sadly the machine will only let you insert 99. Anything else gets returned.
             time.sleep(3.5)
             
+        if amount < 0:
+            continue # TODO print statement presumably. plz.
+        
+        if amount > Data["tokens"]:
+            continue # TODO ADD A PRINT STATEMENT HERE TOO >:(
+            
 
 
         time.sleep(1.4)
-        reel = slot_animation()
+        reel = slot_animation() # plays slot animation
 
         time.sleep(1.4)
         clear()
         print(f"   _    _    _")
-        print(f" | {reel[0]} | {reel[1]} | {reel[2]} | ,")
+        print(f" | {reel[0]} | {reel[1]} | {reel[2]} | ,") # prints a sick slot machine
         print(" |              |/")
         time.sleep(1.4)
 
-        if reel[0] == reel[1] and reel[1] == reel[2]:
+        if reel[0] == reel[1] and reel[1] == reel[2]: # checks for jackpot
             print(text["slots6"])# JACKPOT!
             Data["tokens"] += amount * 2
             time.sleep(2.4)
@@ -61,7 +67,7 @@ def slots(Data, text):
             clear()
             continue
 
-        elif reel[0] == reel[1] or reel[0] == reel[2] or reel[1] == reel[2]:
+        elif reel[0] == reel[1] or reel[0] == reel[2] or reel[1] == reel[2]: # checks for any match at all
             Data["tokens"] += amount
 
             win = str(amount)
@@ -72,7 +78,7 @@ def slots(Data, text):
             clear()
             continue
         
-        else:
+        else: # oof
             Data["tokens"] -= amount
 
             anoumt = str(amount)

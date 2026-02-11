@@ -14,24 +14,24 @@ def load_game(slot):
         try:
                 save.save_game(new_game, slot)  # No save yet
                 print("loading...")
-                with open(filepath, "r") as game_state:
-                    return json.load(game_state)
+                with open(filepath, "r") as game_state: # open it first
+                    return json.load(game_state) # return opened file
 
-        except Exception as e:
+        except Exception as e: # get error
             return e
     else:
         try:
-            with open(filepath, "r") as game_state:
-                return json.load(game_state)
+            with open(filepath, "r") as game_state: # there is a save, so open it
+                return json.load(game_state) # then send it off
         except Exception as e:
             return e
 
 def load_json(file):
-    file_path = os.path.join( "REP",JSON_DIR, file)
+    file_path = os.path.join( "REP",JSON_DIR, file) # Loads lore.json and etc i guess
     if not os.path.exists(file_path):
-        return None
+        return None # if this happens someone effed up
     try:
-        with open(file_path, "r") as f:
-            return json.load(f)
+        with open(file_path, "r") as f: # open it
+            return json.load(f) # send it
     except Exception as a:
         return a

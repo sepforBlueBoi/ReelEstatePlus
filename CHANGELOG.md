@@ -42,7 +42,7 @@ I think today can have lots of things since all the said things are quite small.
 
 **1: 09** I've decided after my short break to start on the save/quit function
 
-**3:14** OMG. just ran into so many syntax errors in the save quit function. also turns out pygame isnt good at reporting errors :(. but it works, and a svae quit function exists.
+**3:14** OMG. just ran into so many syntax errors in the save quit function. also turns out pyinstaller isnt good at reporting errors :(. but it works, and a svae quit function exists.
 
 **4:37** dev console in progress. im done for today. im tired. the save/quit thing killed my momentum. dev console WILL be finished tomorrow. i will make sure of it. 
 
@@ -93,3 +93,15 @@ Feb 8, 2026. some decent progress happened yesterday. i dont expect as much, but
 **8:27** i have done zero progress and its 8pm. ive started on the shop :)
 
 **10:30** Shop has had decent progress. :)
+
+### day 9
+you'll never guess it, but its Feb 9, 2026. Shop has had LARGE progress. its missing checks and the buying mechanic, Also i've decided to add more detail to the dev log. :). 
+
+### day 10
+Feb 11, 2026. took a few days off, decided to take today to fix a few bugs and edge cases, as well as more comments around the place so future me can figure out what any of this means. Im a little disapointed i didn't do too much on day 9, even after saying i'd put more details into the dev logs and not even doing anything that day. but hey who cares. Im here now.
+
+**2:34** Added comments to shop, specificly shop function. shop_init is a bunch of print statements and match case statements that are quite simple. Starting work on commenting Hub.py
+
+**2:51** all but kasino has comments. i do mean ALL but casino has comments...well i guess save_stuff doesnt? but why does it need comments. the dict/key names should be enough to tell me whats happening. while i add comments to kasino.py (or whatever its named) i'll fix some edge cases with the slots function and whatever else.
+
+**3:05** Finished comments, add checks and continues to slots for the two missing edge cases. Need to do print statements for this when i get to them. onto finishing the shop :), which is adding dialogue, as well as checks and actually being able to buy stuff.

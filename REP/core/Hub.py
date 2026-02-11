@@ -21,7 +21,7 @@ class World:
         self.Worldstate = {}
         self.dialogue = {}
 
-    def choice_call(self, choice):
+    def choice_call(self, choice): # after maing your choice it sends you off.
         clear_console()
         name = self.Worldstate["name"].strip().lower()
 
@@ -30,18 +30,20 @@ class World:
         elif choice == "2":
             shop_init(self.Worldstate, self.dialogue)
         elif choice == "3":
-            print("lake")
+            print("lake") #TODO
         elif choice == "4":
             Inv.display(self.Worldstate)
         elif choice == "0":
             leaving(self.slot, self.Worldstate, self.dialogue)
         elif choice == "{/}" and name == "kondike":
             Terminal(self.Worldstate, self.slot, self.dialogue)
+        # no else? 
+        # TODO ADD ELSE
         
 
     def choice(self):
         """choice :)"""
-        save_game(self.Worldstate, self.slot)
+        save_game(self.Worldstate, self.slot) # saves game after intro, and upon opening save
         name = self.Worldstate["name"].strip().lower()
         print(self.dialogue["where1"])
         time.sleep(1.4)
@@ -54,7 +56,7 @@ class World:
                 print("=", end='')
                 time.sleep(0.1)
             print("\n")
-            print(self.dialogue["place1"] if self.Worldstate["map"] == "owned" else "1. ???")
+            print(self.dialogue["place1"] if self.Worldstate["map"] == "owned" else "1. ???") #only prints the name of the place if you own the map offered in intro
             time.sleep(0.2)
             print(self.dialogue["place2"] if self.Worldstate["map"] == "owned" else "2. ???")
             time.sleep(0.2)
@@ -68,12 +70,12 @@ class World:
                 print(self.dialogue["place6"])
 
             time.sleep(0.2)
-            where_to_go = input("> ")
+            where_to_go = input("> ") # sich variable name
 
-            self.choice_call(self, where_to_go)
+            self.choice_call(self, where_to_go) # sends you off
         
 
-    def intro(self, save, slot):
+    def intro(self, save, slot): # intro for post game initialization
         self.slot = slot
         self.dialogue = load_json(file="lore.json")
         self.Worldstate = save
@@ -86,7 +88,7 @@ class World:
             print(self.dialogue["lore2"])
             time.sleep(1.2)
 
-            Red_you1 = self.dialogue["lore3"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}")
+            Red_you1 = self.dialogue["lore3"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}") # < makes all the "You"s red.
             Red_you2 = self.dialogue["lore4"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}")
             Red_you3 = self.dialogue["lore6"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}")
             Red_you4 = self.dialogue["lore8"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}")
@@ -102,9 +104,9 @@ class World:
                     print(self.dialogue["lore5"])
                     continue
                 elif smash == "banished":
-                    sys.exit()
+                    sys.exit() # gone bcause ur name is gaster
                 else:
-                    response = epic_name_checker(name)
+                    response = epic_name_checker(name) # for easter eggs
                     time.sleep(1.2)
                     print(response) 
                     self.Worldstate["name"] = name
@@ -114,7 +116,7 @@ class World:
 
             while True:
                 print(Red_you3) 
-                currency_name = input("> ")
+                currency_name = input("> ") # setting currency name
                 c_name = money_n_checker(currency_name)
                 if c_name == "try again":
                     clear_console()
@@ -130,7 +132,7 @@ class World:
 
             print(Red_you4)
             time.sleep(1.2)
-            map = input("(Y/N)> ").lower()
+            map = input("(Y/N)> ").lower() # check for map
             if map in ["yes", "y"]:
                 print(self.dialogue["lore9"]) 
                 self.Worldstate["map"] = "owned"
@@ -140,4 +142,4 @@ class World:
             time.sleep(4.5)
             self.Worldstate["intro"] = "Done"
         clear_console()
-        self.choice(self) 
+        self.choice(self) # enter main game loop
