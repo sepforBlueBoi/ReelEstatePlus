@@ -14,7 +14,7 @@ pip install -r requirements.txt
 3. compiling with pyinstaller through this command: 
 
 ```
-pyinstaller --onefile --name=ReelEstatePlus --paths=. REP/core/player_init.py --clean
+pyinstaller --onefile --name=ReelEstatePlus --icon=Images/ReelEstatePlus.ico --paths=. REP/core/player_init.py --clean
 ```
 4. run and test | naming yourself kondike gives access to the dev console
 
