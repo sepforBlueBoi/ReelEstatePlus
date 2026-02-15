@@ -48,8 +48,8 @@ class World:
         print(self.dialogue["where1"])
         time.sleep(1.4)
         print(self.dialogue["where2"] if self.Worldstate["map"] == "owned" else self.dialogue["where2.5"])
+        time.sleep(1.4)
         while True:
-            time.sleep(1.4)
             print(self.dialogue["where3"])
             time.sleep(1.4)
             for x in range(20):

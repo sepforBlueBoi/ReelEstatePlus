@@ -105,3 +105,11 @@ Feb 11, 2026. took a few days off, decided to take today to fix a few bugs and e
 **2:51** all but kasino has comments. i do mean ALL but casino has comments...well i guess save_stuff doesnt? but why does it need comments. the dict/key names should be enough to tell me whats happening. while i add comments to kasino.py (or whatever its named) i'll fix some edge cases with the slots function and whatever else.
 
 **3:05** Finished comments, add checks and continues to slots for the two missing edge cases. Need to do print statements for this when i get to them. onto finishing the shop :), which is adding dialogue, as well as checks and actually being able to buy stuff.
+
+### day 11
+Feb 13 2026, skipped yesterday. todays plan is to actually finish the shop, including: item display logic, buying checks and monkey wrenching, and setting up inventory display logic/checks for the new items. i predict i get shop done, and inventory update started but not finished.
+
+**12:19** Started on shop item display logic. it should be simple, get item and item description parameters, then print item, price, and desc on one page, the have a "buy return" input. while the function exists it has a place holder print line cause i'd like to add shop script to lore.json real quick.
+
+### day 12
+Feb 14 2026. I am sorry for being so absent. REP has been a bit draining, and ive been less productive. as of now the shop has a script, clear lines, and line buffers. 

@@ -54,5 +54,6 @@ def leaving(slot, Data, text):
             clear()
             continue
         #TODO ADD A PRINT STATEMENT HEAR YOU A HOLE
+        # rude kondike, rude. 
 
         

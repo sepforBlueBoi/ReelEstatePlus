@@ -77,5 +77,19 @@
     "quit3": "2. Quit",
     "quit4": "3. return",
     "quit5": "You return to the Game.",
-    "quit6": "Did you save first?"
+    "quit6": "Did you save first?",
+    "shop1": "You walk into the little shop. The bell above the door rings.",
+    "shop2": "The cashier greets you.",
+    "shop3": "'Hello there!'",
+    "shop4": "There are a large array of isles",
+    "shop5": "Including one for houses. Sadly its just the map of the house and the keys...",
+    "shop6": "1. Real Estate",
+    "shop7": "2. Furniture",
+    "shop8": "3. Fishing rods",
+    "shop9": "4. Lures [TODO]",
+    "shop10": "5. Miscellaneous",
+    "shop11": "0. Return",
+    "shop12": "You walk into a wall.",
+    "shop13": "You walk into another wall. What is with all these walls?",
+    "shop14": "You exit the store, Your pockets feeling lighter...or heavier, in the medium you can't tell."
 }
