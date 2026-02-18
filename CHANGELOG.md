@@ -113,3 +113,6 @@ Feb 13 2026, skipped yesterday. todays plan is to actually finish the shop, incl
 
 ### day 12
 Feb 14 2026. I am sorry for being so absent. REP has been a bit draining, and ive been less productive. as of now the shop has a script, clear lines, and line buffers. 
+
+### day 13
+Feb 18 2026. Holy Sh17. Another OS switch. Arch betrayed me and i couldnt no more, so im on Ubuntu now. Lack of work mainly cause Depression and some burn out. :\ . im hoping to get back into the flow. also after doing some research, the genre of text games are so dang boreing. mostly dundeon crawlers. also most "modern text based games", use images now. talk about betraying the medium. I think i can mix things up a bit, and i have some ideas for a...text based game, after REstate Plus.
