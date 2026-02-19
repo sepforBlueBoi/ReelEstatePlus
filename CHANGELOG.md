@@ -115,4 +115,10 @@ Feb 13 2026, skipped yesterday. todays plan is to actually finish the shop, incl
 Feb 14 2026. I am sorry for being so absent. REP has been a bit draining, and ive been less productive. as of now the shop has a script, clear lines, and line buffers. 
 
 ### day 13
-Feb 18 2026. Holy Sh17. Another OS switch. Arch betrayed me and i couldnt no more, so im on Ubuntu now. Lack of work mainly cause Depression and some burn out. :\ . im hoping to get back into the flow. also after doing some research, the genre of text games are so dang boreing. mostly dundeon crawlers. also most "modern text based games", use images now. talk about betraying the medium. I think i can mix things up a bit, and i have some ideas for a...text based game, after REstate Plus.
+Feb 18 2026. Holy Sh17. Another OS switch. Arch betrayed me and i couldnt no more, so im on Ubuntu now. Lack of work mainly cause Depression and some burn out. :\ . im hoping to get back into the flow. also after doing some research, the genre of text games are so dang boreing. mostly dundeon crawlers. also most "modern text based games", use images now. talk about betraying the medium. I think i can mix things up a bit, and i have some ideas for a...text based game, after REstate Plus. 
+The reason i havent been working on REP, or even documenting it much is cause the burn out. ive been trying, but its hard, so i stopped trying for a moment. and here we are! i feel better, and i have plans. big plans >:D
+
+### day 14
+Feb 19 2026. second week of dev log, plans for today include: finishing shop item display, and actual functionality, slot edge cases get print statements, inventory gets edge cases (even if just place holders). switch charged, headphones charged. music is ready. most chores out of the way. I am ready.
+
+**10:22** Item display is complete, sales are also now obvious. it went my faster then i though. now its time for item purchase logic. im kinda scared of it, cause the amount of if checks...:\ . but we should be fine. hopefully.

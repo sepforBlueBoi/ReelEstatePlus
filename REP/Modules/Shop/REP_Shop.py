@@ -6,8 +6,23 @@ import random
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
     
-def item_display(item, desc):
-    print("stall")
+def item_display_function(item, desc, price): # item display logic for polish. 
+    shop_item = item.replace("_", " ")
+    print(f"====={shop_item}=====")
+    print("\n")
+    time.sleep(1.4)
+    
+    print(desc.get("desc"))
+    time.sleep(1.4)
+    
+    if price != desc.get("price"):
+        Price = f"[{desc.get("price")}] -> {price}"
+        
+    else:
+        Price = price
+    
+    print(f"${Price}")
+    time.sleep(1.4)
     
 def shop(tag, data, sale, lore):
     """Display_items = dict(items)
@@ -39,6 +54,10 @@ def shop(tag, data, sale, lore):
             
     while True:
         print("=" * 5, title, "=" * 5)
+        if sale != 1.0:
+            time.sleep(1.4)
+            print("All items are half price")
+        
         time.sleep(1.4)
         print("\n")
         
@@ -55,7 +74,32 @@ def shop(tag, data, sale, lore):
         try:
             item = int(input("> "))
         except ValueError:
-            print() # You hear a loud buzzer blare
+            clear()
+            print(lore["shop15"]) # You hear a loud buzzer blare
+            continue
+        
+        if item == 0:
+            clear()
+            print(lore["shop16"]) # You leave the isle, the cashier seems bored.
+            time.sleep(4.5)
+            clear()
+            return
+        
+        if item > len(items) or item < 0: 
+            clear()
+            print(lore["shop17"]) # You slip and land face first into a wall. What were you going for?
+            time.sleep(1.4)
+            continue
+        
+        time.sleep(1.4)
+        
+        while True:
+            price = desc.get("price") * sale
+            clear()
+            item_display_function(items[item], desc, price) # Display item, item descripton, and price.
+            
+            print()
+            
     
 def shop_init(data, lore):
     print(lore["shop1"]) # you walk into the little shop. the bell above the door dings
