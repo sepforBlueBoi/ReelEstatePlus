@@ -142,4 +142,10 @@ Feb 19 2026. second week of dev log, plans for today include: finishing shop ite
 
 ---
 ### Day 15
-Feb 21 2026. Did some cooler formatting for the markdown :) I think i'll have to code during weekends. most days i just done have the energy for it. but it IS a saturday; meaning i could code.
+Feb 21 2026. Did some cooler formatting for the markdown :) I think i'll have to code during weekends. most days i just done have the energy for it. but it IS a saturday; meaning i could code. 
+Also gonna start using checkboxes
+
+- [ ] Shop buying logic and item owning in inventory
+- [ ] update inventory logig with items
+- [ ] Make sure shop has phases and lock checks.
+- [ ] Finish implementing Global.json
