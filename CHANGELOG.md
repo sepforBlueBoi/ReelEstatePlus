@@ -3,7 +3,7 @@
 The changelog is actually a dev log suckas
 
 ## Dev-Log
-
+--- 
 ### day 1
 im starting the Dev log on jan. 29 2026. just to clarify, this is NOT when i started the game. it started in early 2025, but ive been slapped around.
 
@@ -13,6 +13,7 @@ Things i plan to do: Refix REP/modules/Casino/Tokenizer, Redo slots, and start o
 
 okay writing this on the day AFTER...freak that. i basically just finished the tokenizer...a shame
 
+---
 ### day 2
 Jan 30, 2026. after yesterdays...progress today i will only plan to finish the text in the tokenizer, then push to start slots. maybe today will be hold more progress then yesterday. 
 
@@ -34,6 +35,7 @@ Jan 30, 2026. after yesterdays...progress today i will only plan to finish the t
 
 Day 2 is done. :]
 
+---
 ### day 3
 Jan 31 2026. yesterday went according to plan. today the plan is to finish slots/bugtest and add scripting, set up save/quit, saves in Casino, and then afterwards if i have energy add the dev console.
 I think today can have lots of things since all the said things are quite small. save quit is a simple prompt and check. scripting is write it in lore.json, add the lines to the slots function in Casino.py, then import save, make sure the save slot is in Casino.py, then add saves throughout Casino.py. simple.
@@ -48,9 +50,11 @@ I think today can have lots of things since all the said things are quite small.
 
 noticable less action then yesterday, but simple how it is i guess. and progress IS progress. :)
 
+---
 ### day 4
 Feb 01, 2026. with the most recent progress, and the making of Static, i do believe today will hold plenty of progress. The Plans for today is to finish the Dev console, and start on the shop. i do think the shop will take tomorrow to finish with the scale of it, but it should be super good...while writing that ive decided to also work on the inventory with the shop. this way i can see whats happening :).
 
+---
 ### day 5
 Feb 05, 2026. i have made little progress as of day 4. as in i did a small thing to the dev console, and took a long break.
 so plan for today is ACTUALLY FINISH THE DEV CONSOLE!! Thank you :)
@@ -62,11 +66,13 @@ Have me some dr thunder, i am READYYY
 
 **7:39** I am done for today. inventory module started as a class. 
 
+---
 ### day 6
 Feb 06, 2026. Inventory work, and adding comments and notes in dev_stuff is on the agenda. 
 I adjusted the repo structure to be more clear and readable to newbies, and just anyone in general.
 Yesterday i added CONTRIBUTING and requirements so people can help debug.
 
+---
 ### day 7
 Feb 7, 2026. okay, i was wrong. yesterday (the 6th) was just be making sure everything else was smooth. the repo, the discord server, etc. other then that not much happened other then more comments. with all that done it IS inventory time.
 
@@ -87,6 +93,7 @@ I never thought something i made would get this kind of attention, bots or not.
 
 **5:19** made the shop folder+file, and have been upgrading the current savefiles to make room for the shop. kinda brain numbing, but will be worth it.
 
+---
 ### day 8
 Feb 8, 2026. some decent progress happened yesterday. i dont expect as much, but i have plans >:), though the shop still scares me. i dont know how im gonna improve it compared to the last one. i mean other then more items, and obv actually getting sales to work. i mean, i guess just making it have a better UI too. which is also the plan. i guess casheer dialogue would work. but i'd like to implement that with the other NPCs.
 
@@ -94,9 +101,11 @@ Feb 8, 2026. some decent progress happened yesterday. i dont expect as much, but
 
 **10:30** Shop has had decent progress. :)
 
+---
 ### day 9
 you'll never guess it, but its Feb 9, 2026. Shop has had LARGE progress. its missing checks and the buying mechanic, Also i've decided to add more detail to the dev log. :). 
 
+---
 ### day 10
 Feb 11, 2026. took a few days off, decided to take today to fix a few bugs and edge cases, as well as more comments around the place so future me can figure out what any of this means. Im a little disapointed i didn't do too much on day 9, even after saying i'd put more details into the dev logs and not even doing anything that day. but hey who cares. Im here now.
 
@@ -106,19 +115,31 @@ Feb 11, 2026. took a few days off, decided to take today to fix a few bugs and e
 
 **3:05** Finished comments, add checks and continues to slots for the two missing edge cases. Need to do print statements for this when i get to them. onto finishing the shop :), which is adding dialogue, as well as checks and actually being able to buy stuff.
 
+---
 ### day 11
 Feb 13 2026, skipped yesterday. todays plan is to actually finish the shop, including: item display logic, buying checks and monkey wrenching, and setting up inventory display logic/checks for the new items. i predict i get shop done, and inventory update started but not finished.
 
 **12:19** Started on shop item display logic. it should be simple, get item and item description parameters, then print item, price, and desc on one page, the have a "buy return" input. while the function exists it has a place holder print line cause i'd like to add shop script to lore.json real quick.
 
+---
 ### day 12
 Feb 14 2026. I am sorry for being so absent. REP has been a bit draining, and ive been less productive. as of now the shop has a script, clear lines, and line buffers. 
 
+---
 ### day 13
 Feb 18 2026. Holy Sh17. Another OS switch. Arch betrayed me and i couldnt no more, so im on Ubuntu now. Lack of work mainly cause Depression and some burn out. :\ . im hoping to get back into the flow. also after doing some research, the genre of text games are so dang boreing. mostly dundeon crawlers. also most "modern text based games", use images now. talk about betraying the medium. I think i can mix things up a bit, and i have some ideas for a...text based game, after REstate Plus. 
 The reason i havent been working on REP, or even documenting it much is cause the burn out. ive been trying, but its hard, so i stopped trying for a moment. and here we are! i feel better, and i have plans. big plans >:D
 
+---
 ### day 14
 Feb 19 2026. second week of dev log, plans for today include: finishing shop item display, and actual functionality, slot edge cases get print statements, inventory gets edge cases (even if just place holders). switch charged, headphones charged. music is ready. most chores out of the way. I am ready.
 
 **10:22** Item display is complete, sales are also now obvious. it went my faster then i though. now its time for item purchase logic. im kinda scared of it, cause the amount of if checks...:\ . but we should be fine. hopefully.
+
+**3:09** i have played with generate doc string. it is kinda lame. :|. i havent been very productive as there are people over. and its distracting. also i have a cool chair now.
+
+**3:26** changed the intro key in save_stuff. when ever i ask an ai to rate the code base, its always one of the complaints. "its comparing it to false, but its a string", SO now its a boolean. which sure i guess. sure :\. It has been pointed our to me the timing uses magic numbers. to avoid this ive decided to add a global.json and use that for settings. as of now it will only hold timing. 
+
+---
+### Day 15
+Feb 21 2026. Did some cooler formatting for the markdown :) I think i'll have to code during weekends. most days i just done have the energy for it. but it IS a saturday; meaning i could code.

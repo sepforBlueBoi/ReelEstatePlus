@@ -4,7 +4,7 @@ game_dict: dict[str, any] = {
     "tokens": 0,
     "c_name": "",
     "map": "not owned",
-    "intro": "False",    
+    "intro": False,    
     "phase": 1,
     "shop": { #replica of all items but with prices.
         "Small_House": {"tag": "house", "price": 2000, "desc": "Basic house, perfect for one person.", "id": 1},
@@ -73,7 +73,7 @@ new_game = {
     "tokens": 0,
     "c_name": "",
     "map": "not owned",
-    "intro": "False",    
+    "intro": False,    
     "phase": 1,
     "shop": {
         "Small_House": {"tag": "house", "price": 2000, "desc": "Basic house, perfect for one person.", "id": 1},

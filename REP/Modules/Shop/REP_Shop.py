@@ -7,6 +7,13 @@ def clear():
     os.system('cls' if os.name == "nt" else "clear")
     
 def item_display_function(item, desc, price): # item display logic for polish. 
+    """_summary_
+
+    Args:
+        item (_type_): _description_
+        desc (_type_): _description_
+        price (_type_): _description_
+    """
     shop_item = item.replace("_", " ")
     print(f"====={shop_item}=====")
     print("\n")
@@ -102,6 +109,12 @@ def shop(tag, data, sale, lore):
             
     
 def shop_init(data, lore):
+    """_summary_
+
+    Args:
+        data (_type_): _description_
+        lore (_type_): _description_
+    """
     print(lore["shop1"]) # you walk into the little shop. the bell above the door dings
     time.sleep(1.4)
     print(lore["shop2"]) # the Cashier greets you.

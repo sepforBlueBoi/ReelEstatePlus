@@ -13,6 +13,12 @@ save_speech = ["saved", "Saved", "Json File Updated", "Data Uploaded", "Json Fil
 saved = random.choice(save_speech)
 
 def save_game(data, slot): #saves current status to current save slot, aka currect save file
+    """_summary_
+
+    Args:
+        data (_type_): _description_
+        slot (_type_): _description_
+    """
     filepath = os.path.join(SAVE_DIR, f"save_slot_{slot}.json")
     with open(filepath, "w") as f: # opens it
         json.dump(data, f, indent=4) # dumps the save data in

@@ -12,6 +12,14 @@ def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def select_save(slot):
+    """_summary_
+
+    Args:
+        slot (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     if slot in [1, 2, 3]: # if it can load
         print(f"loading save {slot}")
         time.sleep(1.4)
@@ -26,6 +34,11 @@ def select_save(slot):
 
 init(autoreset=True)
 def save_select():
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
     while True:
         clear_console()
         for idx, i in enumerate(range(3), start=1): # prints save slot choices for me

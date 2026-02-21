@@ -9,6 +9,14 @@ JSON_DIR = "constants"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 def load_game(slot):
+    """_summary_
+
+    Args:
+        slot (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     filepath = os.path.join(SAVE_DIR, f"save_slot_{slot}.json")
     if not os.path.exists(filepath):
         try:

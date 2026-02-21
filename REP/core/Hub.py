@@ -16,10 +16,11 @@ def clear_console():
 Inv = InvDisplay()
 
 class World:
-    def init(self):
+    def __init__(self):
         self.slot = ""
         self.Worldstate = {}
         self.dialogue = {}
+        self.timer = {}
 
     def choice_call(self, choice): # after maing your choice it sends you off.
         clear_console()
@@ -37,8 +38,9 @@ class World:
             leaving(self.slot, self.Worldstate, self.dialogue)
         elif choice == "{/}" and name == "kondike":
             Terminal(self.Worldstate, self.slot, self.dialogue)
-        # no else? 
-        # TODO ADD ELSE
+        else:
+            clear_console()
+            print(self.dialogue["place7"])
         
 
     def choice(self):
@@ -46,30 +48,30 @@ class World:
         save_game(self.Worldstate, self.slot) # saves game after intro, and upon opening save
         name = self.Worldstate["name"].strip().lower()
         print(self.dialogue["where1"])
-        time.sleep(1.4)
+        time.sleep(self.timer["text_timing"])
         print(self.dialogue["where2"] if self.Worldstate["map"] == "owned" else self.dialogue["where2.5"])
-        time.sleep(1.4)
+        time.sleep(self.timer["text_timing"])
         while True:
             print(self.dialogue["where3"])
-            time.sleep(1.4)
+            time.sleep(self.timer["text_timing"])
             for x in range(20):
                 print("=", end='')
                 time.sleep(0.1)
             print("\n")
             print(self.dialogue["place1"] if self.Worldstate["map"] == "owned" else "1. ???") #only prints the name of the place if you own the map offered in intro
-            time.sleep(0.2)
+            time.sleep(self.timer["list_timing"])
             print(self.dialogue["place2"] if self.Worldstate["map"] == "owned" else "2. ???")
-            time.sleep(0.2)
+            time.sleep(self.timer["list_timing"])
             print(self.dialogue["place3"] if self.Worldstate["map"] == "owned" else "3. ???")
-            time.sleep(0.2)
+            time.sleep(self.timer["list_timing"])
             print(self.dialogue["place4"])
-            time.sleep(0.2)
+            time.sleep(self.timer["list_timing"])
             print(self.dialogue["place5"])
-            time.sleep(0.2)
+            time.sleep(self.timer["list_timing"])
             if name == "kondike":
                 print(self.dialogue["place6"])
 
-            time.sleep(0.2)
+            time.sleep(self.timer["list_timing"])
             where_to_go = input("> ") # sich variable name
 
             self.choice_call(self, where_to_go) # sends you off
@@ -78,15 +80,16 @@ class World:
     def intro(self, save, slot): # intro for post game initialization
         self.slot = slot
         self.dialogue = load_json(file="lore.json")
+        self.timer = load_json(file="Global.json")
         self.Worldstate = save
         clear_console()
-        if self.Worldstate["intro"] == "False": # why isnt it working?? hmm
+        if not self.Worldstate["intro"]: # why isnt it working?? hmm
             print(self.dialogue["lore1"])
             for x in range(3):
                 print(".", end=' ', flush=True)
                 time.sleep(0.7)
             print(self.dialogue["lore2"])
-            time.sleep(1.2)
+            time.sleep(self.timer["text_timing"])
 
             Red_you1 = self.dialogue["lore3"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}") # < makes all the "You"s red.
             Red_you2 = self.dialogue["lore4"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}")
@@ -94,7 +97,7 @@ class World:
             Red_you4 = self.dialogue["lore8"].replace("You", f"{Fore.RED}You{Style.RESET_ALL}")
 
             print(Red_you1) # I don't remember You? [<- red you]
-            time.sleep(1.2)
+            time.sleep(self.timer["text_timing"])
             while True:
                 print(Red_you2) # who are you again?
                 name = input("> ")
@@ -107,10 +110,10 @@ class World:
                     sys.exit() # gone bcause ur name is gaster
                 else:
                     response = epic_name_checker(name) # for easter eggs
-                    time.sleep(1.2)
+                    time.sleep(self.timer["text_timing"])
                     print(response) 
                     self.Worldstate["name"] = name
-                    time.sleep(4.5)
+                    time.sleep(self.timer["read_timer"])
                     clear_console()
                     break
 
@@ -124,14 +127,14 @@ class World:
                     continue
                 else:
                     self.Worldstate["c_name"] = currency_name
-                    time.sleep(1.2)
+                    time.sleep(self.timer["text_timing"])
                     print(self.dialogue["lore7"])
-                    time.sleep(4.5)
+                    time.sleep(self.timer["read_timer"])
                     clear_console()
                     break
 
             print(Red_you4)
-            time.sleep(1.2)
+            time.sleep(self.timer["text_timing"])
             map = input("(Y/N)> ").lower() # check for map
             if map in ["yes", "y"]:
                 print(self.dialogue["lore9"]) 
@@ -139,7 +142,7 @@ class World:
             else:
                 print(self.dialogue["lore10"])    
                 
-            time.sleep(4.5)
-            self.Worldstate["intro"] = "Done"
+            time.sleep(self.timer["text_timing"])
+            self.Worldstate["intro"] = True
         clear_console()
         self.choice(self) # enter main game loop

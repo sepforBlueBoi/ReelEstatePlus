@@ -1,10 +1,10 @@
 {
-    "name": "Kondike",
+    "name": "",
     "currency": 500,
     "tokens": 0,
-    "c_name": "Cash",
-    "map": "owned",
-    "intro": "Done",
+    "c_name": "",
+    "map": "not owned",
+    "intro": false,
     "phase": 1,
     "shop": {
         "Small_House": {
@@ -46,7 +46,7 @@
         },
         "Old_Rod": {
             "tag": "lake",
-            "price": 4,
+            "price": 5,
             "desc": "Old fishing rod. kinda broken. I would not advice using it.",
             "id": 1
         },
@@ -104,7 +104,7 @@
         },
         "Golden_Idle": {
             "tag": "misc",
-            "price": 10,
+            "price": 9,
             "desc": "It's a golden idle. You aren't sure if you should waste your money on this.",
             "id": 3
         },
@@ -125,7 +125,7 @@
         "Smelly_Rug": {
             "tag": "furniture",
             "phase": 1,
-            "price": 26,
+            "price": 25,
             "desc": "It has one stain, It wont leave. Its smell is...Why was this for sell?",
             "id": 3
         },

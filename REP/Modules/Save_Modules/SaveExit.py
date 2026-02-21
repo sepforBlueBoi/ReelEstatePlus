@@ -7,6 +7,16 @@ def clear():
     os.system('cls' if os.name == "nt" else "clear")
 
 def leaving(slot, Data, text):
+    """_summary_
+
+    Args:
+        slot (_type_): _description_
+        Data (_type_): _description_
+        text (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     clear()
 
     while True:
