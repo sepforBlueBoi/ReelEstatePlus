@@ -28,7 +28,7 @@ class World:
         name = self.Worldstate["name"].strip().lower()
 
         if choice == "1":
-            Casino(self.Worldstate, self.dialogue)
+            Casino(self.Worldstate, self.dialogue, self.timer)
         elif choice == "2":
             Shop_.shop_init(self.Worldstate, self.dialogue, self.timer)
         elif choice == "3":
@@ -73,7 +73,7 @@ class World:
                 print(self.dialogue["place6"])
 
             time.sleep(self.timer["list_timing"])
-            where_to_go = input("> ") # sich variable name
+            where_to_go = input("> ") # sick variable name
 
             self.choice_call(self, where_to_go) # sends you off
         

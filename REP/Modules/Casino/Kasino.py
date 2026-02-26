@@ -9,31 +9,33 @@ from REP.Modules.Casino.Slots import slot_animation
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
 
-def slots(Data, text):
+def slots(Data, text, cd):
     print(text["slots1"]) # You go to the closest Slots machine.
     time.sleep(1.4)
 
     while True:
         print(text["slots2"]) # The lever becons deaply. 
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
         print(f"Tokens in Pocket: {Data["tokens"]}") # tokens
+        time.sleep(cd["text_timing"])
         try:
             amount = int(input(text["slots3"])) # How many tokens to you insert into the hole? (Put 0 to return) \n
         except ValueError:
             clear()
             print(text["slots4"]) # the machine refuses whatever you just put in the machine.
+            time.sleep(cd["text_timing"])
             continue
 
         if amount == 0:
             clear()
             print(text["slots5"]) # you leave the machine and return to the casino hub.
-            time.sleep(4.5)
+            time.sleep(cd["read_timer"])
             return
 
         if amount >= 100:
             amount = 99
             print(text["slots9"]) #Sadly the machine will only let you insert 99. Anything else gets returned.
-            time.sleep(3.5)
+            time.sleep(cd["read_timer"])
             
         if amount < 0:
             continue # TODO print statement presumably. plz.
@@ -43,27 +45,27 @@ def slots(Data, text):
             
 
 
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
         reel = slot_animation() # plays slot animation
 
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
         clear()
         print(f"   _    _    _")
         print(f" | {reel[0]} | {reel[1]} | {reel[2]} | ,") # prints a sick slot machine
         print(" |              |/")
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
 
         if reel[0] == reel[1] and reel[1] == reel[2]: # checks for jackpot
             print(text["slots6"])# JACKPOT!
             Data["tokens"] += amount * 2
-            time.sleep(2.4)
+            time.sleep(cd["text_timer"])
 
             jackpot = str(amount * 2)
 
             slots7 = text["slots7"].replace('*', jackpot)
 
             print(slots7) # You won {amount * 2}!
-            time.sleep(4.5)
+            time.sleep(cd["read_timer"])
             clear()
             continue
 
@@ -74,7 +76,7 @@ def slots(Data, text):
             slots7_5 = text["slots7.5"].replace('*', win)
 
             print(slots7_5) #You won {amount}!
-            time.sleep(4.5)
+            time.sleep(cd["read_timer"])
             clear()
             continue
         
@@ -85,20 +87,20 @@ def slots(Data, text):
             slots8_5 = text["slots8.5"].replace('*', anoumt)
 
             print(text["slots8"]) # Luck was not on your side this roll
-            time.sleep(2.4)
+            time.sleep(cd["text_timing"])
             print(slots8_5)# You lost {amount}
-            time.sleep(4.5)
+            time.sleep(cd["read_timer"])
             clear()
             continue
 
-def roulette(Data, text):
+def roulette(Data, text, cd):
 
     print(text["roulette1"])# you walk over to the Roulette table.
-    time.sleep(1.4)
+    time.sleep(cd["text_timing"])
     while True:
         
         print(text["roulette2.5"] if random.randint(1, 50) == 5 else text["roulette2"])# the ghost manning it greets you asks
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
         roulette1 = text["roulette3"].replace("Red", f"{Fore.RED}Red{Style.RESET_ALL}")
         roulette2 = roulette1.replace("Black", f"{Fore.BLACK}{Style.BRIGHT}Black{Style.RESET_ALL}")
         roulette3 = roulette2.replace("Blue", f"{Fore.BLUE}Blue{Style.RESET_ALL}")
@@ -128,18 +130,18 @@ def roulette(Data, text):
         while True:
         
             print(text["roulette4"])# Now the bet.
-            time.sleep(1.4)
+            time.sleep(cd["text_timing"])
             print(text["roulette5"])# how much you bettin?
-            time.sleep(1.4)
+            time.sleep(cd["text_timing"])
             print(f"Currency: {Data["currency"]}")# in your wallet is {money}.
-            time.sleep(1.4)
+            time.sleep(cd["text_timing"])
             print(text["roulette0"]) # Type 0 to return to colors
             try:
                 bet = int(input("> "))
             except ValueError:
                 clear()
                 print(text["roulette5.5"]) # this...isn't an amount
-                time.sleep(4.5)
+                time.sleep(cd["read_timer"])
                 clear()
                 continue
         
@@ -150,73 +152,78 @@ def roulette(Data, text):
             if bet == 0:
                 clear()
                 print(text["roulettereturn"])#ah, changing colors?
+                time.sleep(cd["read_timer"])
+                clear()
                 break
         
             if bet <= 19:
                 clear()
                 print(roulette6)# our lowest bet is 20 {money name}
+                time.sleep(cd["read_timer"])
                 continue
             elif bet > Data["currency"]:
                 clear()
                 print(text["roulette8"])# you dont have that much
+                time.sleep(cd["read_timer"])
                 continue
             elif bet >= 1000:
                 clear()
                 print(roulette7)# sorry bud, max bet is 999 {money name}
+                time.sleep(cd["read_timer"])
                 continue
         
 
             wow = rouletete()
-            time.sleep(2)
+            time.sleep(cd["text_timing"])
             if p_color == wow:
                 print(text["roulette9"])# nice win
-                time.sleep(1.4)
+                time.sleep(cd["text_timing"])
                 Data["currency"] = Data["currency"] + bet
                 print(Data["currency"],"!")
-                time.sleep(1.4)
+                time.sleep(cd["text_timing"])
                 input("Press Enter to Continue")
                 clear()
                 continue
             else:
                 print(text["roulette10"])# oof, better luck next time!
-                time.sleep(1.4)
+                time.sleep(cd["text_timing"])
                 Data["currency"] = Data["currency"] - bet
                 print(Data["currency"],"...")
-                time.sleep(1.4)
+                time.sleep(cd["text_timing"])
                 input("press Enter to Continue")
                 clear()
                 break
         
 
-def Casino(Data, text):
+def Casino(Data, text, cd):
     print(text["casino1"])# You enter the imfamous Casino
-    time.sleep(1.4)
+    time.sleep(cd["text_timing"])
     print(text["casino2"])# Kondike's Kasino...
-    time.sleep(1.4)
+    time.sleep(cd["text_timing"])
     print(text["casino3"])# The place is ran by ghosts.
-    time.sleep(1.4)
+    time.sleep(cd["text_timing"])
     while True:
         print(text["casino4"])# Which spot to waste time at first?
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
         print(text["casino5"])# 1. Roulette\n2. Slots?
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
         choice = input("> ").lower().strip()
 
         if choice == "1" or choice == "roulette":
             clear()
-            roulette(Data, text)
+            roulette(Data, text, cd)
         elif choice == "2" or choice == "slots":
             clear()
-            slots(Data, text)
+            slots(Data, text, cd)
         elif choice == "3" or choice == "tokens":
             clear()
-            token_shop(text, Data)
+            token_shop(text, Data, cd)
         elif choice == "4" or choice == "leave":
             clear()
             print(text["casino6"])
-            time.sleep(1.4)
+            time.sleep(cd["text_timing"])
             print(text["casino7"])
-            time.sleep(4.5)
+            time.sleep(cd["read_timer"])
             clear()
             return
         else:
