@@ -11,7 +11,7 @@ def clear():
 
 def slots(Data, text, cd):
     print(text["slots1"]) # You go to the closest Slots machine.
-    time.sleep(1.4)
+    time.sleep(cd["text_timing"])
 
     while True:
         print(text["slots2"]) # The lever becons deaply. 
@@ -38,9 +38,11 @@ def slots(Data, text, cd):
             time.sleep(cd["read_timer"])
             
         if amount < 0:
+            print() # The Lever wont move without any tokens.
             continue # TODO print statement presumably. plz.
         
         if amount > Data["tokens"]:
+            print() # You do not have that many tokens. 
             continue # TODO ADD A PRINT STATEMENT HERE TOO >:(
             
 

@@ -34,9 +34,9 @@ class World:
         elif choice == "3":
             print("lake") #TODO
         elif choice == "4":
-            Inv.display(self.Worldstate)
+            Inv.display(self.Worldstate, self.timer)
         elif choice == "0":
-            leaving(self.slot, self.Worldstate, self.dialogue)
+            leaving(self.slot, self.Worldstate, self.dialogue, self.timer)
         elif choice == "{/}" and name == "kondike":
             Terminal(self.Worldstate, self.slot, self.dialogue)
         else:

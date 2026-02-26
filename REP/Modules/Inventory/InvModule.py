@@ -25,44 +25,45 @@ class InvDisplay:
     def __init__(self):
         self.data = {} # Holds data. same thing we did in Hub.py
         self.page = 1 # keep track of pages
+        self.cd = {}
         
     def page_5(self, data):
         print("page 5\t ----\tHouses and Furniture\n")
-        time.sleep(1.4)
+        time.sleep(self.cd["text_timing"])
         
     def page_4(self, data):
         print("page 4\t ----\tFishpedia\n")
-        time.sleep(1.4)    
+        time.sleep(self.cd["test_timing"])    
         
     def page_3(self, data):
         print("Page 3\t ----\tAchievements\n")
-        time.sleep(1.4)    
+        time.sleep(self.cd["text_timing"])    
         
     def page_2(self, data):
         print("Page 2\t ----\tCollectables and Lore\n")
-        time.sleep(1.4)
+        time.sleep(self.cd["text_timing"])
         
     def page_1(self, data): # <- current page function
         print("Page 1\t ----\tBasic Inventory\n")
-        time.sleep(1.4)
+        time.sleep(self.cd["text_timing"])
         print(f"[{data["name"]}]")
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         print(data["c_name"],":",data["currency"])
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         print("tokens:", data["tokens"])
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         print("Fishing rods: TODO") #TODO 
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         
     def prompt(self): # simple page prompt that will be at the bottom of every page.
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         print(f"page {self.page}/5")
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         print("which page . . .")
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         print("0 to close inventory")
         print("1-5 to go to those pages")
-        time.sleep(0.2)
+        time.sleep(self.cd["list_timing"])
         try:
             page = int(input("> ").strip())
         except ValueError:
@@ -70,7 +71,8 @@ class InvDisplay:
         
         return page
 
-    def display(self, data):
+    def display(self, data, cd):
+        self.cd = cd
         while True:
             clear()
             page_string = str(self.page) #<- making it a string so maybe it works better???. this is where the error is
@@ -88,7 +90,7 @@ class InvDisplay:
             if page == 0:
                 clear()
                 print("you close the inventory")
-                time.sleep(4.5)
+                time.sleep(self.cd["read_timer"])
                 clear()
                 return
             

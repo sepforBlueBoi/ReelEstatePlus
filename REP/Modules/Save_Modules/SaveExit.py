@@ -6,7 +6,7 @@ from REP.Modules.Save_Modules.save_module import save_game
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
 
-def leaving(slot, Data, text):
+def leaving(slot, Data, text, cd):
     """_summary_
 
     Args:
@@ -26,26 +26,26 @@ def leaving(slot, Data, text):
         quit6 = text["quit6"].replace('you', f"{Fore.RED}You{Style.RESET_ALL}")
 
         print(quit1) # You [<- Red] planning on leaving?
-        time.sleep(1.4)
+        time.sleep(cd["text_timing"])
         print(quit2) # save // yellow save
-        time.sleep(0.2)
+        time.sleep(cd["list_timing"])
         print(text["quit3"]) # quit
-        time.sleep(0.2)
+        time.sleep(cd["list_timing"])
         print(text["quit4"]) # return
-        time.sleep(0.2)
+        time.sleep(cd["list_timing"])
 
         choice = input("> ").lower().strip() 
         clear()
 
         if choice == "3" or choice == "return":
             print(quit5) # You [<- red you] return to the game
-            time.sleep(3.4)
+            time.sleep(cd["read_timer"])
             clear()
             return
 
         elif choice == "1" or choice == "save":
             save_game(Data, slot)
-            time.sleep(1.4)
+            time.sleep(cd["text_timing"])
             continue
 
         elif choice == "2" or choice == "quit":
@@ -55,9 +55,9 @@ def leaving(slot, Data, text):
             if save == "n":
                 save_game(Data, slot)
 
-            time.sleep(1.4)
+            time.sleep(cd["text_timing"])
             print("Cya later alligator!")
-            time.sleep(1.4)
+            time.sleep(cd["text_timing"])
             sys.exit()
             
         else:
