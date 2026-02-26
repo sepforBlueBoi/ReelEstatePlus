@@ -24,6 +24,7 @@ def leaving(slot, Data, text, cd):
         quit2 = text["quit2"].replace('Save', f"{Fore.YELLOW}Save{Style.RESET_ALL}")
         quit5 = text["quit5"].replace('You', f"{Fore.RED}You{Style.RESET_ALL}")
         quit6 = text["quit6"].replace('you', f"{Fore.RED}You{Style.RESET_ALL}")
+        quit7 = text["quit7"].replace('you', f"{Fore.RED}You{Style.RESET_ALL}")
 
         print(quit1) # You [<- Red] planning on leaving?
         time.sleep(cd["text_timing"])
@@ -62,8 +63,8 @@ def leaving(slot, Data, text, cd):
             
         else:
             clear()
+            print(quit7) # You interact with a button behind you. it does nothing other then spawn a sheep somewhere.
+            time.sleep(cd["read_timer"])
             continue
-        #TODO ADD A PRINT STATEMENT HEAR YOU A HOLE
-        # rude kondike, rude. 
-
+       
         

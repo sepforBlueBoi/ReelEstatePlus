@@ -69,7 +69,11 @@ class InvDisplay:
         except ValueError:
             return "error"
         
-        return page
+        
+        if page in [0, 1, 2, 3, 4, 5]:
+            return page
+        else:
+            return "error"
 
     def display(self, data, cd):
         self.cd = cd

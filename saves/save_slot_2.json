@@ -1,10 +1,10 @@
 {
-    "name": "",
+    "name": "Kondike",
     "currency": 500,
     "tokens": 0,
-    "c_name": "",
-    "map": "not owned",
-    "intro": false,
+    "c_name": "Kondollars",
+    "map": "owned",
+    "intro": true,
     "phase": 1,
     "shop": {
         "Small_House": {
