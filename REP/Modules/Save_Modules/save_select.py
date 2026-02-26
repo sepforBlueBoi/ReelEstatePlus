@@ -4,6 +4,7 @@ import REP.Modules.Save_Modules.Load_module as load
 from REP.core.Hub import World
 from colorama import Fore, Style, init
 import time
+import gc
 import os
 
 game = World
@@ -24,7 +25,10 @@ def select_save(slot):
         print(f"loading save {slot}")
         time.sleep(1.4)
         game_state = load.load_game(slot) # load
+        gc.set_threshold(700, 10, 10)
+        gc.collect(2)
         game.intro(game, game_state, slot)
+        
     else:
         return "nu-uh-uh" # NU UH
         

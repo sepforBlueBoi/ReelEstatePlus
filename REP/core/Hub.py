@@ -1,4 +1,3 @@
-import time
 from REP.Modules.Save_Modules.Load_module import load_json
 from REP.Modules.Save_Modules.save_module import save_game
 from REP.Modules.Casino.Kasino import Casino
@@ -6,14 +5,16 @@ from REP.Modules.Checkers.Intro_Checker import *
 from REP.Modules.Save_Modules.SaveExit import leaving
 from REP.Modules.Misc.Dev_stuff import Terminal
 from REP.Modules.Inventory.InvModule import InvDisplay
-from REP.Modules.Shop.REP_Shop import shop_init
-import sys, os
+from REP.Modules.Shop.REP_Shop import Shop
 from colorama import Fore, init, Style
+import time
+import sys, os
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear' )
 
 Inv = InvDisplay()
+Shop_ = Shop()
 
 class World:
     def __init__(self):
@@ -29,7 +30,7 @@ class World:
         if choice == "1":
             Casino(self.Worldstate, self.dialogue)
         elif choice == "2":
-            shop_init(self.Worldstate, self.dialogue)
+            Shop_.shop_init(self.Worldstate, self.dialogue, self.timer)
         elif choice == "3":
             print("lake") #TODO
         elif choice == "4":
