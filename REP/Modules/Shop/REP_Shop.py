@@ -45,18 +45,18 @@ class Shop:
     def __init__(self):
         self.cd = {}
     
-    def item_display_function(self, item, desc, price): # item display logic for polish. 
+    def item_display_function(self, item, price): # item display logic for polish. 
     
         shop_item = item.replace("_", " ")
         print(f"====={shop_item}=====")
         print("\n")
         time.sleep(self.cd["text_timing"])
     
-        print(desc.get("desc"))
+        print(shop[item].get("desc"))
         time.sleep(self.cd["text_timing"])
     
-        if price != desc.get("price"):
-            Price = f"[{desc.get("price")}] -> {price}"
+        if price != shop[item].get("price"):
+            Price = f"[{shop[item].get("price")}] -> {price}"
         
         else:
             Price = price
@@ -107,8 +107,7 @@ class Shop:
                         item_display = k.replace("_", " ")
                         if k not in items:
                             items.append(k) # appends item to items list for later selection
-                        desc = v
-                        print(f"{desc.get("id")}. - {item_display}") # print items
+                        print(f"{shop[k].get("id")}. - {item_display}") # print items
                         time.sleep(self.cd["list_timing"])
             print(lore["shop11"]) # 0. Return
                 
@@ -135,9 +134,9 @@ class Shop:
             time.sleep(self.cd["text_timing"])
         
             while True:
-                price = desc.get("price")
+                price = round(shop[items[item]].get("price") * sale)
                 clear()
-                self.item_display_function(items[item], desc, price) # Display item, item descripton, and price, for UI
+                self.item_display_function(items[item], price) # Display item, item descripton, and price, for UI
             
                 print()# 1. Buy/OWNED
                 print()# 2. Cancel
@@ -166,9 +165,7 @@ class Shop:
         sales = 1.0
         if random.randint(1, 65) == 1:
             sales = 0.5 #sales :)
-            print("SALES")
-        else:
-            print("NO SALES")
+
     
         while True:
             print(lore["shop4"]) # There are a wide array of isles. 
