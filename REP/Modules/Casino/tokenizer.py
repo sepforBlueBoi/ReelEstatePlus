@@ -55,7 +55,7 @@ def token_shop(lore, Data, cd):
                 token5 = lore["token5"].replace("*", token_amount_string)
                 clear()
                 print(lore["token4"]) #okie dokie. let me set you up with the tokens
-                time.sleep(cd["list_timing"])
+                time.sleep(cd["text_timing"])
                 Data["currency"] = Data["currency"] - token_amount * 5
                 Data["tokens"] = Data["tokens"] + token_amount
                 print(token5) # there we go, there is your * tokens. Have fun!

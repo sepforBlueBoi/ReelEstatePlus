@@ -7,6 +7,39 @@ def clear():
     os.system('cls' if os.name == "nt" else "clear")
     
     
+shop: dict[str, any] = { #replica of all items but with prices.
+        "Small_House": {"tag": "estate", "price": 2000, "desc": "Basic house, perfect for one person.", "id": 1},
+        "House": {"tag": "estate", "price": 2500,"desc": "Rather nice house, perfect for you.", "id": 2},
+        "Large_House": {"tag": "estate", "price":5000, "desc": "Large house. Not mansion sized yet.", "id": 3},
+        "Weird_House": {"tag": "estate", "price": 6300, "desc": "This house has 20 bathrooms. 19 of them have toilets. 1 has a urinal.", "id": 4},
+        "Box": {"tag": "estate", "price": 2, "desc": "how...is this a house?", "id": 5},
+        "Casino": {"tag": "estate", "price": 9500, "desc": "Not a house. but you can live in it. Something inside wants you.", "lock": True, "id": 6},
+        "Old_Rod": {"tag": "lake", "price": 5, "desc": "Old fishing rod. kinda broken. I would not advice using it.", "id": 1},
+        "Basic_Rod": {"tag": "lake", "price": 450, "desc": "Basic rod. decent choice for the lake.", "id": 2},
+        "Colored_Rod": {"tag": "ocean", "price": 600, "desc": "comes in many different colors", "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "pruple"],
+                        "color_owned": "", "id": 1},
+        "Effiecent_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
+        "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
+        "Premier_Rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney.", "id": 4},
+        "Map": {"tag": "misc", "price": 500, "desc": "Its the same map you refused at the beginning of the game.", "id": 1},
+        "Red_and_White_Ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?", "id": 2},
+        "Golden_Idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this.", "id": 3},
+        "Old_Couch": {"tag": "furniture", "phase": 1, "price": 50, "desc": "it is mostly holes", "id": 1},
+        "Small_TV": {"tag": "furniture", "phase": 1, "price": 100, "desc": "Its basically a mobile phone with how small it is.", "id": 2},
+        "Smelly_Rug": {"tag": "furniture", "phase": 1, "price": 25, "desc": "It has one stain, It wont leave. Its smell is...Why was this for sell?", "id": 3},
+        "Nice_Loveseat": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Thousands of times better then the couch. No holes either.", "id": 1},
+        "Basic_TV": {"tag": "furniture", "phase": 2, "price": 600, "desc": "It comes with all modern streaming services for free!. this has gotta be illegal", "id": 2},
+        "Nice_Rug": {"tag": "furniture", "phase": 2, "price": 350, "desc": "Its the same type of rug from before; just clean and new.", "id": 3},
+        "Pictures": {"tag": "furniture", "phase": 2, "price": 100, "desc": "There is three of them. sadly since this world text based you can't see their beauty.", "id": 4},
+        "Desk": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Presumably for a computer you don't have yet.", "id": 5},
+        "Deluxe_Double_decker_couch": {"tag": "furniture", "phase": 3, "price": 1000, "desc": "surprisingly not made of Legos.", "id": 1},
+        "Amazing_Carpet": {"tag": "furniture", "phase": 3, "price": 550, "desc": "Its actually a carpet of snow that doesn't melt, nor get footprints. It's almost solid.", "id": 2},
+        "more_pictures": {"tag": "furniture", "phase": 3, "price": 100, "desc": "Even more pictures you can't see. just know, they are beautiful.", "id": 3},
+        "Gaming_chair": {"tag": "furniture", "phase": 3, "price": 150, "desc": "Would fit well with the desk you bought earlier.", "id": 4},
+        "Entire_Desktop": {"tag": "furniture", "phase": 3, "price": 1600, "desc": "Even comes with a monitor, keyboard, and mouse. weird.", "id": 5},
+        "Statue_of_self": {"tag": "furniture", "phase": 3, "price": 9000, "desc": "...who made this and when?", "id": 6}
+    }
+    
 class Shop:
 
     def __init__(self):
@@ -50,7 +83,7 @@ class Shop:
         items = ["placeholder"] # place holder so items start at index 1.
     
         match tag: # grabs the title of the page/isle based off of tag.
-            case "house":
+            case "estate":
                 title = "Real Estate"
             case "furniture":
                 title = "Furniture"
@@ -68,14 +101,15 @@ class Shop:
             time.sleep(self.cd["text_timing"])
             print("\n")
         
-            for k, v in data["shop"].items(): #grabs item, and item info for each item in shop dict
+            for k, v in shop.items(): #grabs item, and item info for each item in shop dict
                 if v.get("tag") == tag: # checks if they are in the tag selected
-                    item_display = k.replace("_", " ")
-                    if k not in items:
-                        items.append(k) # appends item to items list for later selection
-                    desc = v
-                    print(f"{desc.get("id")}. - {item_display}") # print items
-                    time.sleep(self.cd["list_timing"])
+                    if not v.get("phase") or v.get("phase") == data["phase"]: # makes sure you in the correct phase if its there (ie furniture.) so it doesnt add ALL furniture to the list.
+                        item_display = k.replace("_", " ")
+                        if k not in items:
+                            items.append(k) # appends item to items list for later selection
+                        desc = v
+                        print(f"{desc.get("id")}. - {item_display}") # print items
+                        time.sleep(self.cd["list_timing"])
             print(lore["shop11"]) # 0. Return
                 
             try:
@@ -101,13 +135,18 @@ class Shop:
             time.sleep(self.cd["text_timing"])
         
             while True:
-                price = desc.get("price") * sale
+                price = desc.get("price")
                 clear()
-                self.item_display_function(items[item], desc, price) # Display item, item descripton, and price.
+                self.item_display_function(items[item], desc, price) # Display item, item descripton, and price, for UI
             
-                print()
+                print()# 1. Buy/OWNED
+                print()# 2. Cancel
             
-    
+                try:
+                    choice = input("> ")
+                except ValueError:
+                    print() # Im Concerned.
+
     def shop_init(self, data, lore, cd):
         """_summary_
 
@@ -127,6 +166,9 @@ class Shop:
         sales = 1.0
         if random.randint(1, 65) == 1:
             sales = 0.5 #sales :)
+            print("SALES")
+        else:
+            print("NO SALES")
     
         while True:
             print(lore["shop4"]) # There are a wide array of isles. 
@@ -165,7 +207,7 @@ class Shop:
                 case 1:
                     time.sleep(self.cd["text_timing"])
                     clear()
-                    self.shop("house", data, sales, lore)
+                    self.shop("estate", data, sales, lore)
                 case 2:
                     time.sleep(self.cd["text_timing"])
                     clear()

@@ -6,38 +6,7 @@ game_dict: dict[str, any] = {
     "map": "not owned",
     "intro": False,    
     "phase": 1,
-    "shop": { #replica of all items but with prices.
-        "Small_House": {"tag": "house", "price": 2000, "desc": "Basic house, perfect for one person.", "id": 1},
-        "House": {"tag": "house", "price": 2500,"desc": "Rather nice house, perfect for you.", "id": 2},
-        "Large_House": {"tag": "house", "price":5000, "desc": "Large house. Not mansion sized yet.", "id": 3},
-        "Weird_House": {"tag": "house", "price": 6300, "desc": "This house has 20 bathrooms. 19 of them have toilets. 1 has a urinal.", "id": 4},
-        "Box": {"tag": "house", "price": 2, "desc": "how...is this a house?", "id": 5},
-        "Casino": {"tag": "house", "price": 9500, "desc": "Not a house. but you can live in it. Something inside wants you.", "lock": True, "id": 6},
-        "Old_Rod": {"tag": "lake", "price": 5, "desc": "Old fishing rod. kinda broken. I would not advice using it.", "id": 1},
-        "Basic_Rod": {"tag": "lake", "price": 450, "desc": "Basic rod. decent choice for the lake.", "id": 2},
-        "Colored_Rod": {"tag": "ocean", "price": 600, "desc": "comes in many different colors", "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "pruple"],
-                        "color_owned": "", "id": 1},
-        "Effiecent_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
-        "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
-        "Premier_Rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney.", "id": 4},
-        "Map": {"tag": "misc", "price": 500, "desc": "Its the same map you refused at the beginning of the game.", "id": 1},
-        "Red_and_White_Ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?", "id": 2},
-        "Golden_Idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this.", "id": 3},
-        "Old_Couch": {"tag": "furniture", "phase": 1, "price": 50, "desc": "it is mostly holes", "id": 1},
-        "Small_TV": {"tag": "furniture", "phase": 1, "price": 100, "desc": "Its basically a mobile phone with how small it is.", "id": 2},
-        "Smelly_Rug": {"tag": "furniture", "phase": 1, "price": 25, "desc": "It has one stain, It wont leave. Its smell is...Why was this for sell?", "id": 3},
-        "Nice_Loveseat": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Thousands of times better then the couch. No holes either.", "id": 1},
-        "Basic_TV": {"tag": "furniture", "phase": 2, "price": 600, "desc": "It comes with all modern streaming services for free!. this has gotta be illegal", "id": 2},
-        "Nice_Rug": {"tag": "furniture", "phase": 2, "price": 350, "desc": "Its the same type of rug from before; just clean and new.", "id": 3},
-        "Pictures": {"tag": "furniture", "phase": 2, "price": 100, "desc": "There is three of them. sadly since this world text based you can't see their beauty.", "id": 4},
-        "Desk": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Presumably for a computer you don't have yet.", "id": 5},
-        "Deluxe_Double_decker_couch": {"tag": "furniture", "phase": 3, "price": 1000, "desc": "surprisingly not made of Legos.", "id": 1},
-        "Amazing_Carpet": {"tag": "furniture", "phase": 3, "price": 550, "desc": "Its actually a carpet of snow that doesn't melt, nor get footprints. It's almost solid.", "id": 2},
-        "more_pictures": {"tag": "furniture", "phase": 3, "price": 100, "desc": "Even more pictures you can't see. just know, they are beautiful.", "id": 3},
-        "Gaming_chair": {"tag": "furniture", "phase": 3, "price": 150, "desc": "Would fit well with the desk you bought earlier.", "id": 4},
-        "Entire_Desktop": {"tag": "furniture", "phase": 3, "price": 1600, "desc": "Even comes with a monitor, keyboard, and mouse. weird.", "id": 5},
-        "Statue_of_self": {"tag": "furniture", "phase": 3, "price": 9000, "desc": "...who made this and when?", "id": 6}
-    },
+    
     "achiev": {
       
     },
@@ -50,9 +19,18 @@ game_dict: dict[str, any] = {
     "lore": {
         
     },
-    "rods": {
-        
+    "lake": {
+        "Old_Rod": False,
+        "Basic_Rod": False
     },
+    
+    "ocean": {
+        "Colored_Rod": False,
+        "Effiecent_Rod": False,
+        "Superior_Rod": False,
+        "Premier_Rod": False
+    },
+    
     "fish": {
         
     },
@@ -60,10 +38,33 @@ game_dict: dict[str, any] = {
         
     },
     "estate": {
-        
+         "Small_House": False,
+        "House": False,
+        "Large_House": False,
+        "Weird_House": False,
+        "Box": False,
+        "Casino": {"owned": False, "lock": True}
     },
     "furniture": {
-        
+        "Old_Couch": False,
+        "Small_TV": False,
+        "Smelly_Rug": False,
+        "Nice_Loveseat": False,
+        "Basic_TV": False,
+        "Nice_Rug": False,
+        "Pictures": False,
+        "Desk": False,
+        "Deluxe_Double_decker_couch": False,
+        "Amazing_Carpet": False,
+        "more_pictures": False,
+        "Gaming_chair": False,
+        "Entire_Desktop": False,
+        "Statue_of_self": False
+    },
+    
+    "misc": {
+        "Red_and_White_Ball": False,
+        "Golden_Idle": False,
     },
 }
 
@@ -75,38 +76,7 @@ new_game = {
     "map": "not owned",
     "intro": False,    
     "phase": 1,
-    "shop": {
-        "Small_House": {"tag": "house", "price": 2000, "desc": "Basic house, perfect for one person.", "id": 1},
-        "House": {"tag": "house", "price": 2500,"desc": "Rather nice house, perfect for you.", "id": 2},
-        "Large_House": {"tag": "house", "price":5000, "desc": "Large house. Not mansion sized yet.", "id": 3},
-        "Weird_House": {"tag": "house", "price": 6300, "desc": "This house has 20 bathrooms. 19 of them have toilets. 1 has a urinal.", "id": 4},
-        "Box": {"tag": "house", "price": 2, "desc": "how...is this a house?", "id": 5},
-        "Casino": {"tag": "house", "price": 9500, "desc": "Not a house. but you can live in it. Something inside wants you.", "lock": True, "id": 6},
-        "Old_Rod": {"tag": "lake", "price": 5, "desc": "Old fishing rod. kinda broken. I would not advice using it.", "id": 1},
-        "Basic_Rod": {"tag": "lake", "price": 450, "desc": "Basic rod. decent choice for the lake.", "id": 2},
-        "Colored_Rod": {"tag": "ocean", "price": 600, "desc": "comes in many different colors", "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "pruple"],
-                        "color_owned": "", "id": 1},
-        "Effiecent_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
-        "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
-        "Premier_Rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney.", "id": 4},
-        "Map": {"tag": "misc", "price": 500, "desc": "Its the same map you refused at the beginning of the game.", "id": 1},
-        "Red_and_White_Ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?", "id": 2},
-        "Golden_Idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this.", "id": 3},
-        "Old_Couch": {"tag": "furniture", "phase": 1, "price": 50, "desc": "it is mostly holes", "id": 1},
-        "Small_TV": {"tag": "furniture", "phase": 1, "price": 100, "desc": "Its basically a mobile phone with how small it is.", "id": 2},
-        "Smelly_Rug": {"tag": "furniture", "phase": 1, "price": 25, "desc": "It has one stain, It wont leave. Its smell is...Why was this for sell?", "id": 3},
-        "Nice_Loveseat": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Thousands of times better then the couch. No holes either.", "id": 1},
-        "Basic_TV": {"tag": "furniture", "phase": 2, "price": 600, "desc": "It comes with all modern streaming services for free!. this has gotta be illegal", "id": 2},
-        "Nice_Rug": {"tag": "furniture", "phase": 2, "price": 350, "desc": "Its the same type of rug from before; just clean and new.", "id": 3},
-        "Pictures": {"tag": "furniture", "phase": 2, "price": 100, "desc": "There is three of them. sadly since this world text based you can't see their beauty.", "id": 4},
-        "Desk": {"tag": "furniture", "phase": 2, "price": 200, "desc": "Presumably for a computer you don't have yet.", "id": 5},
-        "Deluxe_Double_decker_couch": {"tag": "furniture", "phase": 3, "price": 1000, "desc": "surprisingly not made of Legos.", "id": 1},
-        "Amazing_Carpet": {"tag": "furniture", "phase": 3, "price": 550, "desc": "Its actually a carpet of snow that doesn't melt, nor get footprints. It's almost solid.", "id": 2},
-        "more_pictures": {"tag": "furniture", "phase": 3, "price": 100, "desc": "Even more pictures you can't see. just know, they are beautiful.", "id": 3},
-        "Gaming_chair": {"tag": "furniture", "phase": 3, "price": 150, "desc": "Would fit well with the desk you bought earlier.", "id": 4},
-        "Entire_Desktop": {"tag": "furniture", "phase": 3, "price": 1600, "desc": "Even comes with a monitor, keyboard, and mouse. weird.", "id": 5},
-        "Statue_of_self": {"tag": "furniture", "phase": 3, "price": 9000, "desc": "...who made this and when?", "id": 6}
-    },
+    
     "achiev": {
       
     },
@@ -119,9 +89,18 @@ new_game = {
     "lore": {
         
     },
-    "rods": {
-        
+    "lake": {
+        "Old_Rod": False,
+        "Basic_Rod": False
     },
+    
+    "ocean": {
+        "Colored_Rod": False,
+        "Effiecent_Rod": False,
+        "Superior_Rod": False,
+        "Premier_Rod": False
+    },
+    
     "fish": {
         
     },
@@ -129,9 +108,32 @@ new_game = {
         
     },
     "estate": {
-        
+         "Small_House": False,
+        "House": False,
+        "Large_House": False,
+        "Weird_House": False,
+        "Box": False,
+        "Casino": {"owned": False, "lock": True}
     },
     "furniture": {
-        
+        "Old_Couch": False,
+        "Small_TV": False,
+        "Smelly_Rug": False,
+        "Nice_Loveseat": False,
+        "Basic_TV": False,
+        "Nice_Rug": False,
+        "Pictures": False,
+        "Desk": False,
+        "Deluxe_Double_decker_couch": False,
+        "Amazing_Carpet": False,
+        "more_pictures": False,
+        "Gaming_chair": False,
+        "Entire_Desktop": False,
+        "Statue_of_self": False
+    },
+    
+    "misc": {
+        "Red_and_White_Ball": False,
+        "Golden_Idle": False,
     },
 }

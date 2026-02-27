@@ -33,7 +33,7 @@ class InvDisplay:
         
     def page_4(self, data):
         print("page 4\t ----\tFishpedia\n")
-        time.sleep(self.cd["test_timing"])    
+        time.sleep(self.cd["text_timing"])    
         
     def page_3(self, data):
         print("Page 3\t ----\tAchievements\n")
