@@ -165,3 +165,5 @@ Feb 26 2026. Wow i suck at this. lol. well the plan is not to touch the shop tod
 Feb 27 2026. Progress i guess. turns out Cython wont work. kinda dissapointing. i had plans to heavily optimize the game, but oh well. only so much you can do lol. plans for today have been the plans for the last few days, finish the shop, which ive been heavily procrastinating on lol.
 
 **3:35** Shop dict is IN the shop, save files have the item booleans :). it is time to wrap up the shop ive been avoiding for a while for some reason.
+
+**4:31** BLEH i hate bugs. got it though. The shop would use the last items desc in the respective page via desc being set. now i just use the shop dict directly. break time...it killed my momentum.
