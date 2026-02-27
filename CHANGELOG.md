@@ -152,9 +152,14 @@ Also gonna start using checkboxes
 
 (i still update this ^, :))
 
+---
 ### Day 16
 Feb 26 2026. Wow i suck at this. lol. well the plan is not to touch the shop today, finish everything else ive started: Edgecases everywhere. Finish adding the global timings. thats it. also ive decided to implement Cython for the sake of speed. why does a not resource intensive game, working as fast as it does need speed? because python is considered bad cause its slow. and i want to hyper-optimize. Cython brings C like speed to python. :)). between 3.14, and Cython, and gc.collect? this game is gonna run so smoothly.
 
 **8:42** global logic is finished in Hub, and shop.
 
 **4:14** been gone a second for GED classes, finished global timing in all but SaveExit. also did research on Cython. the plan is to change all functions and classes to cpdef objects. and moving the shop dict from save files to the save module, edit it so its a top layer for the cdef struct! aka OPTIMIZATION!!!! but first, finish implementing edge cases.
+
+---
+### day 17
+Feb 27 2026. Progress i guess. turns out Cython wont work. kinda dissapointing. i had plans to heavily optimize the game, but oh well. only so much you can do lol. plans for today have been the plans for the last few days, finish the shop, which ive been heavily procrastinating on lol.
