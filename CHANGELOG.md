@@ -167,3 +167,5 @@ Feb 27 2026. Progress i guess. turns out Cython wont work. kinda dissapointing. 
 **3:35** Shop dict is IN the shop, save files have the item booleans :). it is time to wrap up the shop ive been avoiding for a while for some reason.
 
 **4:31** BLEH i hate bugs. got it though. The shop would use the last items desc in the respective page via desc being set. now i just use the shop dict directly. break time...it killed my momentum.
+
+**8:25** its late, some progress, and to quote myself in my discord "Good news! the Shop for REP is almost done, thats 2/4 major pillars of main gameplay done. the next two are fishing, then ofc the complementary additions; Achievements, Collectables, and NPCs/quests. :)) " and "also im HYPED to make fishing. to quote rauanb on the fishing "its spammy". and ive got plans to make it fun and not spammy. :'P" :D plans for tomorrow is finish shop buying logic (1 line, text and text pacing), then inventory implementation!
