@@ -173,39 +173,65 @@ class Shop:
 
                 print(lore["shop18"] if data[tag].get(items[item]) == False 
                       else lore["shop19"])# 1. Buy/OWNED
-                print()# 2. Cancel
-            
+                time.sleep(self.cd["list_timing"])
+                print(lore["shop20"])# 2. Cancel
+                time.sleep(self.cd("text_timing"))
                 try:
                     choice = input("> ")
                 except ValueError:
-                    print() # Im Concerned.
+                    clear()
+                    print(lore["shop21"]) # Im Concerned.
+                    time.sleep(self.cd["text_timing"])
                     
                 if choice == 2:
                     clear()
-                    print() # You decided this is not what you want.
+                    print(lore["shop22"]) # You decided this is not what you want.
+                    time.sleep(["read_timer"])
+                    clear()
                     break
                 
                 elif choice != 1:
                     clear()
-                    print()# You decided to try to buy and cancel at the same time in hopes to dupe it. you fail.
+                    print(lore["shop23"])# You decided to try to buy and cancel at the same time in hopes to dupe it. you fail.
+                    time.sleep(self.cd["text_timing"])
                     continue
                 
                 if data["currency"] < price:
                     clear()
-                    print()# you dont have enough, and stealing isnt a feature.
+                    print(lore["shop24"])# you dont have enough, and stealing isnt a feature.
+                    time.sleep(self.cd["text_timing"])
                     continue
                 
                 elif data[tag].get(items[item]):
                     clear()
-                    print() # You already own this.
+                    print(lore["shop25"]) # You already own this.
+                    time.sleep(self.cd["text_timing"])
                     break
+                
+                elif items[item] == "Casino" and data["estate"]["Casino"].get("lock"):
+                    clear()
+                    print(lore["shop28"]) # This item is locked. You cannot buy it yet.
+                    time.sleep(self.cd["read_timer"])
+                    clear()
+                    return
                 
                 else:
                     clear()
-                    print() # you have purchased {item} for {price}!
+                    
+                    lore1 = lore["shop26"].replace("*1", items[item])
+                    lore1 = lore1.replace("*2", price)
+                    lore2 = lore["shop27"].replace("*", price)
+                    
+                    print(lore1) # you have purchased {item} for {price}!
+                    time.sleep(self.cd["text_timing"])
                     data["currency"] -= price
-                    data[tag][items[item]] = True
-                    print() # You have {amount} left.
+                    if items[item] == "Casino":    
+                        data["estate"]["Casino"].get("owned") = True
+                    else:
+                        data[tag][items[item]] = True
+                    print(lore2) # You have {amount} left.
+                    time.sleep(self.cd["read_timer"])
+                    clear()
                     return
                 
 

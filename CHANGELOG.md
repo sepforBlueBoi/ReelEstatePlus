@@ -172,3 +172,8 @@ Feb 27 2026. Progress i guess. turns out Cython wont work. kinda dissapointing. 
 
 ### day 18
 Feb28 2026. its 8 rn. i plan to finish a bit of shop logic, and make the fishing files/folders.
+
+### day 19
+March 1 2026. new month! shop is basically done. yesterday i was messing with Cython. its fun. today im gonna actually finish the shop, which shouldnt be hard. its dialogue and text timing.
+
+**11:02** shop is done for real. next step, finishing the inventory.
