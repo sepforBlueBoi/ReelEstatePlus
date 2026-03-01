@@ -52,7 +52,11 @@ class InvDisplay:
         time.sleep(self.cd["list_timing"])
         print("tokens:", data["tokens"])
         time.sleep(self.cd["list_timing"])
-        print("Fishing rods: TODO") #TODO 
+        print("Fishing rods: ")
+        for i in data["lake"]:
+            thing = i.replace("_", " ")
+            time.sleep(self.cd["list_timing"])
+            print(f"\t{thing}")
         time.sleep(self.cd["list_timing"])
         
     def prompt(self): # simple page prompt that will be at the bottom of every page.

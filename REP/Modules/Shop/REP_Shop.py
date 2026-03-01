@@ -222,8 +222,9 @@ class Shop:
                 else:
                     clear()
                     
-                    lore1 = lore["shop26"].replace("*1", items[item])
-                    lore1 = lore1.replace("*2", str(price))
+                    item_bought = items[item].replace("_", " ")
+                    lore1 = lore["shop26"].replace("*1", item_bought)
+                    lore1 = lore1.replace("*2", str(price))                   
                     
                     
                     print(lore1) # you have purchased {item} for {price}!
