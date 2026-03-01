@@ -177,3 +177,5 @@ Feb28 2026. its 8 rn. i plan to finish a bit of shop logic, and make the fishing
 March 1 2026. new month! shop is basically done. yesterday i was messing with Cython. its fun. today im gonna actually finish the shop, which shouldnt be hard. its dialogue and text timing.
 
 **11:02** shop is done for real. next step, finishing the inventory.
+
+**11:48** shop had multiple bugs. the shop is a cancer. but now its done...more done then it was at 11 02. INVENTORY TIME.

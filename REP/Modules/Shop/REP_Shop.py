@@ -79,7 +79,7 @@ class Shop:
     def item_display_function(self, item, price): # item display logic for polish. 
     
         shop_item = item.replace("_", " ")
-        print(f"====={shop_item}=====")
+        print(f"]===== {shop_item} =====[")
         print("\n")
         time.sleep(self.cd["text_timing"])
     
@@ -91,8 +91,9 @@ class Shop:
         
         else:
             Price = price
-    
+        print()
         print(f"${Price}")
+        print()
         time.sleep(self.cd["text_timing"])
     
     def shop(self, tag, data, sale, lore):
@@ -170,36 +171,39 @@ class Shop:
                 clear()
                 self.item_display_function(items[item], price) # Display item, item descripton, and price, for UI
             
-
-                print(lore["shop18"] if data[tag].get(items[item]) == False 
-                      else lore["shop19"])# 1. Buy/OWNED
+                if items[item] != "Casino":
+                    print(lore["shop18"] if data[tag].get(items[item]) == False else lore["shop19"])# 1. Buy/OWNED
+                else:
+                    print(lore["shop18"] if data[tag][items[item]].get("owned") == False else lore["shop19"])
+                
                 time.sleep(self.cd["list_timing"])
                 print(lore["shop20"])# 2. Cancel
-                time.sleep(self.cd("text_timing"))
+                time.sleep(self.cd["text_timing"])
                 try:
-                    choice = input("> ")
+                    choice = int(input("> "))
                 except ValueError:
                     clear()
                     print(lore["shop21"]) # Im Concerned.
-                    time.sleep(self.cd["text_timing"])
+                    time.sleep(self.cd["read_timer"])
+                    continue
                     
                 if choice == 2:
                     clear()
                     print(lore["shop22"]) # You decided this is not what you want.
-                    time.sleep(["read_timer"])
+                    time.sleep(self.cd["read_timer"])
                     clear()
                     break
                 
                 elif choice != 1:
                     clear()
                     print(lore["shop23"])# You decided to try to buy and cancel at the same time in hopes to dupe it. you fail.
-                    time.sleep(self.cd["text_timing"])
+                    time.sleep(self.cd["read_timer"])
                     continue
                 
                 if data["currency"] < price:
                     clear()
                     print(lore["shop24"])# you dont have enough, and stealing isnt a feature.
-                    time.sleep(self.cd["text_timing"])
+                    time.sleep(self.cd["read_timer"])
                     continue
                 
                 elif data[tag].get(items[item]):
@@ -219,16 +223,17 @@ class Shop:
                     clear()
                     
                     lore1 = lore["shop26"].replace("*1", items[item])
-                    lore1 = lore1.replace("*2", price)
-                    lore2 = lore["shop27"].replace("*", price)
+                    lore1 = lore1.replace("*2", str(price))
+                    
                     
                     print(lore1) # you have purchased {item} for {price}!
                     time.sleep(self.cd["text_timing"])
                     data["currency"] -= price
                     if items[item] == "Casino":    
-                        data["estate"]["Casino"].get("owned") = True
+                        data["estate"]["Casino"]["owned"] = True
                     else:
                         data[tag][items[item]] = True
+                    lore2 = lore["shop27"].replace("*", str(data["currency"]))
                     print(lore2) # You have {amount} left.
                     time.sleep(self.cd["read_timer"])
                     clear()
