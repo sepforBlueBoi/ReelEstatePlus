@@ -204,6 +204,7 @@ class Shop:
                     clear()
                     print() # you have purchased {item} for {price}!
                     data["currency"] -= price
+                    data[tag][items[item]] = True
                     print() # You have {amount} left.
                     return
                 
