@@ -18,6 +18,8 @@ def leaving(slot, Data, text, cd):
         _type_: _description_
     """
     clear()
+    sys.stdout.write(f'\033]0;Save and Quit\a')
+    sys.stdout.flush()
 
     while True:
         quit1 = text["quit1"].replace('You', f"{Fore.RED}You{Style.RESET_ALL}")

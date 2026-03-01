@@ -53,6 +53,8 @@ class World:
         print(self.dialogue["where2"] if self.Worldstate["map"] == "owned" else self.dialogue["where2.5"])
         time.sleep(self.timer["text_timing"])
         while True:
+            sys.stdout.write(f'\033]0;REP Hub\a')
+            sys.stdout.flush()
             print(self.dialogue["where3"])
             time.sleep(self.timer["text_timing"])
             for x in range(20):
@@ -83,6 +85,8 @@ class World:
         self.dialogue = load_json(file="lore.json")
         self.timer = load_json(file="Global.json")
         self.Worldstate = save
+        sys.stdout.write(f'\033]0;Intro\a')
+        sys.stdout.flush()
         clear_console()
         if not self.Worldstate["intro"]: # why isnt it working?? hmm
             print(self.dialogue["lore1"])

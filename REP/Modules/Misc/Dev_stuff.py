@@ -1,4 +1,4 @@
-import os
+import os, sys
 from REP.Modules.Save_Modules.Load_module import load_json
 from REP.Modules.Casino.tokenizer import token_shop # used on line 54
 from REP.Modules.Casino.Kasino import slots, roulette, Casino # lines 46, 50, 42 respectivly
@@ -62,6 +62,8 @@ def Terminal(data, slot, text):
     
     all 5 commands can be found in Cmds.json"""
     
+    sys.stdout.write(f'\033]0;Dev Terminal\a')
+    sys.stdout.flush()
     
     commands = load_json(file="Cmds.json") # loading Cmds.json using load_json from the load module in Save_Modules
     

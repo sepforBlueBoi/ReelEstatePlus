@@ -1,5 +1,5 @@
 #SHOP
-import os
+import os, sys
 import time
 import random
 
@@ -248,6 +248,8 @@ class Shop:
         lore (_type_): _description_
     """
         self.cd = cd
+        sys.stdout.write(f'\033]0;Spamee o s\a')
+        sys.stdout.flush()
         
         print(lore["shop1"]) # you walk into the little shop. the bell above the door dings
         time.sleep(self.cd["text_timing"])

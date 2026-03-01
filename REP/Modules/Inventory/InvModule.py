@@ -2,7 +2,7 @@
 #...
 # FINE, I'll do it :\
 import time
-import os
+import os, sys
 
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
@@ -77,6 +77,8 @@ class InvDisplay:
 
     def display(self, data, cd):
         self.cd = cd
+        sys.stdout.write(f'\033]0;Inventory\a')
+        sys.stdout.flush()
         while True:
             clear()
             page_string = str(self.page) #<- making it a string so maybe it works better???. this is where the error is

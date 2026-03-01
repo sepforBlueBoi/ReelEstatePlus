@@ -1,6 +1,7 @@
 import os
 import random
 import time
+import sys
 from colorama import Fore, Style, init
 from REP.Modules.Casino.roulette import rouletete
 from REP.Modules.Casino.tokenizer import token_shop
@@ -10,6 +11,8 @@ def clear():
     os.system('cls' if os.name == "nt" else "clear")
 
 def slots(Data, text, cd):
+    sys.stdout.write(f'\033]0;Slots\a')
+    sys.stdout.flush()
     print(text["slots1"]) # You go to the closest Slots machine.
     time.sleep(cd["text_timing"])
 
@@ -96,6 +99,8 @@ def slots(Data, text, cd):
             continue
 
 def roulette(Data, text, cd):
+    sys.stdout.write(f'\033]0;Roulette\a')
+    sys.stdout.flush()
 
     print(text["roulette1"])# you walk over to the Roulette table.
     time.sleep(cd["text_timing"])
@@ -198,6 +203,8 @@ def roulette(Data, text, cd):
         
 
 def Casino(Data, text, cd):
+    sys.stdout.write(f'\033]0;Kasino\a')
+    sys.stdout.flush()
     print(text["casino1"])# You enter the imfamous Casino
     time.sleep(cd["text_timing"])
     print(text["casino2"])# Kondike's Kasino...

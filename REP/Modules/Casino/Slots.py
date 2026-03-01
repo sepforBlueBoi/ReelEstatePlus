@@ -3,14 +3,11 @@
 import random
 import os
 import time
-import sys
 
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
 
 def slot_animation():
-    sys.stdout.write(f'\033]0;"Slots"\a')
-    sys.stdout.flush()
     reel = []
     for i in range(3):
         item = random.choice(["\U0001f48e","\u2764\ufe0f", "\U0001F34B", "\U0001F514", "\U0001F340", "7"]) #diamond, heart, lemon, bell, clover
