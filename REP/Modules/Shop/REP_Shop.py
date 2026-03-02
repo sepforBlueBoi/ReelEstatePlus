@@ -222,7 +222,7 @@ class Shop:
                 else:
                     clear()
                     
-                    item_bought = items[item].replace("_", " ")
+                    item_bought = items[item].replace("_", " ") # pretty print
                     lore1 = lore["shop26"].replace("*1", item_bought)
                     lore1 = lore1.replace("*2", str(price))                   
                     
@@ -230,8 +230,10 @@ class Shop:
                     print(lore1) # you have purchased {item} for {price}!
                     time.sleep(self.cd["text_timing"])
                     data["currency"] -= price
-                    if items[item] == "Casino":    
+                    if items[item] == "Casino":    # casino edge case
                         data["estate"]["Casino"]["owned"] = True
+                    elif items[item] == "Map": # map edge case
+                        data[items[item]] == True
                     else:
                         data[tag][items[item]] = True
                     lore2 = lore["shop27"].replace("*", str(data["currency"]))

@@ -50,8 +50,8 @@ class InvDisplay:
         print("page 5\t ----\tHouses and Furniture\n")
         time.sleep(self.cd["text_timing"])
         print("houses owned: ")
-        for h in data["estate"]:
-            if h == True:
+        for h in data["estate"].items():
+            if h:
                 house = h.replace("_", " ")
                 print(f"\t{house}")
                 houses = True
@@ -59,8 +59,8 @@ class InvDisplay:
             print("\tYou are Homeless...once again.")
                 
         print("\nActive furniture: ")
-        for i in data["furniture"]:
-            if i == True:
+        for i in data["furniture"].items():
+            if i:
                 furniture = i.replace("_", " ")
                 if fur_phase[i] == data["phase"]:
                     print(f"{furniture}")
@@ -99,8 +99,8 @@ class InvDisplay:
                 print(item)
         
         print("\nFishing rods: ") # fishing rods
-        for i in data["lake"]:
-            if i == True:
+        for i in data["lake"].items():
+            if i:
                 thing = i.replace("_", " ")
                 time.sleep(self.cd["list_timing"])
                 print(f"\t{thing}")

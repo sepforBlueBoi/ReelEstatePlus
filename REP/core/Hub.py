@@ -6,6 +6,7 @@ from REP.Modules.Save_Modules.SaveExit import leaving
 from REP.Modules.Misc.Dev_stuff import Terminal
 from REP.Modules.Inventory.InvModule import InvDisplay
 from REP.Modules.Shop.REP_Shop import Shop
+from REP.Modules.Fishing.Lake_intro import lake_init
 from colorama import Fore, init, Style
 import time
 import sys, os
@@ -32,7 +33,7 @@ class World:
         elif choice == "2":
             Shop_.shop_init(self.Worldstate, self.dialogue, self.timer)
         elif choice == "3":
-            print("lake") #TODO
+            lake_init(self.Worldstate, self.dialogue, self.timer)
         elif choice == "4":
             Inv.display(self.Worldstate, self.timer)
         elif choice == "0":

@@ -73,7 +73,7 @@
     "slots8": "Luck was not on your side this roll.",
     "slots8.5": "You lost * Tokens...",
     "slots9": "Sadly the machine will only let you insert 99 tokens. Anymore will get returned immediently.",
-    "slot10": "The lever won't move without tokens.",
+    "slots10": "The lever won't move without tokens.",
     "slots11": "You don't have that many tokens.",
     "quit1": "You plan on leaving?",
     "quit2": "1. Save",

@@ -170,9 +170,11 @@ Feb 27 2026. Progress i guess. turns out Cython wont work. kinda dissapointing. 
 
 **8:25** its late, some progress, and to quote myself in my discord "Good news! the Shop for REP is almost done, thats 2/4 major pillars of main gameplay done. the next two are fishing, then ofc the complementary additions; Achievements, Collectables, and NPCs/quests. :)) " and "also im HYPED to make fishing. to quote rauanb on the fishing "its spammy". and ive got plans to make it fun and not spammy. :'P" :D plans for tomorrow is finish shop buying logic (1 line, text and text pacing), then inventory implementation!
 
+---
 ### day 18
 Feb28 2026. its 8 rn. i plan to finish a bit of shop logic, and make the fishing files/folders.
 
+---
 ### day 19
 March 1 2026. new month! shop is basically done. yesterday i was messing with Cython. its fun. today im gonna actually finish the shop, which shouldnt be hard. its dialogue and text timing.
 
@@ -181,3 +183,7 @@ March 1 2026. new month! shop is basically done. yesterday i was messing with Cy
 **11:48** shop had multiple bugs. the shop is a cancer. but now its done...more done then it was at 11 02. INVENTORY TIME.
 
 **6:32** Shop has had phase implementaton, and inventory works with buyable items now. also did some testing with a launcher, didnt keep it.
+
+---
+### day 20
+March 2 2026. its time to do fishing. the plan with fishing is a stardew valley type of minigame. but not exactly. a column of emojis. one an arrow (you the player), one red, two yellow. red blue. Your job is to touch red enter on red. enter on yellow and a small time penalty. no more context :)
