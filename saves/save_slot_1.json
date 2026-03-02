@@ -3,7 +3,7 @@
     "currency": 500,
     "tokens": 0,
     "c_name": "Kondollars",
-    "map": "owned",
+    "map": true,
     "intro": true,
     "phase": 1,
     "achiev": {},
@@ -11,8 +11,8 @@
     "collectables": {},
     "lore": {},
     "lake": {
-        "Old_Rod": true,
-        "Basic_Rod": true
+        "Old_Rod": false,
+        "Basic_Rod": false
     },
     "ocean": {
         "Colored_Rod": false,

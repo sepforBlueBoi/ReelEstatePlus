@@ -7,6 +7,23 @@ import os, sys
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
     
+fur_phase: dict[str, int] = {
+        "Old_Couch": 1,
+        "Small_TV": 1,
+        "Smelly_Rug": 1,
+        "Nice_Loveseat": 2,
+        "Basic_TV": 2,
+        "Nice_Rug": 2,
+        "Pictures": 2,
+        "Desk": 2,
+        "Deluxe_Double_decker_couch": 3,
+        "Amazing_Carpet": 3,
+        "more_pictures": 3,
+        "Gaming_chair": 3,
+        "Entire_Desktop": 3,
+        "Statue_of_self": 3
+    }
+    
 class InvDisplay:
     """Inventory class for reel estate plus.
     
@@ -28,8 +45,28 @@ class InvDisplay:
         self.cd = {}
         
     def page_5(self, data):
+        houses = False
+        furnitur = False
         print("page 5\t ----\tHouses and Furniture\n")
         time.sleep(self.cd["text_timing"])
+        print("houses owned: ")
+        for h in data["estate"]:
+            if h == True:
+                house = h.replace("_", " ")
+                print(f"\t{house}")
+                houses = True
+        if not houses:
+            print("\tYou are Homeless...once again.")
+                
+        print("\nActive furniture: ")
+        for i in data["furniture"]:
+            if i == True:
+                furniture = i.replace("_", " ")
+                if fur_phase[i] == data["phase"]:
+                    print(f"{furniture}")
+            furnitur = True
+        if not furnitur:
+            print("\tYou have not any furniture")
         
     def page_4(self, data):
         print("page 4\t ----\tFishpedia\n")
@@ -44,19 +81,33 @@ class InvDisplay:
         time.sleep(self.cd["text_timing"])
         
     def page_1(self, data): # <- current page function
+        rods = False
         print("Page 1\t ----\tBasic Inventory\n")
         time.sleep(self.cd["text_timing"])
-        print(f"[{data["name"]}]")
+        print(f"[{data["name"]}]") # user name
         time.sleep(self.cd["list_timing"])
-        print(data["c_name"],":",data["currency"])
+        print(data["c_name"],":",data["currency"]) # currency
         time.sleep(self.cd["list_timing"])
-        print("tokens:", data["tokens"])
+        print("tokens:", data["tokens"]) # tokens
         time.sleep(self.cd["list_timing"])
-        print("Fishing rods: ")
+        if data["map"]:
+            print("Map")
+            
+        for i in data["misc"]:
+            if i == True:
+                item = i.replace("_", " ")
+                print(item)
+        
+        print("\nFishing rods: ") # fishing rods
         for i in data["lake"]:
-            thing = i.replace("_", " ")
-            time.sleep(self.cd["list_timing"])
-            print(f"\t{thing}")
+            if i == True:
+                thing = i.replace("_", " ")
+                time.sleep(self.cd["list_timing"])
+                print(f"\t{thing}")
+                rods = True
+        if not rods:
+            print("No rods owned.")
+                
         time.sleep(self.cd["list_timing"])
         
     def prompt(self): # simple page prompt that will be at the bottom of every page.

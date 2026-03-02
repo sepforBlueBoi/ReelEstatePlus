@@ -50,7 +50,7 @@ class World:
         name = self.Worldstate["name"].strip().lower()
         print(self.dialogue["where1"])
         time.sleep(self.timer["text_timing"])
-        print(self.dialogue["where2"] if self.Worldstate["map"] == "owned" else self.dialogue["where2.5"])
+        print(self.dialogue["where2"] if self.Worldstate["map"] == True else self.dialogue["where2.5"])
         time.sleep(self.timer["text_timing"])
         while True:
             sys.stdout.write(f'\033]0;REP Hub\a')
@@ -61,11 +61,11 @@ class World:
                 print("=", end='')
                 time.sleep(0.1)
             print("\n")
-            print(self.dialogue["place1"] if self.Worldstate["map"] == "owned" else "1. ???") #only prints the name of the place if you own the map offered in intro
+            print(self.dialogue["place1"] if self.Worldstate["map"] == True else "1. ???") #only prints the name of the place if you own the map offered in intro
             time.sleep(self.timer["list_timing"])
-            print(self.dialogue["place2"] if self.Worldstate["map"] == "owned" else "2. ???")
+            print(self.dialogue["place2"] if self.Worldstate["map"] == True else "2. ???")
             time.sleep(self.timer["list_timing"])
-            print(self.dialogue["place3"] if self.Worldstate["map"] == "owned" else "3. ???")
+            print(self.dialogue["place3"] if self.Worldstate["map"] == True else "3. ???")
             time.sleep(self.timer["list_timing"])
             print(self.dialogue["place4"])
             time.sleep(self.timer["list_timing"])
@@ -143,7 +143,7 @@ class World:
             map = input("(Y/N)> ").lower() # check for map
             if map in ["yes", "y"]:
                 print(self.dialogue["lore9"]) 
-                self.Worldstate["map"] = "owned"
+                self.Worldstate["map"] = True
             else:
                 print(self.dialogue["lore10"])    
                 

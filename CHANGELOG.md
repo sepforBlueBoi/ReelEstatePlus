@@ -179,3 +179,5 @@ March 1 2026. new month! shop is basically done. yesterday i was messing with Cy
 **11:02** shop is done for real. next step, finishing the inventory.
 
 **11:48** shop had multiple bugs. the shop is a cancer. but now its done...more done then it was at 11 02. INVENTORY TIME.
+
+**6:32** Shop has had phase implementaton, and inventory works with buyable items now. also did some testing with a launcher, didnt keep it.

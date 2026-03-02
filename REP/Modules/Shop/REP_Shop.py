@@ -237,6 +237,13 @@ class Shop:
                     lore2 = lore["shop27"].replace("*", str(data["currency"]))
                     print(lore2) # You have {amount} left.
                     time.sleep(self.cd["read_timer"])
+                    if tag == "estate":
+                        match items[item]:
+                            case "House":
+                                data["phase"] = 2
+                            case "Casino" | "Box":
+                                data["phase"] = 3
+                    
                     clear()
                     return
                 
