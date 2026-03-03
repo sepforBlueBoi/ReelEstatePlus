@@ -40,9 +40,9 @@ class InvDisplay:
      """
      
     def __init__(self):
-        self.data = {} # Holds data. same thing we did in Hub.py
-        self.page = 1 # keep track of pages
-        self.cd = {}
+        self.data: dict = {} # Holds data. same thing we did in Hub.py
+        self.page: int = 1 # keep track of pages
+        self.cd: dict = {}
         
     def page_5(self, data):
         houses = False
@@ -120,7 +120,7 @@ class InvDisplay:
         print("1-5 to go to those pages")
         time.sleep(self.cd["list_timing"])
         try:
-            page = int(input("> ").strip())
+            page: int = int(input("> ").strip())
         except ValueError:
             return "error"
         

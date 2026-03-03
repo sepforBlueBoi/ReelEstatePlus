@@ -187,3 +187,7 @@ March 1 2026. new month! shop is basically done. yesterday i was messing with Cy
 ---
 ### day 20
 March 2 2026. its time to do fishing. the plan with fishing is a stardew valley type of minigame. but not exactly. a column of emojis. one an arrow (you the player), one red, two yellow. red blue. Your job is to touch red enter on red. enter on yellow and a small time penalty. no more context :)
+
+---
+### day 21
+March 3 2026. working on fishing some more. not much happened. also im going through and adding type hinting to all vars and dicts for the sake of muscle memory for when i do static typing with cython. and also it looks cool.

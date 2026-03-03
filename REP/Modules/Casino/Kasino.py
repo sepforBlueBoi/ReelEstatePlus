@@ -22,7 +22,7 @@ def slots(Data, text, cd):
         print(f"Tokens in Pocket: {Data["tokens"]}") # tokens
         time.sleep(cd["text_timing"])
         try:
-            amount = int(input(text["slots3"])) # How many tokens to you insert into the hole? (Put 0 to return) \n
+            amount: int = int(input(text["slots3"])) # How many tokens to you insert into the hole? (Put 0 to return) \n
         except ValueError:
             clear()
             print(text["slots4"]) # the machine refuses whatever you just put in the machine.
@@ -112,7 +112,7 @@ def roulette(Data, text, cd):
         roulette2 = roulette1.replace("Black", f"{Fore.BLACK}{Style.BRIGHT}Black{Style.RESET_ALL}")
         roulette3 = roulette2.replace("Blue", f"{Fore.BLUE}Blue{Style.RESET_ALL}")
         print(roulette3)# 1. Red 2. Black 3. Blue
-        roull = input('> ').strip()
+        roull: str = input('> ').strip()
 
         if roull == "1":
             clear()
@@ -144,7 +144,7 @@ def roulette(Data, text, cd):
             time.sleep(cd["text_timing"])
             print(text["roulette0"]) # Type 0 to return to colors
             try:
-                bet = int(input("> "))
+                bet: int = int(input("> "))
             except ValueError:
                 clear()
                 print(text["roulette5.5"]) # this...isn't an amount
@@ -216,7 +216,7 @@ def Casino(Data, text, cd):
         time.sleep(cd["text_timing"])
         print(text["casino5"])# 1. Roulette\n2. Slots?
         time.sleep(cd["text_timing"])
-        choice = input("> ").lower().strip()
+        choice:str = input("> ").lower().strip()
 
         if choice == "1" or choice == "roulette":
             clear()
