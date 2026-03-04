@@ -109,5 +109,12 @@
     "shop25": "You already own this.",
     "shop26": "You bought *1 for *2 !",
     "shop27": "You have * left over.",
-    "shop28": "This item is locked. You cannot buy it yet."
+    "shop28": "This item is locked. You cannot buy it yet.",
+    "lake1": "You walk the path to the lake.",
+    "lake2": "Some birds fly overhead.",
+    "lake3": "1. Fish",
+    "lake4": "2. Return",
+    "lake5": "You still cant climb a tree.",
+    "lake6": "You depart from the edge of the town; returning to the middle of it.",
+    "lake7": "You slip in the mud and roll up a hill."
 }

@@ -11,7 +11,7 @@
     "collectables": {},
     "lore": {},
     "lake": {
-        "Old_Rod": false,
+        "Old_Rod": true,
         "Basic_Rod": false
     },
     "ocean": {

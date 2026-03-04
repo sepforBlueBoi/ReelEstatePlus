@@ -1,11 +1,6 @@
-import os, sys
-import time
 import random
-from REP.Modules.Fishing.FishingChecker import checking
+import os
 
-def clear():
-    os.system('cls' if os.name == "nt" else "clear")
-    
 fish: dict[str, dict[str, list[str]]]= { # nested dict. you can see how it works RIGHT below.
     "common": {
         "basic ahh fish": ["You caught the basic ahh fish", "You regret fishing. basic ahh fish.", "Basic ahh fish. lame."],
@@ -34,39 +29,19 @@ common_payout_range: int = random.randint(50, 100)
 uncommon_payout_range: int = random.randint(100, 200)
 rare_payout_range: int = random.randint(250, 350)
 
-def lake_init(data, lore, cd): # lake intro wooo. fun.
-    """fish intro for reel estate plus."""
-    print(lore["lake1"])# You Walk the path to the lake.
-    time.sleep(cd["text_timing"])
-    print(lore["lake2"]) # Some birds fly over head.
-    time.sleep(cd["text_timing"])
-    print("\n")
+
+
+class Fishing:
+    __slots__ = ["player_pos", "column", "ticks", "target", "fish", "column_amount"]
     
-    while True:
-    
-        print(lore["lake3"]) # 1. fish
-        time.sleep(cd["list_timing"])
-        print(lore["lake4"]) # 2. return
-        time.sleep(cd["list_timing"])
-        print("\n")
-    
-        try:
-            choice:int = int(input("> "))
-        except ValueError:
-            print(lore["lake5"]) # You still cant climb a tree.
+    def __init__(self):
+        self.player_pos: int = 0
+        self.column: list[str] = []
+        self.ticks: int = 0
+        self.target: int = 0
+        self.fish: str = ""
+        self.column_amount: int = 0
         
-        if choice == 1:
-            checking(data, lore, cd)
-            print() 
-        elif choice == 2:
-            time.sleep(cd["text_timing"])
-            print(lore["lake6"]) #You depart from the edge of the town, returning to the middle of it.
-            time.sleep(cd["read_timer"])
-            clear()
-            return
-        else:
-            time.sleep(cd["text_timing"])
-            clear()
-            print(lore["lake7"]) # you slip in the mud and roll up a hill.
-            time.sleep(cd["text_timing"])
-            continue
+    def random_gen(self):
+        print("placeholder")
+        

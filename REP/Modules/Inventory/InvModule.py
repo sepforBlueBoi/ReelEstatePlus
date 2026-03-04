@@ -50,19 +50,19 @@ class InvDisplay:
         print("page 5\t ----\tHouses and Furniture\n")
         time.sleep(self.cd["text_timing"])
         print("houses owned: ")
-        for h in data["estate"].items():
-            if h:
-                house = h.replace("_", " ")
+        for k, v in data["estate"].items():
+            if v:
+                house = k.replace("_", " ")
                 print(f"\t{house}")
                 houses = True
         if not houses:
             print("\tYou are Homeless...once again.")
                 
         print("\nActive furniture: ")
-        for i in data["furniture"].items():
-            if i:
-                furniture = i.replace("_", " ")
-                if fur_phase[i] == data["phase"]:
+        for k, v in data["furniture"].items():
+            if v:
+                furniture = k.replace("_", " ")
+                if fur_phase[k] == data["phase"]:
                     print(f"{furniture}")
             furnitur = True
         if not furnitur:
@@ -93,20 +93,20 @@ class InvDisplay:
         if data["map"]:
             print("Map")
             
-        for i in data["misc"]:
-            if i == True:
-                item = i.replace("_", " ")
+        for k, v in data["misc"].items():
+            if v == True:
+                item = k.replace("_", " ")
                 print(item)
         
         print("\nFishing rods: ") # fishing rods
-        for i in data["lake"].items():
-            if i:
-                thing = i.replace("_", " ")
+        for k, v in data["lake"].items():
+            if v:
+                thing = k.replace("_", " ")
                 time.sleep(self.cd["list_timing"])
                 print(f"\t{thing}")
                 rods = True
         if not rods:
-            print("No rods owned.")
+            print("\tNo rods owned.")
                 
         time.sleep(self.cd["list_timing"])
         

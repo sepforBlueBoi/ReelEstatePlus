@@ -3,7 +3,7 @@ game_dict: dict[str, any] = {
     "currency": 250,
     "tokens": 0,
     "c_name": "",
-    "map": "not owned",
+    "map": False,
     "intro": False,    
     "phase": 1,
     
@@ -93,7 +93,7 @@ new_game = {
     "currency": 500,
     "tokens": 0,
     "c_name": "",
-    "map": "not owned",
+    "map": False,
     "intro": False,    
     "phase": 1,
     
