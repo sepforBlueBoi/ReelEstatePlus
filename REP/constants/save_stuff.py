@@ -32,7 +32,27 @@ game_dict: dict[str, any] = {
     },
     
     "fish": {
-        
+        "common": {
+        "basic ahh fish": False,
+        "other basic ahh fish": False,
+        "grey fish": False,
+        "not cool fish": False,
+        "possibly your pet fish": False
+    },
+    "uncommon": {
+        "not as bad fish": False,
+        "catfish": False,
+        "dogfish": False,
+        "lightgrey fish": False,
+        "bronze fish": False
+    },
+    "rare": {
+        "Silver fish": False,
+        "lightest grey fish": False,
+        "coolest fish": False,
+        "almost rainbow fish": False,
+        "lake squid": False 
+            },
     },
     "lures": {
         
