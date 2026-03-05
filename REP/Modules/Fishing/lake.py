@@ -25,9 +25,6 @@ fish: dict[str, dict[str, list[str]]]= { # nested dict. you can see how it works
     }
 }
 
-common_payout_range: int = random.randint(50, 100)
-uncommon_payout_range: int = random.randint(100, 200)
-rare_payout_range: int = random.randint(250, 350)
 
 
 
@@ -45,21 +42,27 @@ class Fishing:
         self.rarity: str = ""
         
     def random_gen(self):
+        
+        common_payout_range: int = random.randint(50, 100)
+        uncommon_payout_range: int = random.randint(100, 200)
+        rare_payout_range: int = random.randint(250, 350)
+
+        
         for i in range(8):
-            self.column[i] = "\U0001F7E6" # blue sqaures
+            self.column.append("\U0001F7E6") # blue sqaures
         
         self.target = random.randint(0, 7)
         self.column[self.target] = "\U0001F7E5" # red sqaures
         
         if self.target > 0: # so we dont get a yellow on NOT beside the red.
-            self.column[self.target - 1] = "\u1F7E8" # yellow sqaures
+            self.column[self.target - 1] = "\U0001F7E8" # yellow sqaures
         if self.target < 7: # same as above
-            self.column[self.target + 1] = "\u1F7E8"
+            self.column[self.target + 1] = "\U0001F7E8"
             
         rarity: list[str] = ["common", "uncommon", "rare"]
         fishes: list[str] = []
             
-        self.rarity = random.choices(rarity)
+        self.rarity = random.choice(rarity)
         
         if self.rarity == "common":
             self.column_amount = 2
@@ -74,7 +77,7 @@ class Fishing:
         for k, v in fish[self.rarity].items():
             fishes.append(k)
             
-        self.fish = random.choices(fishes)
+        self.fish = random.choice(fishes)
             
         for i in range(self.column_amount):
             self.ticks.append(4) # stays at four to keep it possible
