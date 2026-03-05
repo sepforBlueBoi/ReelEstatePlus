@@ -1,3 +1,7 @@
+from REP.Modules.Fishing.lake import Fishing
+
+lake = Fishing() 
+
 def checking(data, lore, cd):
     
     has_rod = False
@@ -7,8 +11,7 @@ def checking(data, lore, cd):
             has_rod = True
             
     if has_rod:
-        print("plac holder")
-        #lake
+        lake.game(data, lore)
     else:
         print("placeholder") # You have no rods to fish with. go buy one from spamee'o'jr.
         return

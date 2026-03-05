@@ -42,7 +42,7 @@ def presents():
     for x in range(3):
         print('.', end=' ')
         time.sleep(0.6)# load time.
-    print("Press Enter to continue")
+    print("\nPress Enter to continue")
     input()
     clear_console()
     menu() # this way it can be used later :). just...cant use calls with args unless you somehow know a way.
