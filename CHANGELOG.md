@@ -193,3 +193,6 @@ March 2 2026. its time to do fishing. the plan with fishing is a stardew valley 
 March 3 2026. working on fishing some more. not much happened. also im going through and adding type hinting to all vars and dicts for the sake of muscle memory for when i do static typing with cython. and also it looks cool.
 
 **7:50** did some cool vscode customizations. did some small progress on fishing lol. not much to report on today.
+
+### day 22
+March 4 2026. you have missed alot. cause i didnt say anything, fishing checks are done, and minigame is underway. im quite proud of the code im doing on the minigame. this may beat the inventory as my favorite code piece in REP LOL.:))

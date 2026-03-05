@@ -32,16 +32,51 @@ rare_payout_range: int = random.randint(250, 350)
 
 
 class Fishing:
-    __slots__ = ["player_pos", "column", "ticks", "target", "fish", "column_amount"]
+    __slots__ = ["player_pos", "column", "ticks", "target", "fish", "column_amount", "payout", "rarity"] # helps with storage.
     
     def __init__(self):
         self.player_pos: int = 0
         self.column: list[str] = []
-        self.ticks: int = 0
+        self.ticks: list[int] = [5]
         self.target: int = 0
         self.fish: str = ""
         self.column_amount: int = 0
+        self.payout: int = 0
+        self.rarity: str = ""
         
     def random_gen(self):
-        print("placeholder")
+        for i in range(8):
+            self.column[i] = "\U0001F7E6" # blue sqaures
+        
+        self.target = random.randint(0, 7)
+        self.column[self.target] = "\U0001F7E5" # red sqaures
+        
+        if self.target > 0: # so we dont get a yellow on NOT beside the red.
+            self.column[self.target - 1] = "\u1F7E8" # yellow sqaures
+        if self.target < 7: # same as above
+            self.column[self.target + 1] = "\u1F7E8"
+            
+        rarity: list[str] = ["common", "uncommon", "rare"]
+        fishes: list[str] = []
+            
+        self.rarity = random.choices(rarity)
+        
+        if self.rarity == "common":
+            self.column_amount = 2
+            self.payout = common_payout_range
+        elif self.rarity == "uncommon":
+            self.column_amount = 3
+            self.payout = uncommon_payout_range
+        elif self.rarity == "rare":
+            self.column_amount = 4
+            self.payout = rare_payout_range    
+        
+        for k, v in fish[self.rarity].items():
+            fishes.append(k)
+            
+        self.fish = random.choices(fishes)
+            
+        for i in range(self.column_amount):
+            self.ticks.append(4) # stays at four to keep it possible
+            
         
