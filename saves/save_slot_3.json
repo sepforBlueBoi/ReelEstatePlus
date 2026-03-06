@@ -1,17 +1,18 @@
 {
     "name": "Kondike",
-    "currency": 500,
+    "currency": 250,
     "tokens": 0,
-    "c_name": "Kondollars",
+    "c_name": "kondollars",
     "map": true,
     "intro": true,
     "phase": 1,
+    "fish_caught": 0,
     "achiev": {},
     "quests": {},
     "collectables": {},
     "lore": {},
     "lake": {
-        "Old_Rod": true,
+        "Old_Rod": false,
         "Basic_Rod": false
     },
     "ocean": {
@@ -20,7 +21,29 @@
         "Superior_Rod": false,
         "Premier_Rod": false
     },
-    "fish": {},
+    "fish": {
+        "common": {
+            "basic ahh fish": true,
+            "other basic ahh fish": false,
+            "grey fish": false,
+            "not cool fish": false,
+            "possibly your pet fish": false
+        },
+        "uncommon": {
+            "not as bad fish": false,
+            "catfish": false,
+            "dogfish": false,
+            "lightgrey fish": false,
+            "bronze fish": false
+        },
+        "rare": {
+            "Silver fish": false,
+            "lightest grey fish": false,
+            "coolest fish": true,
+            "almost rainbow fish": false,
+            "lake squid": false
+        }
+    },
     "lures": {},
     "estate": {
         "Small_House": false,

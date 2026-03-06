@@ -233,7 +233,7 @@ class Shop:
                     if items[item] == "Casino":    # casino edge case
                         data["estate"]["Casino"]["owned"] = True
                     elif items[item] == "Map": # map edge case
-                        data[items[item]] == True
+                        data[items[item]] = True
                     else:
                         data[tag][items[item]] = True
                     lore2 = lore["shop27"].replace("*", str(data["currency"]))

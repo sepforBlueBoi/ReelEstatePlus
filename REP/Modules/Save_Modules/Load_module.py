@@ -19,8 +19,9 @@ def load_game(slot):
     """
     filepath = os.path.join(SAVE_DIR, f"save_slot_{slot}.json")
     if not os.path.exists(filepath):
-        try:
-                save.save_game(new_game, slot)  # No save yet
+        try:    
+                new_save = new_game()
+                save.save_game(new_save, slot)  # No save yet
                 print("loading...")
                 with open(filepath, "r") as game_state: # open it first
                     return json.load(game_state) # return opened file

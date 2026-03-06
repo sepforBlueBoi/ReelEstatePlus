@@ -26,12 +26,6 @@ fur_phase: dict[str, int] = {
     
 class InvDisplay:
     """Inventory class for reel estate plus.
-    
-    Contains multiple pages, at then end of each page will be a prompt.
-    type in the page you wanna go to. or do i use a and d to move between pages? hmmm
-     a and d would just require adding of subtracting one, and would mirror every other games inventory.
-     i will do the number method as it is not used, and i want to juice the freedom i have as a text based game
-     ^-Not Important
      
      Each page will be different but will still be on the same function. 
      Each page gets its own function: basic, fishpedia, etc.
@@ -64,14 +58,23 @@ class InvDisplay:
                 furniture = k.replace("_", " ")
                 if fur_phase[k] == data["phase"]:
                     print(f"{furniture}")
-            furnitur = True
+                furnitur = True
         if not furnitur:
             print("\tYou have not any furniture")
         
     def page_4(self, data):
         print("page 4\t ----\tFishpedia\n")
-        time.sleep(self.cd["text_timing"])    
-        
+        time.sleep(self.cd["text_timing"])  
+        idx = 1
+        for rarity, fishes in data["fish"].items():
+            for fish_name, caught in fishes.items():
+                if caught:
+                    print(f"{idx}. {fish_name} [{rarity}]")
+                else:
+                    print(f"{idx}. ??? [???]")
+                time.sleep(self.cd["list_timing"])
+                idx += 1
+            
     def page_3(self, data):
         print("Page 3\t ----\tAchievements\n")
         time.sleep(self.cd["text_timing"])    
@@ -84,7 +87,7 @@ class InvDisplay:
         rods = False
         print("Page 1\t ----\tBasic Inventory\n")
         time.sleep(self.cd["text_timing"])
-        print(f"[{data["name"]}]") # user name
+        print(f"[{data['name']}]") # user name
         time.sleep(self.cd["list_timing"])
         print(data["c_name"],":",data["currency"]) # currency
         time.sleep(self.cd["list_timing"])
@@ -136,8 +139,8 @@ class InvDisplay:
         sys.stdout.flush()
         while True:
             clear()
-            page_string = str(self.page) #<- making it a string so maybe it works better???. this is where the error is
-            page_to_display = getattr(self, f"page_{page_string}") # <- getattr. even when not making self.page a string an error occurs here too
+            page_string = str(self.page) # this is a string cause of earlier bugs. while it may not NEED to be one, im scared to remove it
+            page_to_display = getattr(self, f"page_{page_string}") 
             page_to_display(data)
 
             print("\n")
@@ -158,9 +161,3 @@ class InvDisplay:
             self.page = page
             continue
         
-        
-# for quick testing skeleton. 
-# does not work with data parameter
-# probably wont touch this again, but i'd like to be safe ;)        
-"""Inv = Inventory() # instance of the call.
-Inv.display() # <- the call"""

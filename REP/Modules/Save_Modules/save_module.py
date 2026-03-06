@@ -10,7 +10,6 @@ active_slot = 0
 
 save_speech = ["saved", "Saved", "Json File Updated", "Data Uploaded", "Json File consumed", "Backup Made"] # printed messages when saved/ing
 
-saved = random.choice(save_speech)
 
 def save_game(data, slot): #saves current status to current save slot, aka currect save file
     """_summary_
@@ -19,6 +18,8 @@ def save_game(data, slot): #saves current status to current save slot, aka curre
         data (_type_): _description_
         slot (_type_): _description_
     """
+    saved = random.choice(save_speech)
+
     filepath = os.path.join(SAVE_DIR, f"save_slot_{slot}.json")
     with open(filepath, "w") as f: # opens it
         json.dump(data, f, indent=4) # dumps the save data in

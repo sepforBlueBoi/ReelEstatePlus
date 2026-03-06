@@ -45,7 +45,7 @@ class Fishing:
         self.payout: int = 0
         self.rarity: str = ""
         
-    def random_gen(self):
+    def random_gen(self, data):
         
         self.ticks: list[int] = []
         self.ticks.append(7)
@@ -60,6 +60,11 @@ class Fishing:
         common: int = 60
         uncommon: int = 30
         rare: int = 10
+        
+        if data["lake"].get("basic_rod"):
+            common = 40
+            uncommon = 45
+            rare = 15
             
         self.rarity = random.choices(rarity, weights=[common, uncommon, rare])[0]
         
@@ -79,7 +84,7 @@ class Fishing:
         self.fish = random.choice(fishes)
             
         for i in range(self.column_amount):
-            self.ticks.append(6) # stays at four to keep it possible
+            self.ticks.append(6) # stays at 6 to keep it simple and possible
             
     def game_gen(self):
         self.column = []
@@ -90,13 +95,13 @@ class Fishing:
         self.target = random.randint(0, 7)
         self.column[self.target] = "\U0001F7E5" # red sqaures
         
-        if self.target > 0: # so we dont get a yellow on NOT beside the red.
+        if self.target > 0: # so we dont get a yellow NOT beside the red.
             self.column[self.target - 1] = "\U0001F7E8" # yellow sqaures
         if self.target < 7: # same as above
             self.column[self.target + 1] = "\U0001F7E8"
             
-    def game(self, data, lore):
-        self.random_gen()
+    def game(self, data, lore, cd):
+        self.random_gen(data)
         self.game_gen()
         clear()
         
@@ -114,12 +119,13 @@ class Fishing:
                 self.player_pos = random.randint(0, 3)    
         
             while game:
+                print(f"{self.rarity}\n")
                 column = self.column.copy()
                 column[self.player_pos] = "\U000027A1"
                 for i in column:
                     print(i)
                 
-                print("\n", self.ticks[x])
+                print(f"\nMoves Left: {self.ticks[x]}")
                 moving: str = input("(W/S)> ").lower().strip()
                 clear()
             
@@ -147,24 +153,32 @@ class Fishing:
                 if check == "win":
                     game = False
                 elif check == "penalty":
-                    self.ticks[x+1] += 1
+                    self.ticks[x+1] -= 1
                     game = False
                 elif check == "loss": 
-                    self.lose(lore)
+                    self.lose(lore, cd)
                     return
                 
-        self.won(data)    
+        self.won(data, cd)    
             
-    def won(self, data):
+    def won(self, data, cd):
         fish_message = random.choice(fish[self.rarity].get(self.fish))
+        time.sleep(cd["text_timing"])
         print(fish_message)
+        time.sleep(cd["text_timing"])
         print(f"+{self.payout}")
+        
         data["currency"] += self.payout
         data["fish_caught"] += 1
         
-    def lose(self, lore):
-        print() # You Lost the fish.
-        print() # You suck.
+        if not data["fish"][self.rarity].get(self.fish):
+            data["fish"][self.rarity][self.fish] = True
+        
+    def lose(self, lore, cd):
+        time.sleep(cd["text_timing"])
+        print(lore["lake10"]) # You Lost the fish.
+        time.sleep(cd["text_timing"])
+        print(lore["lake11"]) # You suck.
 
 
     def WinCheck(self):
