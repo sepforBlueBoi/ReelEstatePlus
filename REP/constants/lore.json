@@ -90,8 +90,7 @@
     "shop6": "1. Real Estate",
     "shop7": "2. Furniture",
     "shop8": "3. Fishing rods",
-    "shop9": "4. Lures [TODO]",
-    "shop10": "5. Miscellaneous",
+    "shop10": "4. Miscellaneous",
     "shop11": "0. Return",
     "shop12": "You walk into a wall.",
     "shop13": "You walk into another wall. What is with all these walls?",
@@ -119,6 +118,7 @@
     "lake7": "You slip in the mud and roll up a hill.",
     "lake8": "What ever floats your boat.",
     "lake9": "You have no rods to fish with. Go buy one from Spamee'O'Jr.",
-    "lake10": "ou Lost the fish.",
-    "lake11": "You suck."
+    "lake10": "You Lost the fish.",
+    "lake11": "You suck.",
+    "lake12": "Fish again?"
 }

@@ -285,8 +285,6 @@ class Shop:
             time.sleep(self.cd["list_timing"])
             print(lore["shop8"]) # 3. Fishing rods
             time.sleep(self.cd["list_timing"])
-            print(lore["shop9"]) # 4. Lures [TODO]
-            time.sleep(self.cd["list_timing"])
             print(lore["shop10"]) # 5. Miscellaneous
             time.sleep(self.cd["list_timing"])
             print(lore["shop11"]) # 0. Return
@@ -320,11 +318,6 @@ class Shop:
                     clear()
                     self.shop("lake", data, sales, lore)
                 case 4:
-                    time.sleep(self.cd["text_timing"])
-                    clear()
-                    print("TODO")
-                    continue
-                case 5:
                     time.sleep(self.cd["text_timing"])
                     clear()
                     self.shop("misc", data, sales, lore)

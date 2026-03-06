@@ -131,9 +131,9 @@ class Fishing:
             
                 if not moving:
                     if self.player_pos == self.target:
-                         check = self.WinCheck()
+                         check = "win"
                     elif self.player_pos == self.target - 1 or self.player_pos == self.target + 1:
-                         check = self.WinCheck()
+                         check = "penalty"
                     else:
                         pass
             
@@ -147,7 +147,7 @@ class Fishing:
                 self.ticks[x] -= 1
                 
                 if self.ticks[x] == 0:
-                     check = self.WinCheck()
+                     check = "loss"
                 
             
                 if check == "win":
@@ -180,12 +180,3 @@ class Fishing:
         time.sleep(cd["text_timing"])
         print(lore["lake11"]) # You suck.
 
-
-    def WinCheck(self):
-        
-        if self.player_pos == self.target:
-            return "win"
-        elif self.player_pos == self.target - 1 or self.player_pos == self.target + 1:
-            return "penalty"
-        else:
-            return "loss"

@@ -25,11 +25,13 @@ def checking(data, lore, cd):
             clear()
             lake.game(data, lore, cd)
             
-            time.sleep(cd["text_timer"])
-            print() # Fish again?
+            time.sleep(cd["text_timing"])
+            print(lore["lake12"]) # Fish again?
             choice:str = input("(Y/N)>").lower().strip() 
             
             if choice == "y":
+                time.sleep(cd["text_timing"])
+                clear()
                 continue
             if choice == "n":
                 time.sleep(cd["text_timing"])
