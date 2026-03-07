@@ -16,6 +16,8 @@ def lake_init(data, lore, cd): # lake intro wooo. fun.
     print("\n")
     
     while True:
+        print() # What to do?
+        time.sleep(cd["text_timing"])
     
         print(lore["lake3"]) # 1. fish
         time.sleep(cd["list_timing"])

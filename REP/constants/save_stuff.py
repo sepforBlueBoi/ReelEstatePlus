@@ -7,6 +7,7 @@ game_dict: dict[str, any] = {
     "map": False,
     "intro": False,    
     "ocean_unlock": False,
+    "has_met_azure": False,
     "phase": 1,
     "fish_caught": 0,
     

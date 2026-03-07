@@ -93,7 +93,7 @@ class Fishing:
             self.column.append("\U0001F7E6") # blue sqaures
         
         self.target = random.randint(0, 7)
-        self.column[self.target] = "\U0001F7E5" # red sqaures
+        self.column[self.target] = "\U0001F7E9" # red sqaures
         
         if self.target > 0: # so we dont get a yellow NOT beside the red.
             self.column[self.target - 1] = "\U0001F7E8" # yellow sqaures

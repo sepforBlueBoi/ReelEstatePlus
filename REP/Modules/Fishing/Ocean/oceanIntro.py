@@ -4,15 +4,32 @@ import time
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
     
-def ocean_begans(data, lore, cd):
-    print() # The path to the ocean is overgrown.
-    print() # But on the otherside of the forest between here and the town...
-    print() # A beautiful beach lays with a dock.
+def ocean_begans(data: dict, lore: dict, cd: dict):
+    print(lore["ocean1"]) # The path to the ocean is overgrown.  
+    time.sleep(cd["text_timing"])                          
+    print(lore["ocean2"]) # But on the otherside of the forest between here and the town...
+    time.sleep(cd["text_timing"])
+    print(lore["ocean3"]) # A beautiful beach lays with a dock.       
+    time.sleep(cd["text_timing"])                     
     
-    # if not has_met_azure:
-    print() # A store sits above the sand, a hand made sign sits out front.
-    print() # it reads 'Azures Cove'
+    if not data['has_met_azure']:
+        print(lore["ocean4"]) # A store sits above the sand, a hand made sign sits out front.
+        time.sleep(cd["text_timing"])
+        print(lore["ocean5"]) # it reads 'Azures Cove'
+        time.sleep(cd["text_timing"])
     
-    print() # 1. fish
-    print() # 2. Beach front store
-    
+    while True:
+        print(lore["ocean9"]) # What is this place?
+        time.sleep(cd["text_timing"])
+        
+        print(lore["ocean6"]) # 1. fish
+        time.sleep(cd["list_timing"])
+        print(lore["ocean7"]) # 2. Beach front store
+        time.sleep(cd["list_timing"])
+        print(lore["ocean8"]) # 0. Return
+        time.sleep(cd["list_timing"])
+
+        try:
+            choice: int = int(input("> "))
+        except ValueError:
+            print(lore["ocean10"]) # You do some weird dance. the crabs seem scared of you.
