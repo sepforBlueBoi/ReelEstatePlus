@@ -6,6 +6,7 @@ game_dict: dict[str, any] = {
     "c_name": "",
     "map": False,
     "intro": False,    
+    "ocean_unlock": False,
     "phase": 1,
     "fish_caught": 0,
     
@@ -28,7 +29,7 @@ game_dict: dict[str, any] = {
     
     "ocean": {
         "Colored_Rod": False,
-        "Effiecent_Rod": False,
+        "Efficient_Rod": False,
         "Superior_Rod": False,
         "Premier_Rod": False
     },

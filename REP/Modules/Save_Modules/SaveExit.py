@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, gc
 from colorama import Fore, Style, init
 import time
 from REP.Modules.Save_Modules.save_module import save_game
@@ -43,6 +43,7 @@ def leaving(slot, Data, text, cd):
         if choice == "3" or choice == "return":
             print(quit5) # You [<- red you] return to the game
             time.sleep(cd["read_timer"])
+            gc.collect()
             clear()
             return
 
@@ -61,6 +62,7 @@ def leaving(slot, Data, text, cd):
             time.sleep(cd["text_timing"])
             print("Cya later alligator!")
             time.sleep(cd["text_timing"])
+            gc.collect()
             sys.exit()
             
         else:

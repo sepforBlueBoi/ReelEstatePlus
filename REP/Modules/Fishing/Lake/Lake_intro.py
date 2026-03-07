@@ -1,7 +1,7 @@
-import os, sys
+import os
 import time
-import random
-from REP.Modules.Fishing.FishingChecker import checking
+import random, gc
+from REP.Modules.Fishing.Lake.FishingChecker import checking
 
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
@@ -35,6 +35,7 @@ def lake_init(data, lore, cd): # lake intro wooo. fun.
             time.sleep(cd["text_timing"])
             print(lore["lake6"]) #You depart from the edge of the town, returning to the middle of it.
             time.sleep(cd["read_timer"])
+            gc.collect()
             clear()
             return
         else:

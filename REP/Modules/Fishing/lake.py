@@ -61,7 +61,7 @@ class Fishing:
         uncommon: int = 30
         rare: int = 10
         
-        if data["lake"].get("basic_rod"):
+        if data["lake"].get("Basic_Rod"):
             common = 40
             uncommon = 45
             rare = 15
@@ -173,6 +173,12 @@ class Fishing:
         
         if not data["fish"][self.rarity].get(self.fish):
             data["fish"][self.rarity][self.fish] = True
+        
+        if data["ocean_unlock"]:
+            pass
+        
+        if data["fish_caught"]  == 10:
+            data["ocean_unlock"] == True
         
     def lose(self, lore, cd):
         time.sleep(cd["text_timing"])

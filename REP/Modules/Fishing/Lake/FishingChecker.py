@@ -1,6 +1,6 @@
 from REP.Modules.Fishing.lake import Fishing
 import os
-import time
+import time, gc
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -28,9 +28,11 @@ def checking(data, lore, cd):
             time.sleep(cd["text_timing"])
             print(lore["lake12"]) # Fish again?
             choice:str = input("(Y/N)>").lower().strip() 
+            gc.collect()
             
             if choice == "y":
                 time.sleep(cd["text_timing"])
+                
                 clear()
                 continue
             if choice == "n":

@@ -1,4 +1,4 @@
-import os
+import os, gc
 import random
 import time
 import sys
@@ -33,6 +33,7 @@ def slots(Data, text, cd):
             clear()
             print(text["slots5"]) # you leave the machine and return to the casino hub.
             time.sleep(cd["read_timer"])
+            gc.collect()
             return
 
         if amount >= 100:
@@ -126,7 +127,8 @@ def roulette(Data, text, cd):
             clear()
             p_color = "blue"
             
-        elif roull == "4":
+        elif roull == "0":
+            gc.collect()
             clear()
             return
         else:
@@ -185,19 +187,18 @@ def roulette(Data, text, cd):
             if p_color == wow:
                 print(text["roulette9"])# nice win
                 time.sleep(cd["text_timing"])
-                Data["currency"] = Data["currency"] + bet
+                Data["currency"] += bet
                 print(Data["currency"],"!")
-                time.sleep(cd["text_timing"])
-                input("Press Enter to Continue")
+                time.sleep(cd["read_timer"])
+                gc.collect()
                 clear()
                 continue
             else:
                 print(text["roulette10"])# oof, better luck next time!
                 time.sleep(cd["text_timing"])
-                Data["currency"] = Data["currency"] - bet
+                Data["currency"] -= bet
                 print(Data["currency"],"...")
-                time.sleep(cd["text_timing"])
-                input("press Enter to Continue")
+                time.sleep(cd["read_timer"])
                 clear()
                 break
         
@@ -233,6 +234,7 @@ def Casino(Data, text, cd):
             time.sleep(cd["text_timing"])
             print(text["casino7"])
             time.sleep(cd["read_timer"])
+            gc.collect()
             clear()
             return
         else:

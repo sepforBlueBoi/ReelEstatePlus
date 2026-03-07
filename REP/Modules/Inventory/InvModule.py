@@ -2,7 +2,8 @@
 #...
 # FINE, I'll do it :\
 import time
-import os, sys
+import os, sys, gc
+import random
 
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
@@ -32,6 +33,7 @@ class InvDisplay:
      but its all displayed in ONE function.
      ^-Important
      """
+    __slots__ = ["data", "page", "cd"]
      
     def __init__(self):
         self.data: dict = {} # Holds data. same thing we did in Hub.py
@@ -155,8 +157,12 @@ class InvDisplay:
                 clear()
                 print("you close the inventory")
                 time.sleep(self.cd["read_timer"])
+                gc.collect()
                 clear()
                 return
+
+            if random.randint(1, 6) == 2:
+                gc.collect()
             
             self.page = page
             continue

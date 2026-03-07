@@ -1,5 +1,5 @@
 import os
-import time
+import time, gc
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -26,6 +26,7 @@ def token_shop(lore, Data, cd):
             clear()
             print(lore["tokenLeave"]) # You leave the Token shop. You find its weird name to be too weird to use.
             time.sleep(cd["read_timer"])
+            gc.collect()
             clear()
             return
 

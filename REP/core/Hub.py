@@ -6,10 +6,11 @@ from REP.Modules.Save_Modules.SaveExit import leaving
 from REP.Modules.Misc.Dev_stuff import Terminal
 from REP.Modules.Inventory.InvModule import InvDisplay
 from REP.Modules.Shop.REP_Shop import Shop
-from REP.Modules.Fishing.Lake_intro import lake_init
+from REP.Modules.Fishing.Lake.Lake_intro import lake_init
+from REP.Modules.Fishing.Ocean.oceanIntro import ocean_begans
 from colorama import Fore, init, Style
 import time
-import sys, os
+import sys, os, gc
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear' )
@@ -18,16 +19,19 @@ Inv = InvDisplay()
 Shop_ = Shop()
 
 class World:
+    __slots__ = ["slot", "Worldstate", "dialogue", "timer"]
+    
     def __init__(self):
-        self.slot = ""
-        self.Worldstate = {}
-        self.dialogue = {}
-        self.timer = {}
+        self.slot: str = ""
+        self.Worldstate: dict = {}
+        self.dialogue: dict = {}
+        self.timer: dict = {}
 
     def choice_call(self, choice): # after maing your choice it sends you off.
         clear_console()
         name = self.Worldstate["name"].strip().lower()
-
+        gc.collect()
+        
         if choice == "1":
             Casino(self.Worldstate, self.dialogue, self.timer)
         elif choice == "2":
@@ -36,13 +40,15 @@ class World:
             lake_init(self.Worldstate, self.dialogue, self.timer)
         elif choice == "4":
             Inv.display(self.Worldstate, self.timer)
+        elif choice == "5" and self.Worldstate["ocean_unlock"]:
+            ocean_begans(self.Worldstate, self.dialogue, self.timer)
         elif choice == "0":
             leaving(self.slot, self.Worldstate, self.dialogue, self.timer)
         elif choice == "{/}" and name == "kondike":
             Terminal(self.Worldstate, self.slot, self.dialogue)
         else:
             clear_console()
-            print(self.dialogue["place7"])
+            print(self.dialogue["place8"])
         
 
     def choice(self):
@@ -64,11 +70,14 @@ class World:
             print("\n")
             print(self.dialogue["place1"] if self.Worldstate["map"] == True else "1. ???") #only prints the name of the place if you own the map offered in intro
             time.sleep(self.timer["list_timing"])
-            print(self.dialogue["place2"] if self.Worldstate["map"] == True else "2. ???")
+            print(self.dialogue["place2"] if self.Worldstate["map"] == True else "2. ???") # store
             time.sleep(self.timer["list_timing"])
-            print(self.dialogue["place3"] if self.Worldstate["map"] == True else "3. ???")
+            print(self.dialogue["place3"] if self.Worldstate["map"] == True else "3. ???") # lake
             time.sleep(self.timer["list_timing"])
-            print(self.dialogue["place4"])
+            print(self.dialogue["place4"]) # inventory
+            if self.Worldstate["ocean_unlock"]:    
+                time.sleep(self.timer["list_timing"])
+                print(self.dialogue["place7"]) # 5. ocean
             time.sleep(self.timer["list_timing"])
             print(self.dialogue["place5"])
             time.sleep(self.timer["list_timing"])
@@ -150,5 +159,7 @@ class World:
                 
             time.sleep(self.timer["text_timing"])
             self.Worldstate["intro"] = True
+        gc.disable()
         clear_console()
+        gc.collect()
         self.choice(self) # enter main game loop

@@ -2,6 +2,7 @@
 import os, sys
 import time
 import random
+import gc
 
 def clear():
     os.system('cls' if os.name == "nt" else "clear")
@@ -27,7 +28,7 @@ shop: dict[str, any] = { #replica of all items but with prices.
         "Colored_Rod": {"tag": "ocean", "price": 600, "desc": "comes in many different colors", "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "pruple"],
                         "color_owned": "", "id": 1},
         
-        "Effiecent_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
+        "Efficient_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
         
         "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
         
@@ -72,9 +73,10 @@ shop: dict[str, any] = { #replica of all items but with prices.
     }
     
 class Shop:
+    __slots__ = "cd"
 
     def __init__(self):
-        self.cd = {}
+        self.cd: dict = {}
     
     def item_display_function(self, item, price): # item display logic for polish. 
     
@@ -112,7 +114,7 @@ class Shop:
         
     ^ Not important. old logic from Legacy 8.1, used for example to get print items to work
     """
-        items = ["placeholder"] # place holder so items start at index 1.
+        items: list[str] = ["placeholder"] # place holder so items start at index 1.
     
         match tag: # grabs the title of the page/isle based off of tag.
             case "estate":
@@ -136,7 +138,7 @@ class Shop:
             for k, v in shop.items(): #grabs item, and item info for each item in shop dict
                 if v.get("tag") == tag: # checks if they are in the tag selected
                     if not v.get("phase") or v.get("phase") == data["phase"]: # makes sure you in the correct phase if its there (ie furniture.) so it doesnt add ALL furniture to the list.
-                        item_display = k.replace("_", " ")
+                        item_display: str = k.replace("_", " ")
                         if k not in items:
                             items.append(k) # appends item to items list for later selection
                         print(f"{shop[k].get("id")}. - {item_display}") # print items
@@ -144,7 +146,7 @@ class Shop:
             print(lore["shop11"]) # 0. Return
                 
             try:
-                item = int(input("> "))
+                item: int = int(input("> "))
             except ValueError:
                 clear()
                 print(lore["shop15"]) # You hear a loud buzzer blare
@@ -180,7 +182,7 @@ class Shop:
                 print(lore["shop20"])# 2. Cancel
                 time.sleep(self.cd["text_timing"])
                 try:
-                    choice = int(input("> "))
+                    choice: int = int(input("> "))
                 except ValueError:
                     clear()
                     print(lore["shop21"]) # Im Concerned.
@@ -258,7 +260,7 @@ class Shop:
         lore (_type_): _description_
     """
         self.cd = cd
-        sys.stdout.write(f'\033]0;Spamee o s\a')
+        sys.stdout.write(f"\033]0;Spamee'o's\a")
         sys.stdout.flush()
         
         print(lore["shop1"]) # you walk into the little shop. the bell above the door dings
@@ -301,6 +303,7 @@ class Shop:
                 clear()
                 print(lore["shop14"]) # You exit the store, Your pockets feeling emptier...or heavier, in the medium you can't tell.
                 time.sleep(self.cd["read_timer"])
+                gc.collect()
                 clear()
                 return
         
