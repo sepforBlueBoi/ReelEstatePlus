@@ -1,5 +1,6 @@
 import os
-import time
+import time, gc
+from REP.Modules.Fishing.Ocean.OceanChecker import ocean_game
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -33,3 +34,16 @@ def ocean_begans(data: dict, lore: dict, cd: dict):
             choice: int = int(input("> "))
         except ValueError:
             print(lore["ocean10"]) # You do some weird dance. the crabs seem scared of you.
+            
+        if choice == 0:
+            clear()
+            time.sleep(cd["text_timing"])
+            print() # You take the hike back to town.
+            time.sleep(cd["read_timer"])
+            clear()
+            gc.collect()
+            return
+        elif choice == 1:
+            ocean_game(data, lore, cd)
+        else:
+            print() # The Person in Azures Cove is watching you.

@@ -101,6 +101,7 @@ class Fishing:
             self.column[self.target + 1] = "\U0001F7E8"
             
     def game(self, data, lore, cd):
+        """actual game"""
         self.random_gen(data)
         self.game_gen()
         clear()

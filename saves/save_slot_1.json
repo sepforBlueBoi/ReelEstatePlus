@@ -6,18 +6,20 @@
     "map": true,
     "intro": true,
     "ocean_unlock": false,
+    "has_met_azure": false,
     "phase": 1,
     "fish_caught": 0,
+    "equipped_rod": "Basic_Rod",
     "achiev": {},
     "quests": {},
     "collectables": {},
     "lore": {},
     "lake": {
-        "Old_Rod": false,
+        "Old_Rod": true,
         "Basic_Rod": false
     },
     "ocean": {
-        "Colored_Rod": false,
+        "Colored_Rod": true,
         "Efficient_Rod": false,
         "Superior_Rod": false,
         "Premier_Rod": false

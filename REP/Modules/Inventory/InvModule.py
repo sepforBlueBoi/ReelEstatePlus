@@ -33,12 +33,53 @@ class InvDisplay:
      but its all displayed in ONE function.
      ^-Important
      """
-    __slots__ = ["data", "page", "cd"]
+    __slots__ = ["page", "cd"]
      
     def __init__(self):
-        self.data: dict = {} # Holds data. same thing we did in Hub.py
         self.page: int = 1 # keep track of pages
         self.cd: dict = {}
+        
+    def page_6(self, data):
+        rods: list[str] = ["placeholder"]
+        while True:
+            clear()
+            print("Page 6\t ----\tEquip Station\n")
+            time.sleep(self.cd["text_timing"])
+            if data["equipped_rod"] != None:
+                pretty_rod = data["equipped_rod"].replace("_", " ")
+                print(f"Current Rod: {pretty_rod}")
+            else:
+                print("No Rod equipped.")
+            time.sleep(self.cd["text_timing"])
+        
+        
+            i: int = 1
+            for k, v in data["lake"].items():
+                if v:
+                    if not k in rods:
+                        rods.append(k)
+                    print(f"{i}. {k.replace('_', " ")}")
+                    i += 1
+            for key, vey in data["ocean"].items():
+                if vey:
+                    if not key in rods:
+                        rods.append(key)
+                    print(f"{i}. {key.replace('_', ' ')}")
+                    i += 1
+            try:
+                choice: int = int(input("> "))
+            except ValueError:
+                continue
+                #TODO YA KNOW...make this look better. cool print statement or something.
+                
+            if 0 > choice or choice > len(rods) - 1:
+                continue
+            
+            if choice == 0:
+                break # get back to the rest of the inventory
+            
+            data["equipped_rod"] = rods[choice]
+            break
         
     def page_5(self, data):
         houses = False
@@ -117,12 +158,12 @@ class InvDisplay:
         
     def prompt(self): # simple page prompt that will be at the bottom of every page.
         time.sleep(self.cd["list_timing"])
-        print(f"page {self.page}/5")
+        print(f"page {self.page}/6")
         time.sleep(self.cd["list_timing"])
         print("which page . . .")
         time.sleep(self.cd["list_timing"])
         print("0 to close inventory")
-        print("1-5 to go to those pages")
+        print("1-6 to go to those pages")
         time.sleep(self.cd["list_timing"])
         try:
             page: int = int(input("> ").strip())
@@ -130,7 +171,7 @@ class InvDisplay:
             return "error"
         
         
-        if page in [0, 1, 2, 3, 4, 5]:
+        if page in [0, 1, 2, 3, 4, 5, 6]:
             return page
         else:
             return "error"

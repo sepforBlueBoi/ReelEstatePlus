@@ -10,6 +10,7 @@ game_dict: dict[str, any] = {
     "has_met_azure": False,
     "phase": 1,
     "fish_caught": 0,
+    "equipped_rod": None,
     
     "achiev": {
       
