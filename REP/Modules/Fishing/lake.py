@@ -57,16 +57,9 @@ class Fishing:
         rarity: list[str] = ["common", "uncommon", "rare"]
         fishes: list[str] = []
         
-        common: int = 60
-        uncommon: int = 30
-        rare: int = 10
-        
-        if data["lake"].get("Basic_Rod"):
-            common = 40
-            uncommon = 45
-            rare = 15
+        chancee = self.chance(data)
             
-        self.rarity = random.choices(rarity, weights=[common, uncommon, rare])[0]
+        self.rarity = random.choices(rarity, weights=chancee)[0]
         
         if self.rarity == "common":
             self.column_amount = 2
@@ -186,4 +179,19 @@ class Fishing:
         print(lore["lake10"]) # You Lost the fish.
         time.sleep(cd["text_timing"])
         print(lore["lake11"]) # You suck.
+        
+    def chance(self, data):
+        match data["equipped_rod"]:
+            case "Old_Rod":
+                return [60, 30, 10]
+            case "Basic_Rod":
+                return [40, 45, 15]
+            case "Colored_Rod":
+                return [20, 60, 20]
+            case "Efficient_Rod":
+                return [15, 55, 30]
+            case "Superior_Rod":
+                return [10, 45 ,45]
+            case "Premier_Rod":
+                return [10, 40 ,50]
 

@@ -25,15 +25,6 @@ shop: dict[str, any] = { #replica of all items but with prices.
         
         "Basic_Rod": {"tag": "lake", "price": 450, "desc": "Basic rod. decent choice for the lake.", "id": 2},
         
-        "Colored_Rod": {"tag": "ocean", "price": 600, "desc": "comes in many different colors", "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "pruple"],
-                        "color_owned": "", "id": 1},
-        
-        "Efficient_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
-        
-        "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
-        
-        "Premier_Rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney.", "id": 4},
-        
         "Map": {"tag": "misc", "price": 500, "desc": "Its the same map you refused at the beginning of the game.", "id": 1},
         
         "Red_and_White_Ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?", "id": 2}
@@ -241,6 +232,8 @@ class Shop:
                     lore2 = lore["shop27"].replace("*", str(data["currency"]))
                     print(lore2) # You have {amount} left.
                     time.sleep(self.cd["read_timer"])
+                    if tag == "fishing":
+                        data["equipped_rod"] = items[item]
                     if tag == "estate":
                         match items[item]:
                             case "House":

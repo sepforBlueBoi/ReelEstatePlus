@@ -69,17 +69,24 @@ class InvDisplay:
             try:
                 choice: int = int(input("> "))
             except ValueError:
+                clear()
+                time.sleep(self.cd["text_timing"])
+                print("Not an object")
+                time.sleep(self.cd["read_timer"])
                 continue
-                #TODO YA KNOW...make this look better. cool print statement or something.
                 
             if 0 > choice or choice > len(rods) - 1:
+                clear()
+                time.sleep(self.cd["text_timing"])
+                print("You cannot equip that.")
+                time.sleep(self.cd["read_timer"])
                 continue
             
             if choice == 0:
                 break # get back to the rest of the inventory
             
             data["equipped_rod"] = rods[choice]
-            break
+            continue
         
     def page_5(self, data):
         houses = False
@@ -198,8 +205,8 @@ class InvDisplay:
                 clear()
                 print("you close the inventory")
                 time.sleep(self.cd["read_timer"])
-                gc.collect()
                 clear()
+                gc.collect()
                 return
 
             if random.randint(1, 6) == 2:
