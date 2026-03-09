@@ -1,9 +1,12 @@
 import os
 import time, gc
 from REP.Modules.Fishing.Ocean.OceanChecker import ocean_game
+from REP.Modules.Shop.Ocean_Shop import Shop_Ocean
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
+    
+Azure_cove = Shop_Ocean()
     
 def ocean_begans(data: dict, lore: dict, cd: dict):
     print(lore["ocean1"]) # The path to the ocean is overgrown.  
@@ -45,5 +48,7 @@ def ocean_begans(data: dict, lore: dict, cd: dict):
             return
         elif choice == 1:
             ocean_game(data, lore, cd)
+        elif choice == 2:
+            Azure_cove.shop_init(data, lore, cd)
         else:
-            print() # The Person in Azures Cove is watching you.
+            print(lore["ocean13"]) # The Person in Azures Cove is watching you.
