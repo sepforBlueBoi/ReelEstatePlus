@@ -1,5 +1,5 @@
 #save load
-import json
+import orjson
 import random
 import os
 
@@ -21,8 +21,8 @@ def save_game(data, slot): #saves current status to current save slot, aka curre
     saved = random.choice(save_speech)
 
     filepath = os.path.join(SAVE_DIR, f"save_slot_{slot}.json")
-    with open(filepath, "w") as f: # opens it
-        json.dump(data, f, indent=4) # dumps the save data in
+    with open(filepath, "wb") as f: # opens it
+        f.write(orjson.dumps(data, option=orjson.OPT_INDENT_2)) # dumps the save data in
         print(saved)
     
 
