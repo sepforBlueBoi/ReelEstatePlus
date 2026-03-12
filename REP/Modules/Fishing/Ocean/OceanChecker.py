@@ -1,4 +1,4 @@
-from REP.Modules.Fishing.lake import Fishing
+from REP.Modules.Fishing.fish_game import Fishing
 import os
 import time, gc
 

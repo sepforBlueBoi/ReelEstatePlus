@@ -194,5 +194,15 @@ March 3 2026. working on fishing some more. not much happened. also im going thr
 
 **7:50** did some cool vscode customizations. did some small progress on fishing lol. not much to report on today.
 
+---
 ### day 22
 March 4 2026. you have missed alot. cause i didnt say anything, fishing checks are done, and minigame is underway. im quite proud of the code im doing on the minigame. this may beat the inventory as my favorite code piece in REP LOL.:))
+
+---
+### day 23
+March 12 2026. long gap eh? yeah. Had some extreme burn out, but im back with some more energy. and also got sick lol. Fishing is done lake wise. ocean has been started. The ocean will reused the same fishing minigame, but introduce a few new item changes. aswell as have its own shop with azure.
+
+Azure is a new NPC not in the OG kind of. Azure was orginally Spamminton, but when the remake was made, he got through. he made it. and he is aware of his nature. which is why he sets up way on the edge of the world, near the beach. 
+
+The ocean shop is called Azurea cove. it will have the ocean rods AND lures. lures will add extra buffs upon the fishing rods.
+

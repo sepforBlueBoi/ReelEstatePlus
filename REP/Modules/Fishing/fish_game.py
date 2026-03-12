@@ -57,9 +57,9 @@ class Fishing:
         rarity: list[str] = ["common", "uncommon", "rare"]
         fishes: list[str] = []
         
-        chancee = self.chance(data)
+        chance = self.chance_for_rods(data)
             
-        self.rarity = random.choices(rarity, weights=chancee)[0]
+        self.rarity = random.choices(rarity, weights=chance)[0]
         
         if self.rarity == "common":
             self.column_amount = 2
@@ -147,7 +147,8 @@ class Fishing:
                 if check == "win":
                     game = False
                 elif check == "penalty":
-                    self.ticks[x+1] -= 1
+                    if self.ticks[x] > len(self.column_amount):
+                        self.ticks[x+1] -= 1
                     game = False
                 elif check == "loss": 
                     self.lose(lore, cd)
@@ -172,7 +173,7 @@ class Fishing:
             pass
         
         if data["fish_caught"]  == 10:
-            data["ocean_unlock"] == True
+            data["ocean_unlock"] = True
         
     def lose(self, lore, cd):
         time.sleep(cd["text_timing"])
@@ -180,7 +181,7 @@ class Fishing:
         time.sleep(cd["text_timing"])
         print(lore["lake11"]) # You suck.
         
-    def chance(self, data):
+    def chance_for_rods(self, data):
         match data["equipped_rod"]:
             case "Old_Rod":
                 return [60, 30, 10]
