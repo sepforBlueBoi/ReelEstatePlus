@@ -45,5 +45,7 @@ def epic_name_checker(name):
             return "hello no2 :)"
         case "rauan" | "rauanb":
             return "you're playing?? crazy"
+        case "sky" | "skypize":
+            return "This before GTA what ever the next one is, is pretty crazy."
         case _:
             return "Welcome!"
