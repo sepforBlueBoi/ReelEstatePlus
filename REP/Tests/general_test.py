@@ -22,7 +22,7 @@ def load_json(file):
 
 def test_fish_gen():
     
-    fash = Fish.random_gen(data)
+    Fish.random_gen(data)
     assert True
     
 def test_game_gen():

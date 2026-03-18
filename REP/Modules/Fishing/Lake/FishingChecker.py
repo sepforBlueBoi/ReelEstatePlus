@@ -15,7 +15,7 @@ def checking(data, lore, cd):
         if v:
             has_rod = True
             
-    if has_rod and data["equipped_rods"] != None and data["equipped_rod"] in data["lake"]:
+    if has_rod and data["equipped_rod"] != None and data["equipped_rod"] in data["lake"]:
         while True:
             for i in range(3):
                 print(".", end="", flush=True)

@@ -86,7 +86,7 @@ class Fishing:
             self.column.append("\U0001F7E6") # blue sqaures
         
         self.target = random.randint(0, 7)
-        self.column[self.target] = "\U0001F7E9" # red sqaures
+        self.column[self.target] = "\U0001F7E9" # green sqaures
         
         if self.target > 0: # so we dont get a yellow NOT beside the red.
             self.column[self.target - 1] = "\U0001F7E8" # yellow sqaures
@@ -140,14 +140,14 @@ class Fishing:
                 
                 self.ticks[x] -= 1
                 
-                if self.ticks[x] == 0:
+                if self.ticks[x] == 0 and not check:
                      check = "loss"
                 
             
                 if check == "win":
                     game = False
                 elif check == "penalty":
-                    if self.ticks[x] > len(self.column_amount):
+                    if x + 1 > self.column_amount:
                         self.ticks[x+1] -= 1
                     game = False
                 elif check == "loss": 
@@ -184,15 +184,18 @@ class Fishing:
     def chance_for_rods(self, data):
         match data["equipped_rod"]:
             case "Old_Rod":
-                return [60, 30, 10]
+                odds: list[int] = [60, 30, 10]
             case "Basic_Rod":
-                return [40, 45, 15]
+                 odds: list[int] = [40, 45, 15]
             case "Colored_Rod":
-                return [20, 60, 20]
+                odds: list[int] = [20, 60, 20]
             case "Efficient_Rod":
-                return [15, 55, 30]
+                odds: list[int] = [15, 55, 30]
             case "Superior_Rod":
-                return [10, 45 ,45]
+                odds: list[int] = [10, 45 ,45]
             case "Premier_Rod":
-                return [10, 40 ,50]
+                odds: list[int] = [10, 40 ,50]
+                
+        # return odds here instead of when set so we can add lure multipliers later
+        return odds
 

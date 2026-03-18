@@ -1,6 +1,6 @@
 {
   "name": "Kondike",
-  "currency": 250,
+  "currency": 245,
   "tokens": 0,
   "c_name": "Kondollars",
   "map": true,
@@ -9,13 +9,13 @@
   "has_met_azure": false,
   "phase": 1,
   "fish_caught": 0,
-  "equipped_rod": null,
+  "equipped_rod": "Old_Rod",
   "achiev": {},
   "quests": {},
   "collectables": {},
   "lore": {},
   "lake": {
-    "Old_Rod": false,
+    "Old_Rod": true,
     "Basic_Rod": false
   },
   "ocean": {
