@@ -50,6 +50,14 @@ def intro_talk(cd: dict[str, float], save: dict[str, Any]):
     time.sleep(cd["list_timing"])
 
     not_important: str = input("> ").strip()
+    time.sleep(timer)
+    
+    if not_important in ["1", "2"]:
+        # Normal
+        print(Azure["narrator"]["nar_enc1_text_8-1"])
+    else:
+        # Gibberish
+        print(Azure["narrator"]["nar_enc1_text_8-2"])
 
-
+        
  
