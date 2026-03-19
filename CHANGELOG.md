@@ -206,3 +206,6 @@ Azure is a new NPC not in the OG kind of. Azure was orginally Spamminton, but wh
 
 The ocean shop is called Azurea cove. it will have the ocean rods AND lures. lures will add extra buffs upon the fishing rods.
 
+---
+### Day 24
+March 18 2026. nothing big happened coding wise, but im switchin IDEs. for good. i will be sticking with Nvim for now. now, normally nvim with kitty is well enough. but i nEED MORE. so i also got tmux, to help with multitasking :).
