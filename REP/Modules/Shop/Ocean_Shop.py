@@ -1,5 +1,6 @@
 import os
 import gc
+from REP.Modules.NPCs.Azure import intro_talk
 
 def clear():
     os.system('cls' if os.name == "nt" else 'clear')
@@ -13,7 +14,7 @@ shop_items = {
 }    
 
 class Shop_Ocean:
-    __slots__ = "cd"
+    __slots__ = ["cd"]
 
     def __init__(self):
         self.cd: dict = {}
@@ -35,4 +36,6 @@ class Shop_Ocean:
 
 
     def shop_init(self, data, lore, cd):
-        print()
+        if not data["has_met_azure"]:
+            intro_talk(cd, data)
+

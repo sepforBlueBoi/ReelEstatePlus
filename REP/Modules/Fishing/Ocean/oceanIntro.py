@@ -13,24 +13,24 @@ def ocean_begans(data: dict, lore: dict, cd: dict):
     time.sleep(cd["text_timing"])                          
     print(lore["ocean2"]) # But on the otherside of the forest between here and the town...
     time.sleep(cd["text_timing"])
-    print(lore["ocean3"]) # A beautiful beach lays with a dock.       
+    print(lore["ocean3"] + '\n') # A beautiful beach lays with a dock.       
     time.sleep(cd["text_timing"])                     
     
     if not data['has_met_azure']:
         print(lore["ocean4"]) # A store sits above the sand, a hand made sign sits out front.
         time.sleep(cd["text_timing"])
-        print(lore["ocean5"]) # it reads 'Azures Cove'
+        print(lore["ocean5"] + '\n') # it reads 'Azures Cove'
         time.sleep(cd["text_timing"])
     
     while True:
-        print(lore["ocean9"]) # What is this place?
+        print(lore["ocean9"] + '\n') # What is this place?
         time.sleep(cd["text_timing"])
         
         print(lore["ocean6"]) # 1. fish
         time.sleep(cd["list_timing"])
         print(lore["ocean7"]) # 2. Beach front store
         time.sleep(cd["list_timing"])
-        print(lore["ocean8"]) # 0. Return
+        print(lore["ocean8"] + '\n') # 0. Return
         time.sleep(cd["list_timing"])
 
         try:

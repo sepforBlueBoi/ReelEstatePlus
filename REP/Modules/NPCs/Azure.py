@@ -7,7 +7,7 @@ Azure: dict[str, dict[str, str]] = load_json("MyDialogue.json")
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def intro_talk(cd: dict[str, float], save: dict[str, Any]):
+def intro_talk(cd: dict[str, float], save: dict[str, any]):
     timer: float = cd["text_timing"]
     print(Azure["narrator"]["nar_enc1_text_1"])
     time.sleep(timer)
@@ -27,13 +27,13 @@ def intro_talk(cd: dict[str, float], save: dict[str, Any]):
 
     time.sleep(timer)
 
-    print(Azure["Azure"]["Azu_enc1_text_5"])
+    print(Fore.LIGHTBLUE_EX + Azure["Azure"]["Azu_enc1_text_5"])
     time.sleep(timer)
-    print(Azure["Azure"]["Azu_enc1_text_6"])
+    print(Fore.LIGHTBLUE_EX + Azure["Azure"]["Azu_enc1_text_6"])
     time.sleep(timer)
-    print(Azure["Azure"]["Azu_enc1_text_7"].replace("They", Fore.RED + "They") + Style.RESET_ALL)
+    print(Azure["Azure"]["Azu_enc1_text_7"].replace("They", Fore.RED + "They" + Style.RESET_ALL) + Style.RESET_ALL)
     time.sleep(timer - 0.5)
-    print(Azure["narrator"]["nar_enc1_text_5"].replace("Player", Fore.RED + "Player") + Style.RESET_ALL)
+    print(Azure["narrator"]["nar_enc1_text_5"].replace("Player", Fore.RED + "Player" + Style.RESET_ALL))
     time.sleep(timer)
     print(Fore.LIGHTBLUE_EX + Azure["Azure"]["Azu_enc1_text_8"] + Style.RESET_ALL)
     time.sleep(timer)
@@ -59,5 +59,11 @@ def intro_talk(cd: dict[str, float], save: dict[str, Any]):
         # Gibberish
         print(Azure["narrator"]["nar_enc1_text_8-2"])
 
-        
+    time.sleep(cd["read_timer"])
+    clear()
+    print(Fore.LIGHTBLUE_EX + Azure["Azure"]["Azu_enc1_text_10"] + Style.RESET_ALL) # Finally. he is done, and gone. Hope you enjoy the shop.
+    time.sleep(cd["read_timer"])
+    clear()
+    gc.collect()
+    return
  

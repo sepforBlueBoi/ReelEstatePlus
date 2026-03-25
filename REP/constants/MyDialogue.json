@@ -8,7 +8,8 @@
         "Azu_enc1_text_6": "And I'm an outsider.",
         "Azu_enc1_text_7": "But if They have been here before-",
 	"Azu_enc1_text_8": "I can do what I want.",
-	"Azu_enc1_text_9": "Well I alrady messed up the immersion, so you can leave now."
+	"Azu_enc1_text_9": "Well I alrady messed up the immersion, so you can leave now.",
+	"Azu_enc1_text_10": "Finally. He is done and gone. Hope you enjoy the shop."
     },
 
     "narrator": {
@@ -18,7 +19,9 @@
         "nar_enc1_text_4": "I'm sorry? I don't remember you ever in the memo I was given.",
         "nar_enc1_text_5": "No. You cannot reference the Player like that.",
 	"nar_enc1_text_6": "Mhmmmm. But what if no.",
-	"nar_enc1_text_7": "Fine. Come on *."
+	"nar_enc1_text_7": "Fine. Come on *.",
+	"nar_enc1_text_8-1": "...Fine. I'll be waiting outside.",
+	"nar_enc1_text_8-2": "...Werido. I'll be outside when you are done."
     },
 
     "player": {
