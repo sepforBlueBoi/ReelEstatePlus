@@ -209,3 +209,9 @@ The ocean shop is called Azurea cove. it will have the ocean rods AND lures. lur
 ---
 ### Day 24
 March 18 2026. nothing big happened coding wise, but im switchin IDEs. for good. i will be sticking with Nvim for now. now, normally nvim with kitty is well enough. but i nEED MORE. so i also got tmux, to help with multitasking :).
+
+---
+### day 25
+March 25 2026. so many things have happened. So, let me break it down: Nvim, Tmux, and Lazygit, they are my IDE entirely, its cool. I open up my terminal, open up the basic panel set up: % then ", nvim has been socool. its entirely keyboard based, with mouse support, but its way faster if you use the keyboard shortcuts. Lazygit isnt much. its just the git commands with a fancy UI, so nice visually, and has keyboard shortcuts itself
+
+Code wise Azure's first words are done. im gonna finish the basic shop, add lures to the game math, then i will start with the Azure Dialogue tree. 
