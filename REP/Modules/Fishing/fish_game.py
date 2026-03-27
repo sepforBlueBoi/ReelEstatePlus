@@ -10,7 +10,7 @@ fish: dict[str, dict[str, list[str]]]= { # nested dict. you can see how it works
         "basic ahh fish": ["You caught the basic ahh fish", "You regret fishing. basic ahh fish.", "Basic ahh fish. lame."],
         "other basic ahh fish": ["Other basic ahh fish...", "even lamer then the first basic fish.", "Could have been a better fish. instead you got the other basic fish."],
         "grey fish": ["grey fish caught", "dull. grey fish.", "grey fish caught sadly."],
-        "not cool fish": ["You caught the 'not cool fish'", "its a not cool fish. not cool.", "not cool fish. makes you wonder where to cool fish is?"],
+        "not cool fish": ["You caught the 'not cool fish'", "its a not cool fish. not cool.", "not cool fish. makes you wonder where the cool fish is?"],
         "possibly your pet fish": ["you caught a familiar fish. It's possibly your pet fish", "possibly your pet fish...cool.", "fred, your pet gold fish was found!"]
     },
     "uncommon": {
@@ -88,7 +88,7 @@ class Fishing:
         self.target = random.randint(0, 7)
         self.column[self.target] = "\U0001F7E9" # green sqaures
         
-        if self.target > 0: # so we dont get a yellow NOT beside the red.
+        if self.target > 0: # so we dont get a yellow NOT beside the green.
             self.column[self.target - 1] = "\U0001F7E8" # yellow sqaures
         if self.target < 7: # same as above
             self.column[self.target + 1] = "\U0001F7E8"
@@ -96,12 +96,10 @@ class Fishing:
     def game(self, data, lore, cd):
         """actual game"""
         self.random_gen(data)
-        self.game_gen()
         clear()
         
         for x in range(0, self.column_amount):
-            if x != 0:
-                self.game_gen()
+            self.game_gen()
                 
             game: bool = True
                 
@@ -120,7 +118,7 @@ class Fishing:
                     print(i)
                 
                 print(f"\nMoves Left: {self.ticks[x]}")
-                moving: str = input("(W/S)> ").lower().strip()
+                moving: str = input("(W/S)|ENTER> ").lower().strip()
                 clear()
             
                 if not moving:
@@ -147,7 +145,7 @@ class Fishing:
                 if check == "win":
                     game = False
                 elif check == "penalty":
-                    if x + 1 > self.column_amount:
+                    if x + 1 < self.column_amount:
                         self.ticks[x+1] -= 1
                     game = False
                 elif check == "loss": 
@@ -169,10 +167,7 @@ class Fishing:
         if not data["fish"][self.rarity].get(self.fish):
             data["fish"][self.rarity][self.fish] = True
         
-        if data["ocean_unlock"]:
-            pass
-        
-        if data["fish_caught"]  == 10:
+        if data["fish_caught"]  >= 10:
             data["ocean_unlock"] = True
         
     def lose(self, lore, cd):
