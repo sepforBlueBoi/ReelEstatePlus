@@ -11,6 +11,7 @@ game_dict: dict[str, any] = {
     "phase": 1,
     "fish_caught": 0,
     "equipped_rod": None,
+    "equipped_lure": None,
     
     "achiev": {
       
@@ -60,7 +61,10 @@ game_dict: dict[str, any] = {
             },
     },
     "lures": {
-        
+            "Basic_lure": False,
+            "Scented_lure": False,
+            "Superior_lure": False,
+            "Magic_Worm": False
     },
     "estate": {
          "Small_House": False,

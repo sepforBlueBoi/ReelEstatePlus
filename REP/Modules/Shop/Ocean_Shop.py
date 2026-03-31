@@ -11,6 +11,10 @@ shop_items = {
     "Efficient_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
     "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
     "Premier_Rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney.", "id": 4},
+    "Basic_lure": {"tag": "lure", "price": 400, "desc": "", "id": 1}, #TODO DESC
+    "Scented_lure": {"tag": "lure", "price": 700, "desc": "", "id": 2},
+    "Superior_lure": {"tag": "lure", "price": 1000,"desc": "", "id": 3},
+    "Magic_Worm": {"tag": "lure", "price": 1500, "desc": "", "id": 4},
 }    
 
 class Shop_Ocean:
@@ -34,8 +38,12 @@ class Shop_Ocean:
                     time.sleep(self.cd["list_timing"])
                 print(lore["shop11"]) # 0. Return"""
 
+        #for k, v in shop_items.items():
+            
 
-    def shop_init(self, data, lore, cd):
+    def shop_init(self, data: dict, lore: dict, cd: dict):
         if not data["has_met_azure"]:
             intro_talk(cd, data)
+
+        self.cd = cd
 

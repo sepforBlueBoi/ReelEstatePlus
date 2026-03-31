@@ -2,7 +2,7 @@ import os, gc
 import random
 import time
 import sys
-from colorama import Fore, Style, init
+from colorama import Fore, Style
 from REP.Modules.Casino.roulette import rouletete
 from REP.Modules.Casino.tokenizer import token_shop
 from REP.Modules.Casino.Slots import slot_animation
@@ -33,6 +33,7 @@ def slots(Data, text, cd):
             clear()
             print(text["slots5"]) # you leave the machine and return to the casino hub.
             time.sleep(cd["read_timer"])
+            clear()
             gc.collect()
             return
 
@@ -105,42 +106,58 @@ def roulette(Data, text, cd):
 
     print(text["roulette1"])# you walk over to the Roulette table.
     time.sleep(cd["text_timing"])
+    color_choice = 100 # set here so pyright stops screaming at me. >:(
     while True:
         
         print(text["roulette2.5"] if random.randint(1, 50) == 5 else text["roulette2"])# the ghost manning it greets you asks
         time.sleep(cd["text_timing"])
         roulette1 = text["roulette3"].replace("Red", f"{Fore.RED}Red{Style.RESET_ALL}")
-        roulette2 = roulette1.replace("Black", f"{Fore.BLACK}{Style.BRIGHT}Black{Style.RESET_ALL}")
-        roulette3 = roulette2.replace("Blue", f"{Fore.BLUE}Blue{Style.RESET_ALL}")
-        print(roulette3)# 1. Red 2. Black 3. Blue
-        roull: str = input('> ').strip()
+        roulette2 = text["roulette4"].replace("Black", f"{Fore.LIGHTBLACK_EX}Black{Style.RESET_ALL}")
+        roulette3 = text["roulette5"].replace("Blue", f"{Fore.BLUE}Blue{Style.RESET_ALL}")
+        roulette_purple = text["roulette16"].replace("purple", f"{Fore.MAGENTA}purple{Style.RESET_ALL}")
 
-        if roull == "1":
+        print(roulette1)
+        time.sleep(cd["list_timing"])
+        print(roulette2)
+        time.sleep(cd["list_timing"])
+        print(roulette3)
+        time.sleep(cd["text_timing"])
+        try:
+            color_choice: int = int(input('> '))
+        except ValueError:
             clear()
-            p_color = "red"
-            
-        elif roull == "2":
+            print(text["roulette17"])
+            time.sleep(cd["text_timing"])
+            continue
+
+        if color_choice == 1:
             clear()
-            p_color = "black"
+            color = "red"
             
-        elif roull == "3":
+        elif color_choice == 2:
             clear()
-            p_color = "blue"
+            color = "black"
             
-        elif roull == "0":
+        elif color_choice == 3:
+            clear()
+            color = "blue"
+            
+        elif color_choice == 0:
+            clear()
+            print() # You depart from the table, back to the casinos hub
             gc.collect()
             clear()
             return
         else:
             clear()
-            print(f"No, you cannot bet on {Fore.MAGENTA}purple{Style.RESET_ALL}")
+            print(roulette_purple)
             continue
 
         while True:
         
-            print(text["roulette4"])# Now the bet.
+            print(text["roulette7"])# Now the bet.
             time.sleep(cd["text_timing"])
-            print(text["roulette5"])# how much you bettin?
+            print(text["roulette8"])# how much you bettin?
             time.sleep(cd["text_timing"])
             print(f"Currency: {Data["currency"]}")# in your wallet is {money}.
             time.sleep(cd["text_timing"])
@@ -149,18 +166,18 @@ def roulette(Data, text, cd):
                 bet: int = int(input("> "))
             except ValueError:
                 clear()
-                print(text["roulette5.5"]) # this...isn't an amount
+                print(text["roulette9"]) # this...isn't an amount
                 time.sleep(cd["read_timer"])
                 clear()
                 continue
         
 
-            roulette6 = text["roulette6"].replace("*", Data["c_name"])
-            roulette7 = text["roulette7"].replace("*", Data["c_name"])
+            roulette6 = text["roulette10"].replace("*", Data["c_name"])
+            roulette7 = text["roulette11"].replace("*", Data["c_name"])
 
             if bet == 0:
                 clear()
-                print(text["roulettereturn"])#ah, changing colors?
+                print(text["roulette15"])#ah, changing colors?
                 time.sleep(cd["read_timer"])
                 clear()
                 break
@@ -172,7 +189,7 @@ def roulette(Data, text, cd):
                 continue
             elif bet > Data["currency"]:
                 clear()
-                print(text["roulette8"])# you dont have that much
+                print(text["roulette12"])# you dont have that much
                 time.sleep(cd["read_timer"])
                 continue
             elif bet >= 1000:
@@ -182,10 +199,10 @@ def roulette(Data, text, cd):
                 continue
         
 
-            wow = rouletete()
+            animation_n_result = rouletete()
             time.sleep(cd["text_timing"])
-            if p_color == wow:
-                print(text["roulette9"])# nice win
+            if color == animation_n_result:
+                print(text["roulette13"])# nice win
                 time.sleep(cd["text_timing"])
                 Data["currency"] += bet
                 print(Data["currency"],"!")
@@ -194,7 +211,7 @@ def roulette(Data, text, cd):
                 clear()
                 continue
             else:
-                print(text["roulette10"])# oof, better luck next time!
+                print(text["roulette14"])# oof, better luck next time!
                 time.sleep(cd["text_timing"])
                 Data["currency"] -= bet
                 print(Data["currency"],"...")
@@ -228,7 +245,7 @@ def Casino(Data, text, cd):
         elif choice == "3" or choice == "tokens":
             clear()
             token_shop(text, Data, cd)
-        elif choice == "4" or choice == "leave":
+        elif choice == "0" or choice == "leave":
             clear()
             print(text["casino6"])
             time.sleep(cd["text_timing"])
