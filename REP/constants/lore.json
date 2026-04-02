@@ -139,7 +139,16 @@
     "ocean10": "You do a outrageous dance. The nearby crabs are no longer nearby.",
     "ocean11": "Cast your rod again?",
     "ocean12": "You part from the Dock, back to the sand.",
-    "ocean13": "The person in Azures Cove is watching you."
+    "ocean13": "The person in Azures Cove is watching you.",
+    "ocean_shop1": "Despite the narrator leaving, he is still narrating from outside...some how",
+    "ocean_shop2": "Azure is watching me intently from inside.",
+    "ocean_shop3": "1. Advanced rods",
+    "ocean_shop4": "2. Lures",
+    "ocean_shop5": "3. Chat",
+    "ocean_shop6": "0. Leave",
+    "ocean_shop7": "You walk into the floor.",
+    "ocean_shop8": "You leave the cove, back to the sandy beach.",
+    "ocean_shop9": "Another floor. Please stop walking into stuff."
 
 
 }
