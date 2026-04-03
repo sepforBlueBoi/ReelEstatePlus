@@ -11,7 +11,7 @@ shop_items = {
     "Efficient_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
     "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
     "Premier_Rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney.", "id": 4},
-    "Basic_lure": {"tag": "lure", "price": 400, "desc": "Pretty decent lure.", "id": 1}, #TODO DESC
+    "Basic_lure": {"tag": "lure", "price": 400, "desc": "Pretty decent lure.", "id": 1}, 
     "Scented_lure": {"tag": "lure", "price": 700, "desc": "The lure is scented like tide pods. thats what fish like right?", "id": 2},
     "Superior_lure": {"tag": "lure", "price": 1000,"desc": "Much like the rod, it is superior, despite being the second best.", "id": 3},
     "Magic_Worm": {"tag": "lure", "price": 1500, "desc": "Its a worm covered in glitter.", "id": 4},
@@ -27,8 +27,9 @@ class Shop_Ocean:
         print()
         
     def main_shop(self, tag, data, lore):
+        items: list[str] = ["placerholder"]
 
-     """for k, v in shop.items(): #grabs item, and item info for each item in shop dict
+        """for k, v in shop.items(): #grabs item, and item info for each item in shop dict
             if v.get("tag") == tag: # checks if they are in the tag selected
                 if not v.get("phase") or v.get("phase") == data["phase"]: # makes sure you in the correct phase if its there (ie furniture.) so it doesnt add ALL furniture to the list.
                     item_display: str = k.replace("_", " ")
@@ -38,12 +39,48 @@ class Shop_Ocean:
                     time.sleep(self.cd["list_timing"])
                 print(lore["shop11"]) # 0. Return"""
 
-        #for k, v in shop_items.items():
-            
+        title = ""
+        match tag:
+            case "ocean":
+                title = "Advanced Rods"
+            case "lure":
+                title = "Fishing Lures"
+
+        while True:
+            print("-" * 2, "=" * 3, title, "=" * 3, "-" * 2)
+
+            print('\n')
+            for k, v in shop_items.items():
+                if v.get("tag") == tag:
+                    item_display: str = k.replace("_", " ")
+                    if k not in items:
+                        items.append(k)
+                    print(f"{shop_items[k].get("id")}. | {item_display}")  
+            print(lore["shop11"])
+
+            item_choice: int = 10 # another place holder for pyright
+    
+            try:
+                item_choice: int = int(input("> "))
+            except ValueError:
+                clear()
+                print() # [Blue] Please select an item.
+                time.sleep(self.cd["read_timer"])
+                clear()
+                continue
+
+            if item_choice == 0:
+                clear()
+                print() # You leave this isle. Azure is building a card house from letters.
+                time.sleep(self.cd["read_timer"])
+                clear()
+                return
+                
 
     def shop_init(self, data: dict, lore: dict, cd: dict):
         if not data["has_met_azure"]:
             intro_talk(cd, data)
+            data["has_met_azure"] = True
 
         self.cd = cd
         sys.stdout.write(f"\033]0;Azure's Cove\a")

@@ -30,11 +30,11 @@ def analysis():
         print("Option 3")
 
     elif dec == "4":
-        clear_console #DLC. not confirmed (confirmed?)
+        clear_console() #DLC. not confirmed (confirmed?)
         print("Option 4")
 
     else:
-        clear_console
+        clear_console()
         print("Not an option.")
             
         

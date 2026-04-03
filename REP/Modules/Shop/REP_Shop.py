@@ -29,7 +29,7 @@ shop: dict[str, any] = { #replica of all items but with prices.
         
         "Red_and_White_Ball": {"tag": "misc", "price": 450, "desc": "It's a weird red and white capsule. possibly to contain some weird pocket monster?", "id": 2}
         ,
-        "Golden_Idle": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this.", "id": 3},
+        "Golden_Idol": {"tag": "misc", "price": 9, "desc": "It's a golden idle. You aren't sure if you should waste your money on this.", "id": 3},
         
         "Old_Couch": {"tag": "furniture", "phase": 1, "price": 50, "desc": "it is mostly holes", "id": 1},
         
@@ -226,7 +226,7 @@ class Shop:
                     if items[item] == "Casino":    # casino edge case
                         data["estate"]["Casino"]["owned"] = True
                     elif items[item] == "Map": # map edge case
-                        data[items[item]] = True
+                        data[map] = True
                     else:
                         data[tag][items[item]] = True
                     lore2 = lore["shop27"].replace("*", str(data["currency"]))
