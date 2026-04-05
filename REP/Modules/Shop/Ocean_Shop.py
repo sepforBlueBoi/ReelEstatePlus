@@ -11,10 +11,10 @@ shop_items = {
     "Efficient_Rod": {"tag": "ocean", "price": 800, "desc": "Great rod. good for fishing at the beach", "id": 2},
     "Superior_Rod": {"tag": "ocean", "price": 1200, "desc": "One of the best rods to wield. I bet you will be catching great fish at the beach", "id": 3},
     "Premier_Rod": {"tag": "ocean", "price": 2000, "desc": "The best rod. His name is Rodney.", "id": 4},
-    "Basic_lure": {"tag": "lure", "price": 400, "desc": "Pretty decent lure.", "id": 1}, 
-    "Scented_lure": {"tag": "lure", "price": 700, "desc": "The lure is scented like tide pods. thats what fish like right?", "id": 2},
-    "Superior_lure": {"tag": "lure", "price": 1000,"desc": "Much like the rod, it is superior, despite being the second best.", "id": 3},
-    "Magic_Worm": {"tag": "lure", "price": 1500, "desc": "Its a worm covered in glitter.", "id": 4},
+    "Basic_lure": {"tag": "lures", "price": 400, "desc": "Pretty decent lure.", "id": 1}, 
+    "Scented_lure": {"tag": "lures", "price": 700, "desc": "The lure is scented like tide pods. thats what fish like right?", "id": 2},
+    "Superior_lure": {"tag": "lures", "price": 1000,"desc": "Much like the rod, it is superior, despite being the second best.", "id": 3},
+    "Magic_Worm": {"tag": "lures", "price": 1500, "desc": "Its a worm covered in glitter.", "id": 4},
 }    
 
 class Shop_Ocean:
@@ -24,7 +24,16 @@ class Shop_Ocean:
         self.cd: dict = {}
     
     def item_display_function(self, item, price): 
-        print()
+        item_view = item.replace("_", " ")
+        print(f"o|== ~{item_view}~ ==|o")
+        print("\n")
+        
+        time.sleep(self.cd["text_timing"])
+        print(shop_items[item].get("desc"))
+        time.sleep(self.cd["text_timing"])
+
+        print(f"${price}")
+        time.sleep(self.cd["text_timing"])
         
     def main_shop(self, tag, data, lore):
         items: list[str] = ["placerholder"]
@@ -75,6 +84,17 @@ class Shop_Ocean:
                 time.sleep(self.cd["read_timer"])
                 clear()
                 return
+            
+            time.sleep(self.cd["text_timing"])
+            price = shop_items[items[item_choice]].get("price")
+
+            while True:
+                clear()
+                self.item_display_function(items[item_choice], price)
+
+                print("\n")
+                print(lore["shop18"] if data[tag].get(items[item_choice]) == False else lore ["shop19"])
+
                 
 
     def shop_init(self, data: dict, lore: dict, cd: dict):
@@ -126,7 +146,7 @@ class Shop_Ocean:
                 case 2:
                     time.sleep(self.cd["text_timing"])
                     clear()
-                    self.main_shop("lure", data, lore)
+                    self.main_shop("lures", data, lore)
                 case _:
                     time.sleep(self.cd["text_timing"])
                     clear()
