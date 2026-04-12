@@ -284,9 +284,9 @@ class Shop:
             time.sleep(self.cd["list_timing"])
             print(lore["shop11"]) # 0. Return
             time.sleep(self.cd["text_timing"])
-    
+            
             try:
-                isle = int(input("\n> "))
+                isle: int = int(input("\n> "))
             except ValueError:
                 clear()
                 print(lore["shop12"]) # You walk into a wall

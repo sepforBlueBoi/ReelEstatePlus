@@ -94,8 +94,25 @@ class Shop_Ocean:
 
                 print("\n")
                 print(lore["shop18"] if data[tag].get(items[item_choice]) == False else lore ["shop19"])
-
                 
+                time.sleep(self.cd["list_timing"])
+                print(lore["shop20"])
+
+                time.sleep(self.cd["text_timing"])
+                try:
+                    choice: int = int(input("> "))
+                except ValueError:
+                    clear()
+                    print()
+                    time.sleep(self.cd["read_timer"])
+                    continue
+
+                if choice == 2:
+                    clear()
+                    print() # [Blue] Indesisive are you?
+                    time.sleep(self.cd["read_timer"])
+                    clear()
+                    break
 
     def shop_init(self, data: dict, lore: dict, cd: dict):
         if not data["has_met_azure"]:
