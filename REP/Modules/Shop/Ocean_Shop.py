@@ -103,7 +103,7 @@ class Shop_Ocean:
                     choice: int = int(input("> "))
                 except ValueError:
                     clear()
-                    print()
+                    print() # [Blue] A number please. Unless thats too hard for You?
                     time.sleep(self.cd["read_timer"])
                     continue
 
@@ -113,6 +113,20 @@ class Shop_Ocean:
                     time.sleep(self.cd["read_timer"])
                     clear()
                     break
+
+                elif choice != 1:
+                    clear()
+                    print() # [Blue] I know you are given choices, there are only two. what are you doing.
+                    time.sleep(self.cd["read_timer"])
+                    clear()
+                    continue
+
+                elif price > data["currency"]:
+                    clear()
+                    print() # [Blue] Something Something, pocket lint. listen friend. I would like to make a profit.
+                    time.sleep(self.cd["read_timer"])
+                    clear()
+                    continue
 
     def shop_init(self, data: dict, lore: dict, cd: dict):
         if not data["has_met_azure"]:
