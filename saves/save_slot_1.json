@@ -2,14 +2,15 @@
   "name": "Kondike",
   "currency": 250,
   "tokens": 0,
-  "c_name": "Kondollars",
-  "map": true,
+  "c_name": "Kondolllars",
+  "map": false,
   "intro": true,
   "ocean_unlock": false,
   "has_met_azure": false,
   "phase": 1,
   "fish_caught": 0,
   "equipped_rod": null,
+  "equipped_lure": null,
   "achiev": {},
   "quests": {},
   "collectables": {},
@@ -47,7 +48,12 @@
       "lake squid": false
     }
   },
-  "lures": {},
+  "lures": {
+    "Basic_lure": false,
+    "Scented_lure": false,
+    "Superior_lure": false,
+    "Magic_Worm": false
+  },
   "estate": {
     "Small_House": false,
     "House": false,

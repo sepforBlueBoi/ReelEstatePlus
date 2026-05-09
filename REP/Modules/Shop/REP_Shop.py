@@ -226,13 +226,13 @@ class Shop:
                     if items[item] == "Casino":    # casino edge case
                         data["estate"]["Casino"]["owned"] = True
                     elif items[item] == "Map": # map edge case
-                        data[map] = True
+                        data["Map"] = True
                     else:
                         data[tag][items[item]] = True
                     lore2 = lore["shop27"].replace("*", str(data["currency"]))
                     print(lore2) # You have {amount} left.
                     time.sleep(self.cd["read_timer"])
-                    if tag == "fishing":
+                    if tag == "lake":
                         data["equipped_rod"] = items[item]
                     if tag == "estate":
                         match items[item]:

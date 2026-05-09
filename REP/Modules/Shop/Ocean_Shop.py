@@ -1,6 +1,7 @@
 import os
 import gc, sys, time
 from REP.Modules.NPCs.Azure import intro_talk
+from colorama import Fore, Style
 
 def clear():
     os.system('cls' if os.name == "nt" else 'clear')
@@ -52,7 +53,7 @@ class Shop_Ocean:
         match tag:
             case "ocean":
                 title = "Advanced Rods"
-            case "lure":
+            case "lures":
                 title = "Fishing Lures"
 
         while True:
@@ -73,7 +74,7 @@ class Shop_Ocean:
                 item_choice: int = int(input("> "))
             except ValueError:
                 clear()
-                print() # [Blue] Please select an item.
+                print(Fore.LIGHTBLUE_EX + lore["ocean_shop10"]) # [Blue] Please select an item.
                 time.sleep(self.cd["read_timer"])
                 clear()
                 continue
@@ -127,6 +128,29 @@ class Shop_Ocean:
                     time.sleep(self.cd["read_timer"])
                     clear()
                     continue
+
+                elif data[tag].get(items[item_choice]):
+                    clear()
+                    print() # [Blue] You already purchased this.
+                    time.sleep(self.cd["read_timer"])
+                    clear()
+                    continue
+
+                else:
+                    clear()
+                    item_bought: str = items[item_choice].replace("_", " ")
+
+                    print() # [Blue] {item} purchased for {price}. Thanks. 
+                    time.sleep(self.cd["text_timing"])
+                    data["currency"] -= price
+
+                    data[tag][items[item_choice]] = True
+                    print() # You are left with {currency}
+                    time.sleep(self.cd["read_timer"])
+                    clear()
+                    break
+
+
 
     def shop_init(self, data: dict, lore: dict, cd: dict):
         if not data["has_met_azure"]:

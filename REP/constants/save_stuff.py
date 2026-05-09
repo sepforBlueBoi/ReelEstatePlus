@@ -4,7 +4,7 @@ game_dict: dict[str, any] = {
     "currency": 250,
     "tokens": 0,
     "c_name": "",
-    "map": False,
+    "Map": False,
     "intro": False,    
     "ocean_unlock": False,
     "has_met_azure": False,
@@ -93,7 +93,7 @@ game_dict: dict[str, any] = {
     
     "misc": {
         "Red_and_White_Ball": False,
-        "Golden_Idle": False,
+        "Golden_Idol": False,
     },
 }
 

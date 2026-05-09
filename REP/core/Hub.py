@@ -85,9 +85,9 @@ class World:
                 print(self.dialogue["place6"])
 
             time.sleep(self.timer["list_timing"])
-            where_to_go = input("> ") # sick variable name
+            where_to_go: str = input("> ") # sick variable name
 
-            self.choice_call(self, where_to_go) # sends you off
+            self.choice_call(where_to_go) # sends you off
         
 
     def intro(self, save, slot): # intro for post game initialization
@@ -150,10 +150,10 @@ class World:
 
             print(Red_you4)
             time.sleep(self.timer["text_timing"])
-            map = input("(Y/N)> ").lower() # check for map
-            if map in ["yes", "y"]:
+            map_c: str = input("(Y/N)> ").lower() # check for map
+            if map_c in ["yes", "y"]:
                 print(self.dialogue["lore9"]) 
-                self.Worldstate["map"] = True
+                self.Worldstate["Map"] = True
             else:
                 print(self.dialogue["lore10"])    
                 
@@ -162,4 +162,4 @@ class World:
         gc.disable()
         clear_console()
         gc.collect()
-        self.choice(self) # enter main game loop
+        self.choice() # enter main game loop
