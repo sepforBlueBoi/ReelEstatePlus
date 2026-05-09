@@ -38,55 +38,18 @@ class InvDisplay:
     def __init__(self):
         self.page: int = 1 # keep track of pages
         self.cd: dict = {}
-        
+
+    def equip_func(self, data):
+        pass #TODO No clue why i commented this. im working on it activly :\.
+
     def page_6(self, data):
-        rods: list[str] = ["placeholder"]
         while True:
             clear()
             print("Page 6\t ----\tEquip Station\n")
             time.sleep(self.cd["text_timing"])
-            if data["equipped_rod"] != None:
-                pretty_rod = data["equipped_rod"].replace("_", " ")
-                print(f"Current Rod: {pretty_rod}")
-            else:
-                print("No Rod equipped.")
-            time.sleep(self.cd["text_timing"])
-        
-        
-            i: int = 1
-            for k, v in data["lake"].items():
-                if v:
-                    if not k in rods:
-                        rods.append(k)
-                    print(f"{i}. {k.replace('_', " ")}")
-                    i += 1
-            for key, vey in data["ocean"].items():
-                if vey:
-                    if not key in rods:
-                        rods.append(key)
-                    print(f"{i}. {key.replace('_', ' ')}")
-                    i += 1
-            try:
-                choice: int = int(input("> "))
-            except ValueError:
-                clear()
-                time.sleep(self.cd["text_timing"])
-                print("Not an object")
-                time.sleep(self.cd["read_timer"])
-                continue
-                
-            if 0 > choice or choice > len(rods) - 1:
-                clear()
-                time.sleep(self.cd["text_timing"])
-                print("You cannot equip that.")
-                time.sleep(self.cd["read_timer"])
-                continue
-            
-            if choice == 0:
-                break # get back to the rest of the inventory
-            
-            data["equipped_rod"] = rods[choice]
-            continue
+            print("1. Equip Rod")
+            print("2. Equip Lure")
+            print("0. Page Prompt")
         
     def page_5(self, data):
         houses = False

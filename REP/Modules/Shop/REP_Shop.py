@@ -106,7 +106,8 @@ class Shop:
     ^ Not important. old logic from Legacy 8.1, used for example to get print items to work
     """
         items: list[str] = ["placeholder"] # place holder so items start at index 1.
-    
+        
+        title:str = ""
         match tag: # grabs the title of the page/isle based off of tag.
             case "estate":
                 title = "Real Estate"
@@ -166,6 +167,8 @@ class Shop:
             
                 if items[item] != "Casino":
                     print(lore["shop18"] if data[tag].get(items[item]) == False else lore["shop19"])# 1. Buy/OWNED
+                elif items[item] == "Map":
+                    print(lore["shop18"] if data[items[item]] == False else lore["shop19"])
                 else:
                     print(lore["shop18"] if data[tag][items[item]].get("owned") == False else lore["shop19"])
                 
@@ -242,6 +245,7 @@ class Shop:
                                 data["phase"] = 3
                     
                     clear()
+                    items.clear()
                     return
                 
 
@@ -284,9 +288,9 @@ class Shop:
             time.sleep(self.cd["list_timing"])
             print(lore["shop11"]) # 0. Return
             time.sleep(self.cd["text_timing"])
-            
+            isle: int = 0 
             try:
-                isle: int = int(input("\n> "))
+                isle = int(input("\n> "))
             except ValueError:
                 clear()
                 print(lore["shop12"]) # You walk into a wall

@@ -57,7 +57,7 @@ class World:
         name = self.Worldstate["name"].strip().lower()
         print(self.dialogue["where1"])
         time.sleep(self.timer["text_timing"])
-        print(self.dialogue["where2"] if self.Worldstate["map"] == True else self.dialogue["where2.5"])
+        print(self.dialogue["where2"] if self.Worldstate["Map"] == True else self.dialogue["where2.5"])
         time.sleep(self.timer["text_timing"])
         while True:
             sys.stdout.write(f'\033]0;REP Hub\a')
@@ -68,11 +68,11 @@ class World:
                 print("=", end='')
                 time.sleep(0.1)
             print("\n")
-            print(self.dialogue["place1"] if self.Worldstate["map"] == True else "1. ???") #only prints the name of the place if you own the map offered in intro
+            print(self.dialogue["place1"] if self.Worldstate["Map"] == True else "1. ???") #only prints the name of the place if you own the map offered in intro
             time.sleep(self.timer["list_timing"])
-            print(self.dialogue["place2"] if self.Worldstate["map"] == True else "2. ???") # store
+            print(self.dialogue["place2"] if self.Worldstate["Map"] == True else "2. ???") # store
             time.sleep(self.timer["list_timing"])
-            print(self.dialogue["place3"] if self.Worldstate["map"] == True else "3. ???") # lake
+            print(self.dialogue["place3"] if self.Worldstate["Map"] == True else "3. ???") # lake
             time.sleep(self.timer["list_timing"])
             print(self.dialogue["place4"]) # inventory
             if self.Worldstate["ocean_unlock"]:    

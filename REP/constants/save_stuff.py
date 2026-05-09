@@ -1,5 +1,6 @@
 import copy
-game_dict: dict[str, any] = {
+from typing import Any
+game_dict: dict[str, Any] = {
     "name": "",
     "currency": 250,
     "tokens": 0,
