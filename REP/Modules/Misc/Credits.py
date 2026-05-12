@@ -1,13 +1,13 @@
 import time
-import os
+import sys
 from colorama import Fore, Style, init
 
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 from REP.Modules.Save_Modules.Load_module import load_json
 
-credit = load_json("lore.json") # loads credits. only time this is called outside the main loop.
+credit: dict = load_json("lore.json") # loads credits. only time this is called outside the main loop.
 
 def credits():
     print(credit["credit1"]) # Reel Estate+

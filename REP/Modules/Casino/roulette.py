@@ -1,10 +1,10 @@
 import time
-import os
+import os, sys
 import random
 
 
 def clear():
-    os.system('cls' if os.name == "nt" else "clear")
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 red_win = {
     "frame1": "    \U0001F7E6\n  \U0001F7E5  \U0001F7E5\n\U0001F7E6      \U0001F7E6\n  \U00002B1B  \U0001F7E5\n    \U0001F7E6\n    ^",

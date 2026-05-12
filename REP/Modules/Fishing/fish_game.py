@@ -1,9 +1,9 @@
 import random
-import os
+import sys
 import time
 
 def clear():
-    os.system('cls' if os.name == "nt" else "clear")
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 fish: dict[str, dict[str, list[str]]]= { # nested dict. you can see how it works RIGHT below.
     "common": {
@@ -177,6 +177,7 @@ class Fishing:
         print(lore["lake11"]) # You suck.
         
     def chance_for_rods(self, data):
+        odds: list[int] = []
         match data["equipped_rod"]:
             case "Old_Rod":
                 odds: list[int] = [60, 30, 10]

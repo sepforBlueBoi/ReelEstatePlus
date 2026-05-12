@@ -1,12 +1,12 @@
-# so borad. inventory...build your self please
+# so bored. inventory...build your self please
 #...
 # FINE, I'll do it :\
 import time
-import os, sys, gc
+import sys, gc
 import random
 
-def clear():
-    os.system('cls' if os.name == "nt" else "clear")
+def clear() -> None:
+    sys.stdout.write("\033[H\033[2J\033[3J")
     
 fur_phase: dict[str, int] = {
         "Old_Couch": 1,
@@ -39,7 +39,7 @@ class InvDisplay:
         self.page: int = 1 # keep track of pages
         self.cd: dict = {}
 
-    def equip_func(self, data, ToEquip):
+    def equip_func(self, data: dict, ToEquip: str) -> None:
         header: str = ""
         ItemsToCycleThrough: list[str] = []
         ItemsToSelect: list[str] = []
@@ -56,20 +56,40 @@ class InvDisplay:
         print(f"[{header}]\n")
         time.sleep(self.cd["text_timing"])
         
-        idx: int = 1
-        for item in ItemsToCycleThrough:
-            for itemSquared in data[item]:
-                if itemSquared == data["equipped_rod" if ToEquip == "rod" else "equipped_lure"]:
-                    print(f"{idx} - {itemSquared}**")
-                else:
-                    print(f"{idx} - {itemSquared}")
-                ItemsToSelect.append(itemSquared)
-                time.sleep(self.cd["text_timing"])
-                idx += 1
+        while True:
+            idx: int = 1
+            for item in ItemsToCycleThrough:
+                for itemSquared in data[item]:
+                    if itemSquared == data["equipped_rod" if ToEquip == "rod" else "equipped_lure"]:
+                        print(f"{idx} - {itemSquared}**")
+                    else:
+                        print(f"{idx} - {itemSquared}")
+                    ItemsToSelect.append(itemSquared)
+                    time.sleep(self.cd["text_timing"])
+                    idx += 1
 
-        equip_select: int = int(input("> "))
+            print("0. return to main page")
 
-    def page_6(self, data):
+            equip_select: int = int(input("> "))
+
+            if equip_select == 0:
+                clear()
+                return
+
+            if equip_select > len(ItemsToSelect) - 1:
+                clear()
+                print("Invalid Selection") #FIXME Proper humor fail message please
+                continue
+            
+            item: str = ItemsToSelect[equip_select - 1]
+
+            if item == data["equipped_rod" if ToEquip == "rod" else "Equipped lure"]:
+                clear()
+                print("You cannot equip something twice.")
+                continue
+        
+
+    def page_6(self, data: dict) -> None:
         while True:
             clear()
             print("Page 6\t ----\tEquip Station\n")
@@ -93,9 +113,13 @@ class InvDisplay:
                 case 0:
                     break
                 case _:
-                    pass #TODO make this a thing :\
-        
-    def page_5(self, data):
+                    clear()
+                    print("You cannot equip furniture, please try again.")
+                    time.sleep(self.cd["read_timer"])
+                    clear()
+                    continue
+
+    def page_5(self, data: dict) -> None:
         houses = False
         furnitur = False
         print("page 5\t ----\tHouses and Furniture\n")
@@ -132,15 +156,15 @@ class InvDisplay:
                 time.sleep(self.cd["list_timing"])
                 idx += 1
             
-    def page_3(self, data):
+    def page_3(self, data: dict) -> None:
         print("Page 3\t ----\tAchievements\n")
         time.sleep(self.cd["text_timing"])    
         
-    def page_2(self, data):
+    def page_2(self, data: dict) -> None:
         print("Page 2\t ----\tCollectables and Lore\n")
         time.sleep(self.cd["text_timing"])
         
-    def page_1(self, data): # <- current page function
+    def page_1(self, data: dict) -> None: # <- current page function
         rods = False
         print("Page 1\t ----\tBasic Inventory\n")
         time.sleep(self.cd["text_timing"])
@@ -170,7 +194,7 @@ class InvDisplay:
                 
         time.sleep(self.cd["list_timing"])
         
-    def prompt(self): # simple page prompt that will be at the bottom of every page.
+    def prompt(self) -> int: # simple page prompt that will be at the bottom of every page.
         time.sleep(self.cd["list_timing"])
         print(f"page {self.page}/6")
         time.sleep(self.cd["list_timing"])
@@ -182,15 +206,15 @@ class InvDisplay:
         try:
             page: int = int(input("> ").strip())
         except ValueError:
-            return "error"
+            return 404
         
         
         if page in [0, 1, 2, 3, 4, 5, 6]:
             return page
         else:
-            return "error"
+            return 404
 
-    def display(self, data, cd):
+    def display(self, data: dict, cd: dict) -> None:
         self.cd = cd
         sys.stdout.write(f'\033]0;Inventory\a')
         sys.stdout.flush()
@@ -204,7 +228,7 @@ class InvDisplay:
             
             page = self.prompt()
             
-            if page == "error":
+            if page == 404:
                 print("You proceed to change the channel. you are still on the same page") 
                 continue
             

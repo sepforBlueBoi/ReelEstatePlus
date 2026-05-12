@@ -3,12 +3,13 @@ import os, sys
 import time
 import random
 import gc
+from typing import Any
 
 def clear():
-    os.system('cls' if os.name == "nt" else "clear")
+    sys.stdout.write("\033[H\033[2J\033[3J")
     
     
-shop: dict[str, any] = { #replica of all items but with prices.
+shop: dict[str, Any] = { #replica of all items but with prices.
         "Small_House": {"tag": "estate", "price": 2000, "desc": "Basic house, perfect for one person.", "id": 1},
         
         "House": {"tag": "estate", "price": 2500,"desc": "Rather nice house, perfect for you.", "id": 2},

@@ -12,8 +12,8 @@ from colorama import Fore, init, Style
 import time
 import sys, os, gc
 
-def clear_console():
-    os.system('cls' if os.name == 'nt' else 'clear' )
+def clear_console() -> None:
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 Inv = InvDisplay()
 Shop_ = Shop()
@@ -27,7 +27,7 @@ class World:
         self.dialogue: dict = {}
         self.timer: dict = {}
 
-    def choice_call(self, choice): # after maing your choice it sends you off.
+    def choice_call(self, choice: str) -> None: # after maing your choice it sends you off.
         clear_console()
         name = self.Worldstate["name"].strip().lower()
         gc.collect()
@@ -51,7 +51,7 @@ class World:
             print(self.dialogue["place8"])
         
 
-    def choice(self):
+    def choice(self) -> None:
         """choice :)"""
         save_game(self.Worldstate, self.slot) # saves game after intro, and upon opening save
         name = self.Worldstate["name"].strip().lower()
@@ -90,7 +90,7 @@ class World:
             self.choice_call(where_to_go) # sends you off
         
 
-    def intro(self, save, slot): # intro for post game initialization
+    def intro(self, save: dict, slot: str) -> None: # intro for post game initialization
         self.slot = slot
         self.dialogue = load_json(file="lore.json")
         self.timer = load_json(file="Global.json")

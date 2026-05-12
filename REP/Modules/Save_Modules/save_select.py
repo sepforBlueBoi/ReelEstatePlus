@@ -5,13 +5,13 @@ from REP.core.Hub import World
 from colorama import Fore, Style, init
 import time
 import gc
-import os
+import sys
 
 game = World()
 
 def clear_console():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
+    sys.stdout.write("\033[H\033[2J\033[3J")
+    
 def select_save(slot):
     """_summary_
 

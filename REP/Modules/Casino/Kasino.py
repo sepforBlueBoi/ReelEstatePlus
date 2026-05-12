@@ -8,7 +8,7 @@ from REP.Modules.Casino.tokenizer import token_shop
 from REP.Modules.Casino.Slots import slot_animation
 
 def clear():
-    os.system('cls' if os.name == "nt" else "clear")
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 def slots(Data, text, cd):
     sys.stdout.write(f'\033]0;Slots\a')

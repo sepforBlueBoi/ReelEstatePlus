@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import random
-import os
+import sys
 import time
 
 def clear():
-    os.system('cls' if os.name == "nt" else "clear")
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 def slot_animation():
     reel = []

@@ -98,5 +98,5 @@ game_dict: dict[str, Any] = {
     },
 }
 
-def new_game():
+def new_game() -> dict:
     return copy.deepcopy(game_dict)

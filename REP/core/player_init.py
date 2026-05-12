@@ -5,7 +5,7 @@ import os, sys
 from REP.core.analysis import analysis
 
 def clear_console():
-    os.system('cls' if os.name == 'nt' else 'clear' )
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 init(autoreset=True)
 

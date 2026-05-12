@@ -1,8 +1,8 @@
-import os
+import sys
 import time, gc
 
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 
 def token_shop(lore, Data, cd):
@@ -66,6 +66,7 @@ def token_shop(lore, Data, cd):
 
         elif choice == "2": #tokens to money.
             clear()
+            token2 = lore["token2"].replace("*", Data["c_name"])
             print(token2)
             time.sleep(cd["list_timing"])
             print(f"Tokens: {Data["tokens"]}")
