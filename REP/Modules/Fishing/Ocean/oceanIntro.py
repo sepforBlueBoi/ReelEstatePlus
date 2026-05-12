@@ -1,10 +1,10 @@
-import os
+import os, sys
 import time, gc
 from REP.Modules.Fishing.Ocean.OceanChecker import ocean_game
 from REP.Modules.Shop.Ocean_Shop import Shop_Ocean
 
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    sys.stdout.write("\033[H\033[2J\033[3J")
     
 Azure_cove = Shop_Ocean()
     

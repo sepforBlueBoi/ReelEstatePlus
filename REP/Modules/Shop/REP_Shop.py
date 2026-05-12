@@ -5,7 +5,7 @@ import random
 import gc
 from typing import Any
 
-def clear():
+def clear() -> None:
     sys.stdout.write("\033[H\033[2J\033[3J")
     
     
@@ -70,7 +70,7 @@ class Shop:
     def __init__(self):
         self.cd: dict = {}
     
-    def item_display_function(self, item, price): # item display logic for polish. 
+    def item_display_function(self, item: str, price: int) -> None: # item display logic for polish. 
     
         shop_item = item.replace("_", " ")
         print(f"]===== {shop_item} =====[")
@@ -90,7 +90,7 @@ class Shop:
         print()
         time.sleep(self.cd["text_timing"])
     
-    def shop(self, tag, data, sale, lore):
+    def shop(self, tag: str, data: dict, sale: float, lore: dict[str, str]) -> None:
         """Display_items = dict(items)
     if category == "houses" and not all(game_state["npcs"].values()):
         display_items = {k: v for k, v in items.items() if k != "kasino"}
@@ -250,7 +250,7 @@ class Shop:
                     return
                 
 
-    def shop_init(self, data, lore, cd):
+    def shop_init(self, data: dict, lore: dict[str, str], cd: dict[str, int]) -> None:
         """_summary_
 
     Args:

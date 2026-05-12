@@ -53,10 +53,11 @@ class InvDisplay:
             ItemsToCycleThrough.append("lures")
 
         clear()
-        print(f"[{header}]\n")
-        time.sleep(self.cd["text_timing"])
-        
+
         while True:
+            print(f"[{header}]\n")
+            time.sleep(self.cd["text_timing"])
+        
             idx: int = 1
             for item in ItemsToCycleThrough:
                 for itemSquared in data[item]:
@@ -64,13 +65,22 @@ class InvDisplay:
                         print(f"{idx} - {itemSquared}**")
                     else:
                         print(f"{idx} - {itemSquared}")
-                    ItemsToSelect.append(itemSquared)
+                    if not itemSquared in ItemsToSelect:
+                        ItemsToSelect.append(itemSquared)
                     time.sleep(self.cd["text_timing"])
                     idx += 1
 
             print("0. return to main page")
+           
+            equip_select: int = 101509
+            try:
+                equip_select: int = int(input("> "))
+            except ValueError:
+                print("misinput?")
+                time.sleep(self.cd["read_timer"])
+                clear()
+                continue
 
-            equip_select: int = int(input("> "))
 
             if equip_select == 0:
                 clear()
@@ -83,10 +93,24 @@ class InvDisplay:
             
             item: str = ItemsToSelect[equip_select - 1]
 
-            if item == data["equipped_rod" if ToEquip == "rod" else "Equipped lure"]:
+            if item == data["equipped_rod" if ToEquip == "rod" else "equipped_lure"]:
                 clear()
                 print("You cannot equip something twice.")
                 continue
+            
+            if ToEquip == "rod":
+                data["equipped_rod"] = item
+            else:
+                data["equipped_lure"] = item
+
+            time.sleep(self.cd["text_timing"])
+            print(f"Item {item} equipped")
+            time.sleep(self.cd["read_timer"])
+            clear()
+
+            ItemsToSelect.clear() # Make sure this list doesnt keep filling :)
+            continue
+
         
 
     def page_6(self, data: dict) -> None:

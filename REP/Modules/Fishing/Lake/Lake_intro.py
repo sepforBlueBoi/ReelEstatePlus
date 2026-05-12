@@ -1,11 +1,10 @@
-import os
+import sys
 import time
-import random, gc
+import gc
 from REP.Modules.Fishing.Lake.FishingChecker import checking
 
 def clear():
-    os.system('cls' if os.name == "nt" else "clear")
-    
+    sys.stdout.write("\033[H\033[2J\033[3J")   
 
 def lake_init(data, lore, cd): # lake intro wooo. fun.
     """fish intro for reel estate plus."""

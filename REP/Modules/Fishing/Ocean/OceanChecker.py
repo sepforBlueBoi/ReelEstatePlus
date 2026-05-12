@@ -1,9 +1,9 @@
 from REP.Modules.Fishing.fish_game import Fishing
-import os
+import os, sys
 import time, gc
 
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    sys.stdout.write("\033[H\033[2J\033[3J")
 
 ocean = Fishing() 
 
