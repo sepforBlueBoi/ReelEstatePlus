@@ -39,17 +39,61 @@ class InvDisplay:
         self.page: int = 1 # keep track of pages
         self.cd: dict = {}
 
-    def equip_func(self, data):
-        pass #TODO No clue why i commented this. im working on it activly :\.
+    def equip_func(self, data, ToEquip):
+        header: str = ""
+        ItemsToCycleThrough: list[str] = []
+        ItemsToSelect: list[str] = []
+
+        if ToEquip == "rod":
+            header: str = "Rod Equip Menu"
+            rods_list: list[str] = ["lake", "ocean"]
+            ItemsToCycleThrough.extend(rods_list)
+        elif ToEquip == "lures":
+            header:str = "Lure Equip Menu"
+            ItemsToCycleThrough.append("lures")
+
+        clear()
+        print(f"[{header}]\n")
+        time.sleep(self.cd["text_timing"])
+        
+        idx: int = 1
+        for item in ItemsToCycleThrough:
+            for itemSquared in data[item]:
+                if itemSquared == data["equipped_rod" if ToEquip == "rod" else "equipped_lure"]:
+                    print(f"{idx} - {itemSquared}**")
+                else:
+                    print(f"{idx} - {itemSquared}")
+                ItemsToSelect.append(itemSquared)
+                time.sleep(self.cd["text_timing"])
+                idx += 1
+
+        equip_select: int = int(input("> "))
 
     def page_6(self, data):
         while True:
             clear()
             print("Page 6\t ----\tEquip Station\n")
             time.sleep(self.cd["text_timing"])
+            print('\n')
+
             print("1. Equip Rod")
+            time.sleep(self.cd["text_timing"])
             print("2. Equip Lure")
+            time.sleep(self.cd["text_timing"])
             print("0. Page Prompt")
+            time.sleep(self.cd["text_timing"])
+
+            equip_choice: int = int(input("> "))
+
+            match equip_choice:
+                case 1:
+                    self.equip_func(data, "rod")
+                case 2:
+                    self.equip_func(data, "lures")
+                case 0:
+                    break
+                case _:
+                    pass #TODO make this a thing :\
         
     def page_5(self, data):
         houses = False

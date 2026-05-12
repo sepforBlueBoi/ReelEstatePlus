@@ -1,7 +1,7 @@
 #player intizialzation.
 from colorama import Fore, init, Style
 import time
-import os
+import os, sys
 from REP.core.analysis import analysis
 
 def clear_console():
@@ -36,6 +36,8 @@ def menu():
     
 def presents():
     clear_console()
+    sys.stdout.write('\033]0;Reel Estate Plus\a')
+    sys.stdout.flush()
     print(Fore.LIGHTCYAN_EX + "SnowMan games " + Style.RESET_ALL + "A Reel Estate remake: " # COLOR
           "\n" + Fore.YELLOW + "Reel Estate+ !")
     print("v-beta")
