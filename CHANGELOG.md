@@ -214,4 +214,14 @@ March 18 2026. nothing big happened coding wise, but im switchin IDEs. for good.
 ### day 25
 March 25 2026. so many things have happened. So, let me break it down: Nvim, Tmux, and Lazygit, they are my IDE entirely, its cool. I open up my terminal, open up the basic panel set up: % then ", nvim has been socool. its entirely keyboard based, with mouse support, but its way faster if you use the keyboard shortcuts. Lazygit isnt much. its just the git commands with a fancy UI, so nice visually, and has keyboard shortcuts itself
 
-Code wise Azure's first words are done. im gonna finish the basic shop, add lures to the game math, then i will start with the Azure Dialogue tree. 
+Code wise Azure's first words are done. im gonna finish the basic shop, add lures to the game math, then i will start with the Azure Dialogue tree.
+
+---
+### Day 26 (according to the log)
+May 12 2026. Im on DEBIAN NOOOOW. Yeah i cannot update this dev log consistently can i? So, Ocean shop is in the works, page 6 of the inventory (Equip station) made and then got overhauled. i switched out all of the os.system('cls') for sys.stdout.write('\033[H\033[2J\033[3J') which is some cool optimization for the animations.
+
+Im quite used to the IDE workflow now btw. We moved IRL aswell, not sure if i said that in the Dev log, yep. not a far move at all. Man im really hoping this is released in 2026 lol. would be horrible if it didnt. 
+
+The page 6 update just made the equip function more functional, and can work with lures.
+
+Uhhh, back to adding type hinting everwhere i guess...? 

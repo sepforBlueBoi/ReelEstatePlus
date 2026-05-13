@@ -1,16 +1,16 @@
 import sys
 import time, gc
 
-def clear():
+def clear() -> None:
     sys.stdout.write("\033[H\033[2J\033[3J")
 
 
-def token_shop(lore, Data, cd):
+def token_shop(lore: dict[str, str], Data: dict, cd: dict[str, float]) -> None:
     while True:
         print(lore["token1"])# Welcome to the Tokenizer
 
-        lore7 = lore["token7"].replace('*', Data["c_name"])
-        lore8 = lore["token8"].replace("*", Data["c_name"])
+        lore7: str = lore["token7"].replace('*', Data["c_name"])
+        lore8: str = lore["token8"].replace("*", Data["c_name"])
 
         time.sleep(cd["text_timing"])
         print(lore7)# 1. {c_name} to Tokens
@@ -20,7 +20,7 @@ def token_shop(lore, Data, cd):
         print(lore["token9"])# 3. return to Casino hub
         time.sleep(cd["list_timing"])
 
-        choice = input(f"{lore["token13"]} ").strip()# Which exchanger?
+        choice: str = input(f"{lore["token13"]} ").strip()# Which exchanger?
 
         if choice == "3":
             clear()
@@ -32,7 +32,7 @@ def token_shop(lore, Data, cd):
 
         elif choice == "1":
             clear()
-            token2 = lore["token2"].replace("*", Data["c_name"])
+            token2: str = lore["token2"].replace("*", Data["c_name"])
         
             print(token2)#the exchange rate is 5 {c_name} to 1 token
             time.sleep(cd["list_timing"])
@@ -52,8 +52,8 @@ def token_shop(lore, Data, cd):
                 time.sleep(cd["list_timing"])
                 continue
             else:
-                token_amount_string = str(token_amount)
-                token5 = lore["token5"].replace("*", token_amount_string)
+                token_amount_string: str = str(token_amount)
+                token5: str = lore["token5"].replace("*", token_amount_string)
                 clear()
                 print(lore["token4"]) #okie dokie. let me set you up with the tokens
                 time.sleep(cd["text_timing"])
@@ -66,7 +66,7 @@ def token_shop(lore, Data, cd):
 
         elif choice == "2": #tokens to money.
             clear()
-            token2 = lore["token2"].replace("*", Data["c_name"])
+            token2: str = lore["token2"].replace("*", Data["c_name"])
             print(token2)
             time.sleep(cd["list_timing"])
             print(f"Tokens: {Data["tokens"]}")
@@ -93,7 +93,7 @@ def token_shop(lore, Data, cd):
                 continue
             else:
 
-                token11 = lore["token11"].replace('*', Data["c_name"])
+                token11: str = lore["token11"].replace('*', Data["c_name"])
 
                 print(token11) # Thanks for the tokens, i'll go get the {c_name}
                 time.sleep(cd["list_timing"])

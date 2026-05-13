@@ -1,4 +1,4 @@
-import os, gc
+import gc
 import random
 import time
 import sys
@@ -7,10 +7,10 @@ from REP.Modules.Casino.roulette import rouletete
 from REP.Modules.Casino.tokenizer import token_shop
 from REP.Modules.Casino.Slots import slot_animation
 
-def clear():
+def clear() -> None:
     sys.stdout.write("\033[H\033[2J\033[3J")
 
-def slots(Data, text, cd):
+def slots(Data: dict, text: dict[str, str], cd: dict[str, float]) -> None:
     sys.stdout.write(f'\033]0;Slots\a')
     sys.stdout.flush()
     print(text["slots1"]) # You go to the closest Slots machine.
@@ -53,7 +53,7 @@ def slots(Data, text, cd):
 
 
         time.sleep(cd["text_timing"])
-        reel = slot_animation() # plays slot animation
+        reel: list[str] = slot_animation() # plays slot animation
 
         time.sleep(cd["text_timing"])
         clear()
@@ -67,9 +67,9 @@ def slots(Data, text, cd):
             Data["tokens"] += amount * 2
             time.sleep(cd["text_timer"])
 
-            jackpot = str(amount * 2)
+            jackpot: str = str(amount * 2)
 
-            slots7 = text["slots7"].replace('*', jackpot)
+            slots7: str = text["slots7"].replace('*', jackpot)
 
             print(slots7) # You won {amount * 2}!
             time.sleep(cd["read_timer"])
@@ -79,7 +79,7 @@ def slots(Data, text, cd):
         elif reel[0] == reel[1] or reel[0] == reel[2] or reel[1] == reel[2]: # checks for any match at all
             Data["tokens"] += amount
 
-            win = str(amount)
+            win: str = str(amount)
             slots7_5 = text["slots7.5"].replace('*', win)
 
             print(slots7_5) #You won {amount}!
@@ -90,7 +90,7 @@ def slots(Data, text, cd):
         else: # oof
             Data["tokens"] -= amount
 
-            anoumt = str(amount)
+            anoumt: str = str(amount)
             slots8_5 = text["slots8.5"].replace('*', anoumt)
 
             print(text["slots8"]) # Luck was not on your side this roll
@@ -100,13 +100,13 @@ def slots(Data, text, cd):
             clear()
             continue
 
-def roulette(Data, text, cd):
+def roulette(Data: dict, text: dict[str, str], cd: dict[str, float]) -> None:
     sys.stdout.write(f'\033]0;Roulette\a')
     sys.stdout.flush()
 
     print(text["roulette1"])# you walk over to the Roulette table.
     time.sleep(cd["text_timing"])
-    color_choice = 100 # set here so pyright stops screaming at me. >:(
+    color_choice: int = 100 # set here so pyright stops screaming at me. >:(
     while True:
         
         print(text["roulette2.5"] if random.randint(1, 50) == 5 else text["roulette2"])# the ghost manning it greets you asks
@@ -122,6 +122,10 @@ def roulette(Data, text, cd):
         time.sleep(cd["list_timing"])
         print(roulette3)
         time.sleep(cd["text_timing"])
+        print(text["roulette6"])
+        time.sleep(cd["text_timing"])
+
+
         try:
             color_choice: int = int(input('> '))
         except ValueError:
@@ -132,15 +136,15 @@ def roulette(Data, text, cd):
 
         if color_choice == 1:
             clear()
-            color = "red"
+            color: str = "red"
             
         elif color_choice == 2:
             clear()
-            color = "black"
+            color: str = "black"
             
         elif color_choice == 3:
             clear()
-            color = "blue"
+            color: str = "blue"
             
         elif color_choice == 0:
             clear()
@@ -220,9 +224,10 @@ def roulette(Data, text, cd):
                 break
         
 
-def Casino(Data, text, cd):
+def Casino(Data: dict, text: dict[str, str], cd: dict[str, float]) -> None:
     sys.stdout.write(f'\033]0;Kasino\a')
     sys.stdout.flush()
+
     print(text["casino1"])# You enter the imfamous Casino
     time.sleep(cd["text_timing"])
     print(text["casino2"])# Kondike's Kasino...

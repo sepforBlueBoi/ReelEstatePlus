@@ -60,17 +60,19 @@ class InvDisplay:
         
             idx: int = 1
             for item in ItemsToCycleThrough:
-                for itemSquared in data[item]:
-                    if itemSquared == data["equipped_rod" if ToEquip == "rod" else "equipped_lure"]:
-                        print(f"{idx} - {itemSquared}**")
-                    else:
-                        print(f"{idx} - {itemSquared}")
-                    if not itemSquared in ItemsToSelect:
-                        ItemsToSelect.append(itemSquared)
-                    time.sleep(self.cd["text_timing"])
-                    idx += 1
+                for itemSquared, boolean in data[item].items():
+                    if boolean:
+                        itemSquared: str = itemSquared.replace('_', ' ')
+                        if itemSquared == data["equipped_rod" if ToEquip == "rod" else "equipped_lure"]:
+                            print(f"{idx} - {itemSquared}**")
+                        else:
+                            print(f"{idx} - {itemSquared}")
+                        if not itemSquared in ItemsToSelect:
+                            ItemsToSelect.append(itemSquared)
+                        time.sleep(self.cd["list_timing"])
+                        idx += 1
 
-            print("0. return to main page")
+            print("0 - Return to main page")
            
             equip_select: int = 101509
             try:
@@ -86,7 +88,7 @@ class InvDisplay:
                 clear()
                 return
 
-            if equip_select > len(ItemsToSelect) - 1:
+            if equip_select > len(ItemsToSelect):
                 clear()
                 print("Invalid Selection") #FIXME Proper humor fail message please
                 continue
@@ -121,9 +123,9 @@ class InvDisplay:
             print('\n')
 
             print("1. Equip Rod")
-            time.sleep(self.cd["text_timing"])
+            time.sleep(self.cd["list_timing"])
             print("2. Equip Lure")
-            time.sleep(self.cd["text_timing"])
+            time.sleep(self.cd["list_timing"])
             print("0. Page Prompt")
             time.sleep(self.cd["text_timing"])
 
@@ -198,7 +200,7 @@ class InvDisplay:
         time.sleep(self.cd["list_timing"])
         print("tokens:", data["tokens"]) # tokens
         time.sleep(self.cd["list_timing"])
-        if data["map"]:
+        if data["Map"]:
             print("Map")
             
         for k, v in data["misc"].items():
@@ -244,8 +246,7 @@ class InvDisplay:
         sys.stdout.flush()
         while True:
             clear()
-            page_string = str(self.page) # this is a string cause of earlier bugs. while it may not NEED to be one, im scared to remove it
-            page_to_display = getattr(self, f"page_{page_string}") 
+            page_to_display = getattr(self, f"page_{self.page}") 
             page_to_display(data)
 
             print("\n")
