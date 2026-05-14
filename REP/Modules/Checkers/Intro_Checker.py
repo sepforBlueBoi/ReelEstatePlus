@@ -35,7 +35,7 @@ def epic_name_checker(name):
     match lname:
         case "kondike":
             return "Hello Dev ;)"
-        case "no2no":
+        case "no2no" | "no2" | "neo2":
             return "not goku?"
         case "minecraft man" | "aredstoneengineer":
             return "didnt know you'd show up. nice"
@@ -47,5 +47,7 @@ def epic_name_checker(name):
             return "you're playing?? crazy"
         case "sky" | "skypize":
             return "This before GTA what ever the next one is, is pretty crazy."
+        case "cream":
+            return "Welcome to the game with gambling. Hope you enjoy ;)"
         case _:
             return "Welcome!"

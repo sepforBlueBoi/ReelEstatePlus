@@ -62,11 +62,11 @@ class InvDisplay:
             for item in ItemsToCycleThrough:
                 for itemSquared, boolean in data[item].items():
                     if boolean:
-                        itemSquared: str = itemSquared.replace('_', ' ')
+                        itemSquared_display: str = itemSquared.replace('_', ' ')
                         if itemSquared == data["equipped_rod" if ToEquip == "rod" else "equipped_lure"]:
-                            print(f"{idx} - {itemSquared}**")
+                            print(f"{idx} - {itemSquared_display}**")
                         else:
-                            print(f"{idx} - {itemSquared}")
+                            print(f"{idx} - {itemSquared_display}")
                         if not itemSquared in ItemsToSelect:
                             ItemsToSelect.append(itemSquared)
                         time.sleep(self.cd["list_timing"])
@@ -90,7 +90,7 @@ class InvDisplay:
 
             if equip_select > len(ItemsToSelect):
                 clear()
-                print("Invalid Selection") #FIXME Proper humor fail message please
+                print("We both know thats out out of range") #FIXME Proper humor fail message please
                 continue
             
             item: str = ItemsToSelect[equip_select - 1]
@@ -128,8 +128,13 @@ class InvDisplay:
             time.sleep(self.cd["list_timing"])
             print("0. Page Prompt")
             time.sleep(self.cd["text_timing"])
+            
+            equip_choice: int = 83
 
-            equip_choice: int = int(input("> "))
+            try:
+                equip_choice: int = int(input("> "))
+            except ValueError:
+                pass
 
             match equip_choice:
                 case 1:

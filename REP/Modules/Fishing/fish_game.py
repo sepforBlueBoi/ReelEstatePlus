@@ -45,7 +45,7 @@ class Fishing:
         self.payout: int = 0
         self.rarity: str = ""
         
-    def random_gen(self, data):
+    def random_gen(self, data: dict) -> None:
         
         self.ticks: list[int] = []
         self.ticks.append(7)
@@ -79,7 +79,7 @@ class Fishing:
         for i in range(self.column_amount):
             self.ticks.append(6) # stays at 6 to keep it simple and possible
             
-    def game_gen(self):
+    def game_gen(self) -> None:
         self.column = []
         
         for i in range(8):
@@ -93,7 +93,7 @@ class Fishing:
         if self.target < 7: # same as above
             self.column[self.target + 1] = "\U0001F7E8"
             
-    def game(self, data, lore, cd):
+    def game(self, data: dict, lore: dict[str, str], cd: dict[str, float]) -> None:
         """actual game"""
         self.random_gen(data)
         clear()
@@ -154,7 +154,7 @@ class Fishing:
                 
         self.won(data, cd)    
             
-    def won(self, data, cd):
+    def won(self, data: dict, cd: dict[str, float]) -> None:
         fish_message = random.choice(fish[self.rarity].get(self.fish))
         time.sleep(cd["text_timing"])
         print(fish_message)
@@ -170,13 +170,13 @@ class Fishing:
         if data["fish_caught"]  >= 10:
             data["ocean_unlock"] = True
         
-    def lose(self, lore, cd):
+    def lose(self, lore: dict[str, str], cd: dict[str, float]) -> None:
         time.sleep(cd["text_timing"])
         print(lore["lake10"]) # You Lost the fish.
         time.sleep(cd["text_timing"])
         print(lore["lake11"]) # You suck.
         
-    def chance_for_rods(self, data):
+    def chance_for_rods(self, data: dict) -> list[int]:
         odds: list[int] = []
         match data["equipped_rod"]:
             case "Old_Rod":
